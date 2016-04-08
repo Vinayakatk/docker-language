@@ -9,10 +9,10 @@ Docker:
 	)*
 ;
 
-Image:
+Image://build a new image or pull exiting image added later
 	'image' name=STRING'{'
 			(('tag' tag=STRING)?&
-			('dockerFileDir' dockerFileDir=STRING)? & 
+			('dockerFileLocation' dockerFilelocation=STRING)? & 
 			('buildArg' buildargs=BuildArgs+)? &
 			('noCache' noCache=EBoolean)? &
 			('memory' memory=Elong)?&
@@ -46,14 +46,14 @@ Elong returns ecore::ELong:
 
 Container:
 	'container' name=ID '{'
-		'image'image=[Image] 
+		'image'image=STRING 
 		(('binds' '{' binds+=Bind+'}')?&
 		('capabilityAdd''{'capabilityAdd+=Capability+ '}')?&
 		('capabilityDrop''{'capabilityDrop+=Capability+'}')?&
 		('commands''{'commands+=STRING+'}')?&
 		('containerIDFile'containerIDFile=STRING)?&
 		('cpuPeriod'cpuPeriod=INT)?&
-		('cpusetCpus'cpusetCpus=INT)?&
+		('cpusetCpus'cpusetCpus=STRING)?&
 		('cpusetMems'cpusetMems=STRING)?&
 		('cpuShares'cpuShares=INT)?&
 		('devices''{'devices+=Device+'}')?&
@@ -76,7 +76,7 @@ Container:
 		('publishAllPorts'publishAllPorts=EBoolean)?&
 		('readonlyRootfs'readonlyRootfs=EBoolean)?&
 		('pidMode'pidMode=STRING)?&
-		('cgroupParent'cgroupParent=STRING)?&
+//		('cgroupParent'cgroupParent=STRING)?&
 		('workingDir'workingDir=STRING)?&
 		('user'user=STRING)?&
 		('tty'tty=EBoolean)?&
@@ -89,12 +89,12 @@ Container:
 ;
 
 VolumesFrom:'-'
-	container=[Container]
-	accessMode=AccessMode
+	container=STRING':'
+	accessMode=AccessMode?
 ;
 
 RestartPolicy:'-'
-	name=STRING
+	value='always' | 'onFailure' | 'none'
 	maximumRetryCount=INT
 ;
 
@@ -109,7 +109,7 @@ Binding:'-'
 ;
 
 Link:'-'
-	containerLink=[Container]':' alias=STRING
+	containerLink=STRING ':' alias=STRING
 ;
 Ulimit:'-'
 	name=STRING
@@ -419,8 +419,8 @@ enum Capability :
     WAKE_ALARM;
 Bind:'-'
 	location=STRING ':'
-	volume=Volume ':'
-	accessMode1=AccessMode 
+	volume=Volume (':'
+	accessMode1=AccessMode)? 
 ;
 
 Volume: 
