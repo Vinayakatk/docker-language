@@ -123,13 +123,13 @@ public interface ContainerPackage extends EPackage
   int IMAGE__TAG = 1;
 
   /**
-   * The feature id for the '<em><b>Docker File Dir</b></em>' attribute.
+   * The feature id for the '<em><b>Docker Filelocation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMAGE__DOCKER_FILE_DIR = 2;
+  int IMAGE__DOCKER_FILELOCATION = 2;
 
   /**
    * The feature id for the '<em><b>Buildargs</b></em>' containment reference.
@@ -278,7 +278,7 @@ public interface ContainerPackage extends EPackage
   int CONTAINER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Image</b></em>' reference.
+   * The feature id for the '<em><b>Image</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -548,22 +548,13 @@ public interface ContainerPackage extends EPackage
   int CONTAINER__PID_MODE = 30;
 
   /**
-   * The feature id for the '<em><b>Cgroup Parent</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER__CGROUP_PARENT = 31;
-
-  /**
    * The feature id for the '<em><b>Working Dir</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTAINER__WORKING_DIR = 32;
+  int CONTAINER__WORKING_DIR = 31;
 
   /**
    * The feature id for the '<em><b>User</b></em>' attribute.
@@ -572,7 +563,7 @@ public interface ContainerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__USER = 33;
+  int CONTAINER__USER = 32;
 
   /**
    * The feature id for the '<em><b>Tty</b></em>' attribute.
@@ -581,7 +572,7 @@ public interface ContainerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__TTY = 34;
+  int CONTAINER__TTY = 33;
 
   /**
    * The feature id for the '<em><b>Restart Policy</b></em>' containment reference.
@@ -590,7 +581,7 @@ public interface ContainerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__RESTART_POLICY = 35;
+  int CONTAINER__RESTART_POLICY = 34;
 
   /**
    * The feature id for the '<em><b>Volumes</b></em>' containment reference list.
@@ -599,7 +590,7 @@ public interface ContainerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__VOLUMES = 36;
+  int CONTAINER__VOLUMES = 35;
 
   /**
    * The feature id for the '<em><b>Volumes From</b></em>' containment reference list.
@@ -608,7 +599,7 @@ public interface ContainerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__VOLUMES_FROM = 37;
+  int CONTAINER__VOLUMES_FROM = 36;
 
   /**
    * The feature id for the '<em><b>Ulimits</b></em>' containment reference list.
@@ -617,7 +608,7 @@ public interface ContainerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER__ULIMITS = 38;
+  int CONTAINER__ULIMITS = 37;
 
   /**
    * The number of structural features of the '<em>Container</em>' class.
@@ -626,7 +617,7 @@ public interface ContainerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_FEATURE_COUNT = 39;
+  int CONTAINER_FEATURE_COUNT = 38;
 
   /**
    * The meta object id for the '{@link org.eclipse.docker.language.container.impl.VolumesFromImpl <em>Volumes From</em>}' class.
@@ -639,7 +630,7 @@ public interface ContainerPackage extends EPackage
   int VOLUMES_FROM = 4;
 
   /**
-   * The feature id for the '<em><b>Container</b></em>' reference.
+   * The feature id for the '<em><b>Container</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -676,13 +667,13 @@ public interface ContainerPackage extends EPackage
   int RESTART_POLICY = 5;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESTART_POLICY__NAME = 0;
+  int RESTART_POLICY__VALUE = 0;
 
   /**
    * The feature id for the '<em><b>Maximum Retry Count</b></em>' attribute.
@@ -787,7 +778,7 @@ public interface ContainerPackage extends EPackage
   int LINK = 8;
 
   /**
-   * The feature id for the '<em><b>Container Link</b></em>' reference.
+   * The feature id for the '<em><b>Container Link</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1149,15 +1140,15 @@ public interface ContainerPackage extends EPackage
   EAttribute getImage_Tag();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Image#getDockerFileDir <em>Docker File Dir</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Image#getDockerFilelocation <em>Docker Filelocation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Docker File Dir</em>'.
-   * @see org.eclipse.docker.language.container.Image#getDockerFileDir()
+   * @return the meta object for the attribute '<em>Docker Filelocation</em>'.
+   * @see org.eclipse.docker.language.container.Image#getDockerFilelocation()
    * @see #getImage()
    * @generated
    */
-  EAttribute getImage_DockerFileDir();
+  EAttribute getImage_DockerFilelocation();
 
   /**
    * Returns the meta object for the containment reference '{@link org.eclipse.docker.language.container.Image#getBuildargs <em>Buildargs</em>}'.
@@ -1312,15 +1303,15 @@ public interface ContainerPackage extends EPackage
   EAttribute getContainer_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.docker.language.container.Container#getImage <em>Image</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Container#getImage <em>Image</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Image</em>'.
+   * @return the meta object for the attribute '<em>Image</em>'.
    * @see org.eclipse.docker.language.container.Container#getImage()
    * @see #getContainer()
    * @generated
    */
-  EReference getContainer_Image();
+  EAttribute getContainer_Image();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.docker.language.container.Container#getBinds <em>Binds</em>}'.
@@ -1642,17 +1633,6 @@ public interface ContainerPackage extends EPackage
   EAttribute getContainer_PidMode();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Container#getCgroupParent <em>Cgroup Parent</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cgroup Parent</em>'.
-   * @see org.eclipse.docker.language.container.Container#getCgroupParent()
-   * @see #getContainer()
-   * @generated
-   */
-  EAttribute getContainer_CgroupParent();
-
-  /**
    * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Container#getWorkingDir <em>Working Dir</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1740,15 +1720,15 @@ public interface ContainerPackage extends EPackage
   EClass getVolumesFrom();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.docker.language.container.VolumesFrom#getContainer <em>Container</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.VolumesFrom#getContainer <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Container</em>'.
+   * @return the meta object for the attribute '<em>Container</em>'.
    * @see org.eclipse.docker.language.container.VolumesFrom#getContainer()
    * @see #getVolumesFrom()
    * @generated
    */
-  EReference getVolumesFrom_Container();
+  EAttribute getVolumesFrom_Container();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.VolumesFrom#getAccessMode <em>Access Mode</em>}'.
@@ -1772,15 +1752,15 @@ public interface ContainerPackage extends EPackage
   EClass getRestartPolicy();
 
   /**
-   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.RestartPolicy#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.RestartPolicy#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.eclipse.docker.language.container.RestartPolicy#getName()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.eclipse.docker.language.container.RestartPolicy#getValue()
    * @see #getRestartPolicy()
    * @generated
    */
-  EAttribute getRestartPolicy_Name();
+  EAttribute getRestartPolicy_Value();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.RestartPolicy#getMaximumRetryCount <em>Maximum Retry Count</em>}'.
@@ -1868,15 +1848,15 @@ public interface ContainerPackage extends EPackage
   EClass getLink();
 
   /**
-   * Returns the meta object for the reference '{@link org.eclipse.docker.language.container.Link#getContainerLink <em>Container Link</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Link#getContainerLink <em>Container Link</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Container Link</em>'.
+   * @return the meta object for the attribute '<em>Container Link</em>'.
    * @see org.eclipse.docker.language.container.Link#getContainerLink()
    * @see #getLink()
    * @generated
    */
-  EReference getLink_ContainerLink();
+  EAttribute getLink_ContainerLink();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Link#getAlias <em>Alias</em>}'.
@@ -2209,12 +2189,12 @@ public interface ContainerPackage extends EPackage
     EAttribute IMAGE__TAG = eINSTANCE.getImage_Tag();
 
     /**
-     * The meta object literal for the '<em><b>Docker File Dir</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Docker Filelocation</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMAGE__DOCKER_FILE_DIR = eINSTANCE.getImage_DockerFileDir();
+    EAttribute IMAGE__DOCKER_FILELOCATION = eINSTANCE.getImage_DockerFilelocation();
 
     /**
      * The meta object literal for the '<em><b>Buildargs</b></em>' containment reference feature.
@@ -2333,12 +2313,12 @@ public interface ContainerPackage extends EPackage
     EAttribute CONTAINER__NAME = eINSTANCE.getContainer_Name();
 
     /**
-     * The meta object literal for the '<em><b>Image</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Image</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONTAINER__IMAGE = eINSTANCE.getContainer_Image();
+    EAttribute CONTAINER__IMAGE = eINSTANCE.getContainer_Image();
 
     /**
      * The meta object literal for the '<em><b>Binds</b></em>' containment reference list feature.
@@ -2573,14 +2553,6 @@ public interface ContainerPackage extends EPackage
     EAttribute CONTAINER__PID_MODE = eINSTANCE.getContainer_PidMode();
 
     /**
-     * The meta object literal for the '<em><b>Cgroup Parent</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER__CGROUP_PARENT = eINSTANCE.getContainer_CgroupParent();
-
-    /**
      * The meta object literal for the '<em><b>Working Dir</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2647,12 +2619,12 @@ public interface ContainerPackage extends EPackage
     EClass VOLUMES_FROM = eINSTANCE.getVolumesFrom();
 
     /**
-     * The meta object literal for the '<em><b>Container</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VOLUMES_FROM__CONTAINER = eINSTANCE.getVolumesFrom_Container();
+    EAttribute VOLUMES_FROM__CONTAINER = eINSTANCE.getVolumesFrom_Container();
 
     /**
      * The meta object literal for the '<em><b>Access Mode</b></em>' attribute feature.
@@ -2673,12 +2645,12 @@ public interface ContainerPackage extends EPackage
     EClass RESTART_POLICY = eINSTANCE.getRestartPolicy();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RESTART_POLICY__NAME = eINSTANCE.getRestartPolicy_Name();
+    EAttribute RESTART_POLICY__VALUE = eINSTANCE.getRestartPolicy_Value();
 
     /**
      * The meta object literal for the '<em><b>Maximum Retry Count</b></em>' attribute feature.
@@ -2751,12 +2723,12 @@ public interface ContainerPackage extends EPackage
     EClass LINK = eINSTANCE.getLink();
 
     /**
-     * The meta object literal for the '<em><b>Container Link</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Container Link</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LINK__CONTAINER_LINK = eINSTANCE.getLink_ContainerLink();
+    EAttribute LINK__CONTAINER_LINK = eINSTANCE.getLink_ContainerLink();
 
     /**
      * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.

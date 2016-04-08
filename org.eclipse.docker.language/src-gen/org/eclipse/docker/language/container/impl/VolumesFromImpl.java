@@ -9,7 +9,6 @@ import org.eclipse.docker.language.container.VolumesFrom;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -31,14 +30,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class VolumesFromImpl extends MinimalEObjectImpl.Container implements VolumesFrom
 {
   /**
-   * The cached value of the '{@link #getContainer() <em>Container</em>}' reference.
+   * The default value of the '{@link #getContainer() <em>Container</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContainer()
    * @generated
    * @ordered
    */
-  protected org.eclipse.docker.language.container.Container container;
+  protected static final String CONTAINER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getContainer() <em>Container</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContainer()
+   * @generated
+   * @ordered
+   */
+  protected String container = CONTAINER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getAccessMode() <em>Access Mode</em>}' attribute.
@@ -86,27 +95,7 @@ public class VolumesFromImpl extends MinimalEObjectImpl.Container implements Vol
    * <!-- end-user-doc -->
    * @generated
    */
-  public org.eclipse.docker.language.container.Container getContainer()
-  {
-    if (container != null && container.eIsProxy())
-    {
-      InternalEObject oldContainer = (InternalEObject)container;
-      container = (org.eclipse.docker.language.container.Container)eResolveProxy(oldContainer);
-      if (container != oldContainer)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContainerPackage.VOLUMES_FROM__CONTAINER, oldContainer, container));
-      }
-    }
-    return container;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public org.eclipse.docker.language.container.Container basicGetContainer()
+  public String getContainer()
   {
     return container;
   }
@@ -116,9 +105,9 @@ public class VolumesFromImpl extends MinimalEObjectImpl.Container implements Vol
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContainer(org.eclipse.docker.language.container.Container newContainer)
+  public void setContainer(String newContainer)
   {
-    org.eclipse.docker.language.container.Container oldContainer = container;
+    String oldContainer = container;
     container = newContainer;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.VOLUMES_FROM__CONTAINER, oldContainer, container));
@@ -158,8 +147,7 @@ public class VolumesFromImpl extends MinimalEObjectImpl.Container implements Vol
     switch (featureID)
     {
       case ContainerPackage.VOLUMES_FROM__CONTAINER:
-        if (resolve) return getContainer();
-        return basicGetContainer();
+        return getContainer();
       case ContainerPackage.VOLUMES_FROM__ACCESS_MODE:
         return getAccessMode();
     }
@@ -177,7 +165,7 @@ public class VolumesFromImpl extends MinimalEObjectImpl.Container implements Vol
     switch (featureID)
     {
       case ContainerPackage.VOLUMES_FROM__CONTAINER:
-        setContainer((org.eclipse.docker.language.container.Container)newValue);
+        setContainer((String)newValue);
         return;
       case ContainerPackage.VOLUMES_FROM__ACCESS_MODE:
         setAccessMode((AccessMode)newValue);
@@ -197,7 +185,7 @@ public class VolumesFromImpl extends MinimalEObjectImpl.Container implements Vol
     switch (featureID)
     {
       case ContainerPackage.VOLUMES_FROM__CONTAINER:
-        setContainer((org.eclipse.docker.language.container.Container)null);
+        setContainer(CONTAINER_EDEFAULT);
         return;
       case ContainerPackage.VOLUMES_FROM__ACCESS_MODE:
         setAccessMode(ACCESS_MODE_EDEFAULT);
@@ -217,7 +205,7 @@ public class VolumesFromImpl extends MinimalEObjectImpl.Container implements Vol
     switch (featureID)
     {
       case ContainerPackage.VOLUMES_FROM__CONTAINER:
-        return container != null;
+        return CONTAINER_EDEFAULT == null ? container != null : !CONTAINER_EDEFAULT.equals(container);
       case ContainerPackage.VOLUMES_FROM__ACCESS_MODE:
         return accessMode != ACCESS_MODE_EDEFAULT;
     }
@@ -235,7 +223,9 @@ public class VolumesFromImpl extends MinimalEObjectImpl.Container implements Vol
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (accessMode: ");
+    result.append(" (container: ");
+    result.append(container);
+    result.append(", accessMode: ");
     result.append(accessMode);
     result.append(')');
     return result.toString();

@@ -8,7 +8,6 @@ import org.eclipse.docker.language.container.Link;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -30,14 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class LinkImpl extends MinimalEObjectImpl.Container implements Link
 {
   /**
-   * The cached value of the '{@link #getContainerLink() <em>Container Link</em>}' reference.
+   * The default value of the '{@link #getContainerLink() <em>Container Link</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContainerLink()
    * @generated
    * @ordered
    */
-  protected org.eclipse.docker.language.container.Container containerLink;
+  protected static final String CONTAINER_LINK_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getContainerLink() <em>Container Link</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContainerLink()
+   * @generated
+   * @ordered
+   */
+  protected String containerLink = CONTAINER_LINK_EDEFAULT;
 
   /**
    * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
@@ -85,27 +94,7 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public org.eclipse.docker.language.container.Container getContainerLink()
-  {
-    if (containerLink != null && containerLink.eIsProxy())
-    {
-      InternalEObject oldContainerLink = (InternalEObject)containerLink;
-      containerLink = (org.eclipse.docker.language.container.Container)eResolveProxy(oldContainerLink);
-      if (containerLink != oldContainerLink)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContainerPackage.LINK__CONTAINER_LINK, oldContainerLink, containerLink));
-      }
-    }
-    return containerLink;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public org.eclipse.docker.language.container.Container basicGetContainerLink()
+  public String getContainerLink()
   {
     return containerLink;
   }
@@ -115,9 +104,9 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContainerLink(org.eclipse.docker.language.container.Container newContainerLink)
+  public void setContainerLink(String newContainerLink)
   {
-    org.eclipse.docker.language.container.Container oldContainerLink = containerLink;
+    String oldContainerLink = containerLink;
     containerLink = newContainerLink;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.LINK__CONTAINER_LINK, oldContainerLink, containerLink));
@@ -157,8 +146,7 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
     switch (featureID)
     {
       case ContainerPackage.LINK__CONTAINER_LINK:
-        if (resolve) return getContainerLink();
-        return basicGetContainerLink();
+        return getContainerLink();
       case ContainerPackage.LINK__ALIAS:
         return getAlias();
     }
@@ -176,7 +164,7 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
     switch (featureID)
     {
       case ContainerPackage.LINK__CONTAINER_LINK:
-        setContainerLink((org.eclipse.docker.language.container.Container)newValue);
+        setContainerLink((String)newValue);
         return;
       case ContainerPackage.LINK__ALIAS:
         setAlias((String)newValue);
@@ -196,7 +184,7 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
     switch (featureID)
     {
       case ContainerPackage.LINK__CONTAINER_LINK:
-        setContainerLink((org.eclipse.docker.language.container.Container)null);
+        setContainerLink(CONTAINER_LINK_EDEFAULT);
         return;
       case ContainerPackage.LINK__ALIAS:
         setAlias(ALIAS_EDEFAULT);
@@ -216,7 +204,7 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
     switch (featureID)
     {
       case ContainerPackage.LINK__CONTAINER_LINK:
-        return containerLink != null;
+        return CONTAINER_LINK_EDEFAULT == null ? containerLink != null : !CONTAINER_LINK_EDEFAULT.equals(containerLink);
       case ContainerPackage.LINK__ALIAS:
         return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
     }
@@ -234,7 +222,9 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (alias: ");
+    result.append(" (containerLink: ");
+    result.append(containerLink);
+    result.append(", alias: ");
     result.append(alias);
     result.append(')');
     return result.toString();

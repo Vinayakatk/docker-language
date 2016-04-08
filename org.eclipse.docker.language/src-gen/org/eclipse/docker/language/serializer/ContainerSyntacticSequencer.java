@@ -33,9 +33,9 @@ public class ContainerSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_1_3_CapabilityAddKeyword_5_1_0_LeftCurlyBracketKeyword_5_1_1__q;
 	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_24_3_PortBindingsKeyword_5_24_0_LeftCurlyBracketKeyword_5_24_1__q;
 	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_2_3_CapabilityDropKeyword_5_2_0_LeftCurlyBracketKeyword_5_2_1__q;
-	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_34_3_VolumesKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q;
-	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_35_3_VolumesFromKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q;
-	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_36_3_UlimitsKeyword_5_36_0_LeftCurlyBracketKeyword_5_36_1__q;
+	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_33_3_VolumesKeyword_5_33_0_LeftCurlyBracketKeyword_5_33_1__q;
+	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_34_3_VolumesFromKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q;
+	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_35_3_UlimitsKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q;
 	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_3_3_CommandsKeyword_5_3_0_LeftCurlyBracketKeyword_5_3_1__q;
 	protected AbstractElementAlias match_Container___RightCurlyBracketKeyword_5_9_3_DevicesKeyword_5_9_0_LeftCurlyBracketKeyword_5_9_1__q;
 	protected AbstractElementAlias match_Image_BuildArgKeyword_3_2_0_q;
@@ -55,9 +55,9 @@ public class ContainerSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Container___RightCurlyBracketKeyword_5_1_3_CapabilityAddKeyword_5_1_0_LeftCurlyBracketKeyword_5_1_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_1_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getCapabilityAddKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_1_1()));
 		match_Container___RightCurlyBracketKeyword_5_24_3_PortBindingsKeyword_5_24_0_LeftCurlyBracketKeyword_5_24_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_24_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getPortBindingsKeyword_5_24_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_24_1()));
 		match_Container___RightCurlyBracketKeyword_5_2_3_CapabilityDropKeyword_5_2_0_LeftCurlyBracketKeyword_5_2_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_2_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getCapabilityDropKeyword_5_2_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_2_1()));
-		match_Container___RightCurlyBracketKeyword_5_34_3_VolumesKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_34_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getVolumesKeyword_5_34_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_34_1()));
-		match_Container___RightCurlyBracketKeyword_5_35_3_VolumesFromKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_35_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getVolumesFromKeyword_5_35_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_35_1()));
-		match_Container___RightCurlyBracketKeyword_5_36_3_UlimitsKeyword_5_36_0_LeftCurlyBracketKeyword_5_36_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_36_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getUlimitsKeyword_5_36_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_36_1()));
+		match_Container___RightCurlyBracketKeyword_5_33_3_VolumesKeyword_5_33_0_LeftCurlyBracketKeyword_5_33_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_33_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getVolumesKeyword_5_33_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_33_1()));
+		match_Container___RightCurlyBracketKeyword_5_34_3_VolumesFromKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_34_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getVolumesFromKeyword_5_34_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_34_1()));
+		match_Container___RightCurlyBracketKeyword_5_35_3_UlimitsKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_35_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getUlimitsKeyword_5_35_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_35_1()));
 		match_Container___RightCurlyBracketKeyword_5_3_3_CommandsKeyword_5_3_0_LeftCurlyBracketKeyword_5_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_3_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getCommandsKeyword_5_3_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_3_1()));
 		match_Container___RightCurlyBracketKeyword_5_9_3_DevicesKeyword_5_9_0_LeftCurlyBracketKeyword_5_9_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_9_3()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getDevicesKeyword_5_9_0()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_9_1()));
 		match_Image_BuildArgKeyword_3_2_0_q = new TokenAlias(false, true, grammarAccess.getImageAccess().getBuildArgKeyword_3_2_0());
@@ -99,12 +99,12 @@ public class ContainerSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Container___RightCurlyBracketKeyword_5_24_3_PortBindingsKeyword_5_24_0_LeftCurlyBracketKeyword_5_24_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Container___RightCurlyBracketKeyword_5_2_3_CapabilityDropKeyword_5_2_0_LeftCurlyBracketKeyword_5_2_1__q.equals(syntax))
 				emit_Container___RightCurlyBracketKeyword_5_2_3_CapabilityDropKeyword_5_2_0_LeftCurlyBracketKeyword_5_2_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Container___RightCurlyBracketKeyword_5_34_3_VolumesKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q.equals(syntax))
-				emit_Container___RightCurlyBracketKeyword_5_34_3_VolumesKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Container___RightCurlyBracketKeyword_5_35_3_VolumesFromKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q.equals(syntax))
-				emit_Container___RightCurlyBracketKeyword_5_35_3_VolumesFromKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Container___RightCurlyBracketKeyword_5_36_3_UlimitsKeyword_5_36_0_LeftCurlyBracketKeyword_5_36_1__q.equals(syntax))
-				emit_Container___RightCurlyBracketKeyword_5_36_3_UlimitsKeyword_5_36_0_LeftCurlyBracketKeyword_5_36_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Container___RightCurlyBracketKeyword_5_33_3_VolumesKeyword_5_33_0_LeftCurlyBracketKeyword_5_33_1__q.equals(syntax))
+				emit_Container___RightCurlyBracketKeyword_5_33_3_VolumesKeyword_5_33_0_LeftCurlyBracketKeyword_5_33_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Container___RightCurlyBracketKeyword_5_34_3_VolumesFromKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q.equals(syntax))
+				emit_Container___RightCurlyBracketKeyword_5_34_3_VolumesFromKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Container___RightCurlyBracketKeyword_5_35_3_UlimitsKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q.equals(syntax))
+				emit_Container___RightCurlyBracketKeyword_5_35_3_UlimitsKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Container___RightCurlyBracketKeyword_5_3_3_CommandsKeyword_5_3_0_LeftCurlyBracketKeyword_5_3_1__q.equals(syntax))
 				emit_Container___RightCurlyBracketKeyword_5_3_3_CommandsKeyword_5_3_0_LeftCurlyBracketKeyword_5_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Container___RightCurlyBracketKeyword_5_9_3_DevicesKeyword_5_9_0_LeftCurlyBracketKeyword_5_9_1__q.equals(syntax))
@@ -254,7 +254,7 @@ public class ContainerSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     volumes+=Volume (ambiguity) '-' volumes+=Volume
 	 */
-	protected void emit_Container___RightCurlyBracketKeyword_5_34_3_VolumesKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Container___RightCurlyBracketKeyword_5_33_3_VolumesKeyword_5_33_0_LeftCurlyBracketKeyword_5_33_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -265,7 +265,7 @@ public class ContainerSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     volumesFrom+=VolumesFrom (ambiguity) '-' volumesFrom+=VolumesFrom
 	 */
-	protected void emit_Container___RightCurlyBracketKeyword_5_35_3_VolumesFromKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Container___RightCurlyBracketKeyword_5_34_3_VolumesFromKeyword_5_34_0_LeftCurlyBracketKeyword_5_34_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -276,7 +276,7 @@ public class ContainerSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     ulimits+=Ulimit (ambiguity) '-' ulimits+=Ulimit
 	 */
-	protected void emit_Container___RightCurlyBracketKeyword_5_36_3_UlimitsKeyword_5_36_0_LeftCurlyBracketKeyword_5_36_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Container___RightCurlyBracketKeyword_5_35_3_UlimitsKeyword_5_35_0_LeftCurlyBracketKeyword_5_35_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface VolumesFrom extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Container</b></em>' reference.
+   * Returns the value of the '<em><b>Container</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Container</em>' reference isn't clear,
+   * If the meaning of the '<em>Container</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Container</em>' reference.
-   * @see #setContainer(Container)
+   * @return the value of the '<em>Container</em>' attribute.
+   * @see #setContainer(String)
    * @see org.eclipse.docker.language.container.ContainerPackage#getVolumesFrom_Container()
    * @model
    * @generated
    */
-  Container getContainer();
+  String getContainer();
 
   /**
-   * Sets the value of the '{@link org.eclipse.docker.language.container.VolumesFrom#getContainer <em>Container</em>}' reference.
+   * Sets the value of the '{@link org.eclipse.docker.language.container.VolumesFrom#getContainer <em>Container</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Container</em>' reference.
+   * @param value the new value of the '<em>Container</em>' attribute.
    * @see #getContainer()
    * @generated
    */
-  void setContainer(Container value);
+  void setContainer(String value);
 
   /**
    * Returns the value of the '<em><b>Access Mode</b></em>' attribute.

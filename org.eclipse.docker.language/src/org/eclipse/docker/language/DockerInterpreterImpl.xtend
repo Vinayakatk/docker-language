@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.resource.Resource
 import com.github.dockerjava.api.model.BuildResponseItem
 import com.github.dockerjava.core.command.BuildImageResultCallback
-
+ 
 class DockerInterpreterImpl implements DockerInterpreter {
 	private String DOCKER_CERT = "C:\\Users\\vinio\\.docker\\machine\\certs"
 	private String Docker_uri = "https://192.168.99.100:2376"

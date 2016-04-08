@@ -9,7 +9,6 @@ import org.eclipse.docker.language.container.Capability;
 import org.eclipse.docker.language.container.ContainerPackage;
 import org.eclipse.docker.language.container.Device;
 import org.eclipse.docker.language.container.ExposedPort;
-import org.eclipse.docker.language.container.Image;
 import org.eclipse.docker.language.container.Label;
 import org.eclipse.docker.language.container.Link;
 import org.eclipse.docker.language.container.PortBinding;
@@ -72,7 +71,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#isPublishAllPorts <em>Publish All Ports</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#isReadonlyRootfs <em>Readonly Rootfs</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getPidMode <em>Pid Mode</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getCgroupParent <em>Cgroup Parent</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getWorkingDir <em>Working Dir</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getUser <em>User</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#isTty <em>Tty</em>}</li>
@@ -107,14 +105,24 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getImage() <em>Image</em>}' reference.
+   * The default value of the '{@link #getImage() <em>Image</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getImage()
    * @generated
    * @ordered
    */
-  protected Image image;
+  protected static final String IMAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getImage() <em>Image</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImage()
+   * @generated
+   * @ordered
+   */
+  protected String image = IMAGE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getBinds() <em>Binds</em>}' containment reference list.
@@ -204,7 +212,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
    * @generated
    * @ordered
    */
-  protected static final int CPUSET_CPUS_EDEFAULT = 0;
+  protected static final String CPUSET_CPUS_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getCpusetCpus() <em>Cpuset Cpus</em>}' attribute.
@@ -214,7 +222,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
    * @generated
    * @ordered
    */
-  protected int cpusetCpus = CPUSET_CPUS_EDEFAULT;
+  protected String cpusetCpus = CPUSET_CPUS_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCpusetMems() <em>Cpuset Mems</em>}' attribute.
@@ -557,26 +565,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
   protected String pidMode = PID_MODE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getCgroupParent() <em>Cgroup Parent</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCgroupParent()
-   * @generated
-   * @ordered
-   */
-  protected static final String CGROUP_PARENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCgroupParent() <em>Cgroup Parent</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCgroupParent()
-   * @generated
-   * @ordered
-   */
-  protected String cgroupParent = CGROUP_PARENT_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getWorkingDir() <em>Working Dir</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -725,27 +713,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
    * <!-- end-user-doc -->
    * @generated
    */
-  public Image getImage()
-  {
-    if (image != null && image.eIsProxy())
-    {
-      InternalEObject oldImage = (InternalEObject)image;
-      image = (Image)eResolveProxy(oldImage);
-      if (image != oldImage)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContainerPackage.CONTAINER__IMAGE, oldImage, image));
-      }
-    }
-    return image;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Image basicGetImage()
+  public String getImage()
   {
     return image;
   }
@@ -755,9 +723,9 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImage(Image newImage)
+  public void setImage(String newImage)
   {
-    Image oldImage = image;
+    String oldImage = image;
     image = newImage;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.CONTAINER__IMAGE, oldImage, image));
@@ -870,7 +838,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getCpusetCpus()
+  public String getCpusetCpus()
   {
     return cpusetCpus;
   }
@@ -880,9 +848,9 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCpusetCpus(int newCpusetCpus)
+  public void setCpusetCpus(String newCpusetCpus)
   {
-    int oldCpusetCpus = cpusetCpus;
+    String oldCpusetCpus = cpusetCpus;
     cpusetCpus = newCpusetCpus;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.CONTAINER__CPUSET_CPUS, oldCpusetCpus, cpusetCpus));
@@ -1309,29 +1277,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCgroupParent()
-  {
-    return cgroupParent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCgroupParent(String newCgroupParent)
-  {
-    String oldCgroupParent = cgroupParent;
-    cgroupParent = newCgroupParent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.CONTAINER__CGROUP_PARENT, oldCgroupParent, cgroupParent));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getWorkingDir()
   {
     return workingDir;
@@ -1533,8 +1478,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
       case ContainerPackage.CONTAINER__NAME:
         return getName();
       case ContainerPackage.CONTAINER__IMAGE:
-        if (resolve) return getImage();
-        return basicGetImage();
+        return getImage();
       case ContainerPackage.CONTAINER__BINDS:
         return getBinds();
       case ContainerPackage.CONTAINER__CAPABILITY_ADD:
@@ -1593,8 +1537,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
         return isReadonlyRootfs();
       case ContainerPackage.CONTAINER__PID_MODE:
         return getPidMode();
-      case ContainerPackage.CONTAINER__CGROUP_PARENT:
-        return getCgroupParent();
       case ContainerPackage.CONTAINER__WORKING_DIR:
         return getWorkingDir();
       case ContainerPackage.CONTAINER__USER:
@@ -1628,7 +1570,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
         setName((String)newValue);
         return;
       case ContainerPackage.CONTAINER__IMAGE:
-        setImage((Image)newValue);
+        setImage((String)newValue);
         return;
       case ContainerPackage.CONTAINER__BINDS:
         getBinds().clear();
@@ -1653,7 +1595,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
         setCpuPeriod((Integer)newValue);
         return;
       case ContainerPackage.CONTAINER__CPUSET_CPUS:
-        setCpusetCpus((Integer)newValue);
+        setCpusetCpus((String)newValue);
         return;
       case ContainerPackage.CONTAINER__CPUSET_MEMS:
         setCpusetMems((String)newValue);
@@ -1731,9 +1673,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
       case ContainerPackage.CONTAINER__PID_MODE:
         setPidMode((String)newValue);
         return;
-      case ContainerPackage.CONTAINER__CGROUP_PARENT:
-        setCgroupParent((String)newValue);
-        return;
       case ContainerPackage.CONTAINER__WORKING_DIR:
         setWorkingDir((String)newValue);
         return;
@@ -1776,7 +1715,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
         setName(NAME_EDEFAULT);
         return;
       case ContainerPackage.CONTAINER__IMAGE:
-        setImage((Image)null);
+        setImage(IMAGE_EDEFAULT);
         return;
       case ContainerPackage.CONTAINER__BINDS:
         getBinds().clear();
@@ -1865,9 +1804,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
       case ContainerPackage.CONTAINER__PID_MODE:
         setPidMode(PID_MODE_EDEFAULT);
         return;
-      case ContainerPackage.CONTAINER__CGROUP_PARENT:
-        setCgroupParent(CGROUP_PARENT_EDEFAULT);
-        return;
       case ContainerPackage.CONTAINER__WORKING_DIR:
         setWorkingDir(WORKING_DIR_EDEFAULT);
         return;
@@ -1906,7 +1842,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
       case ContainerPackage.CONTAINER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ContainerPackage.CONTAINER__IMAGE:
-        return image != null;
+        return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
       case ContainerPackage.CONTAINER__BINDS:
         return binds != null && !binds.isEmpty();
       case ContainerPackage.CONTAINER__CAPABILITY_ADD:
@@ -1920,7 +1856,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
       case ContainerPackage.CONTAINER__CPU_PERIOD:
         return cpuPeriod != CPU_PERIOD_EDEFAULT;
       case ContainerPackage.CONTAINER__CPUSET_CPUS:
-        return cpusetCpus != CPUSET_CPUS_EDEFAULT;
+        return CPUSET_CPUS_EDEFAULT == null ? cpusetCpus != null : !CPUSET_CPUS_EDEFAULT.equals(cpusetCpus);
       case ContainerPackage.CONTAINER__CPUSET_MEMS:
         return CPUSET_MEMS_EDEFAULT == null ? cpusetMems != null : !CPUSET_MEMS_EDEFAULT.equals(cpusetMems);
       case ContainerPackage.CONTAINER__CPU_SHARES:
@@ -1965,8 +1901,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
         return readonlyRootfs != READONLY_ROOTFS_EDEFAULT;
       case ContainerPackage.CONTAINER__PID_MODE:
         return PID_MODE_EDEFAULT == null ? pidMode != null : !PID_MODE_EDEFAULT.equals(pidMode);
-      case ContainerPackage.CONTAINER__CGROUP_PARENT:
-        return CGROUP_PARENT_EDEFAULT == null ? cgroupParent != null : !CGROUP_PARENT_EDEFAULT.equals(cgroupParent);
       case ContainerPackage.CONTAINER__WORKING_DIR:
         return WORKING_DIR_EDEFAULT == null ? workingDir != null : !WORKING_DIR_EDEFAULT.equals(workingDir);
       case ContainerPackage.CONTAINER__USER:
@@ -1998,6 +1932,8 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", image: ");
+    result.append(image);
     result.append(", capabilityAdd: ");
     result.append(capabilityAdd);
     result.append(", capabilityDrop: ");
@@ -2044,8 +1980,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements org.e
     result.append(readonlyRootfs);
     result.append(", pidMode: ");
     result.append(pidMode);
-    result.append(", cgroupParent: ");
-    result.append(cgroupParent);
     result.append(", workingDir: ");
     result.append(workingDir);
     result.append(", user: ");

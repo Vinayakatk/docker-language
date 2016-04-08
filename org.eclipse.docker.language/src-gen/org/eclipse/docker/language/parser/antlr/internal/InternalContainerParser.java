@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalContainerParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'image'", "'{'", "'tag'", "'dockerFileDir'", "'buildArg'", "'noCache'", "'memory'", "'memswap'", "'cpusetcpus'", "'cpushares'", "'remove'", "'quiet'", "'pull'", "'}'", "'-'", "'false'", "'true'", "'container'", "'binds'", "'capabilityAdd'", "'capabilityDrop'", "'commands'", "'containerIDFile'", "'cpuPeriod'", "'cpusetCpus'", "'cpusetMems'", "'cpuShares'", "'devices'", "'dns'", "'dnsSearch'", "'domainName'", "'entrypoint'", "'env'", "'exposedPorts'", "'extraHosts'", "'labels'", "'links'", "'macAddress'", "'memorySwap'", "'disableNetwork'", "'networkMode'", "'portBindings'", "'privileged'", "'publishAllPorts'", "'readonlyRootfs'", "'pidMode'", "'cgroupParent'", "'workingDir'", "'user'", "'tty'", "'restartPolicy'", "'volumes'", "'volumesFrom'", "'ulimits'", "':'", "'/'", "'TCP'", "'UDP'", "'rw'", "'ro'", "'ALL'", "'AUDIT_CONTROL'", "'AUDIT_WRITE'", "'BLOCK_SUSPEND'", "'CHOWN'", "'DAC_OVERRIDE'", "'DAC_READ_SEARCH'", "'FOWNER'", "'FSETID'", "'IPC_LOCK'", "'IPC_OWNER'", "'KILL'", "'LEASE'", "'LINUX_IMMUTABLE'", "'MAC_ADMIN'", "'MAC_OVERRIDE'", "'MKNOD'", "'NET_ADMIN'", "'NET_BIND_SERVICE'", "'NET_BROADCAST'", "'NET_RAW'", "'SETFCAP'", "'SETGID'", "'SETPCAP'", "'SETUID'", "'SYS_ADMIN'", "'SYS_BOOT'", "'SYS_CHROOT'", "'SYSLOG'", "'SYS_MODULE'", "'SYS_NICE'", "'SYS_PACCT'", "'SYS_PTRACE'", "'SYS_RAWIO'", "'SYS_RESOURCE'", "'SYS_TIME'", "'SYS_TTY_CONFIG'", "'WAKE_ALARM'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'image'", "'{'", "'tag'", "'dockerFileLocation'", "'buildArg'", "'noCache'", "'memory'", "'memswap'", "'cpusetcpus'", "'cpushares'", "'remove'", "'quiet'", "'pull'", "'}'", "'-'", "'false'", "'true'", "'container'", "'binds'", "'capabilityAdd'", "'capabilityDrop'", "'commands'", "'containerIDFile'", "'cpuPeriod'", "'cpusetCpus'", "'cpusetMems'", "'cpuShares'", "'devices'", "'dns'", "'dnsSearch'", "'domainName'", "'entrypoint'", "'env'", "'exposedPorts'", "'extraHosts'", "'labels'", "'links'", "'macAddress'", "'memorySwap'", "'disableNetwork'", "'networkMode'", "'portBindings'", "'privileged'", "'publishAllPorts'", "'readonlyRootfs'", "'pidMode'", "'workingDir'", "'user'", "'tty'", "'restartPolicy'", "'volumes'", "'volumesFrom'", "'ulimits'", "':'", "'always'", "'onFailure'", "'none'", "'/'", "'TCP'", "'UDP'", "'rw'", "'ro'", "'ALL'", "'AUDIT_CONTROL'", "'AUDIT_WRITE'", "'BLOCK_SUSPEND'", "'CHOWN'", "'DAC_OVERRIDE'", "'DAC_READ_SEARCH'", "'FOWNER'", "'FSETID'", "'IPC_LOCK'", "'IPC_OWNER'", "'KILL'", "'LEASE'", "'LINUX_IMMUTABLE'", "'MAC_ADMIN'", "'MAC_OVERRIDE'", "'MKNOD'", "'NET_ADMIN'", "'NET_BIND_SERVICE'", "'NET_BROADCAST'", "'NET_RAW'", "'SETFCAP'", "'SETGID'", "'SETPCAP'", "'SETUID'", "'SYS_ADMIN'", "'SYS_BOOT'", "'SYS_CHROOT'", "'SYSLOG'", "'SYS_MODULE'", "'SYS_NICE'", "'SYS_PACCT'", "'SYS_PTRACE'", "'SYS_RAWIO'", "'SYS_RESOURCE'", "'SYS_TIME'", "'SYS_TTY_CONFIG'", "'WAKE_ALARM'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -114,6 +114,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
     public static final int T__76=76;
     public static final int T__80=80;
     public static final int T__81=81;
+    public static final int T__110=110;
     public static final int T__82=82;
     public static final int T__83=83;
     public static final int RULE_WS=9;
@@ -122,6 +123,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
     public static final int T__108=108;
     public static final int T__89=89;
     public static final int T__107=107;
+    public static final int T__109=109;
     public static final int T__84=84;
     public static final int T__104=104;
     public static final int T__85=85;
@@ -370,7 +372,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImage"
-    // InternalContainer.g:135:1: ruleImage returns [EObject current=null] : (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' ) ;
+    // InternalContainer.g:135:1: ruleImage returns [EObject current=null] : (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' ) ;
     public final EObject ruleImage() throws RecognitionException {
         EObject current = null;
 
@@ -380,7 +382,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token lv_tag_5_0=null;
         Token otherlv_6=null;
-        Token lv_dockerFileDir_7_0=null;
+        Token lv_dockerFilelocation_7_0=null;
         Token otherlv_8=null;
         Token otherlv_10=null;
         Token otherlv_12=null;
@@ -411,11 +413,11 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:138:28: ( (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' ) )
-            // InternalContainer.g:139:1: (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' )
+            // InternalContainer.g:138:28: ( (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' ) )
+            // InternalContainer.g:139:1: (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' )
             {
-            // InternalContainer.g:139:1: (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' )
-            // InternalContainer.g:139:3: otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}'
+            // InternalContainer.g:139:1: (otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}' )
+            // InternalContainer.g:139:3: otherlv_0= 'image' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) ) otherlv_26= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
@@ -451,19 +453,19 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getImageAccess().getLeftCurlyBracketKeyword_2());
                 
-            // InternalContainer.g:165:1: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) )
-            // InternalContainer.g:167:1: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) )
+            // InternalContainer.g:165:1: ( ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) ) )
+            // InternalContainer.g:167:1: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) )
             {
-            // InternalContainer.g:167:1: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) )
-            // InternalContainer.g:168:2: ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* )
+            // InternalContainer.g:167:1: ( ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* ) )
+            // InternalContainer.g:168:2: ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* )
             {
              
             	  getUnorderedGroupHelper().enter(grammarAccess.getImageAccess().getUnorderedGroup_3());
             	
-            // InternalContainer.g:171:2: ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* )
-            // InternalContainer.g:172:3: ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )*
+            // InternalContainer.g:171:2: ( ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )* )
+            // InternalContainer.g:172:3: ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )*
             {
-            // InternalContainer.g:172:3: ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )*
+            // InternalContainer.g:172:3: ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )*
             loop3:
             do {
                 int alt3=12;
@@ -542,42 +544,42 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalContainer.g:208:4: ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:208:4: ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:208:4: ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:209:5: {...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:208:4: ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:209:5: {...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getImageAccess().getUnorderedGroup_3(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleImage", "getUnorderedGroupHelper().canSelect(grammarAccess.getImageAccess().getUnorderedGroup_3(), 1)");
             	    }
-            	    // InternalContainer.g:209:102: ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:210:6: ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:209:102: ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:210:6: ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getImageAccess().getUnorderedGroup_3(), 1);
             	    	 				
-            	    // InternalContainer.g:213:6: ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:213:7: {...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:213:6: ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:213:7: {...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleImage", "true");
             	    }
-            	    // InternalContainer.g:213:16: (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:213:18: otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) )
+            	    // InternalContainer.g:213:16: (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:213:18: otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) )
             	    {
             	    otherlv_6=(Token)match(input,14,FOLLOW_4); 
 
-            	        	newLeafNode(otherlv_6, grammarAccess.getImageAccess().getDockerFileDirKeyword_3_1_0());
+            	        	newLeafNode(otherlv_6, grammarAccess.getImageAccess().getDockerFileLocationKeyword_3_1_0());
             	        
-            	    // InternalContainer.g:217:1: ( (lv_dockerFileDir_7_0= RULE_STRING ) )
-            	    // InternalContainer.g:218:1: (lv_dockerFileDir_7_0= RULE_STRING )
+            	    // InternalContainer.g:217:1: ( (lv_dockerFilelocation_7_0= RULE_STRING ) )
+            	    // InternalContainer.g:218:1: (lv_dockerFilelocation_7_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:218:1: (lv_dockerFileDir_7_0= RULE_STRING )
-            	    // InternalContainer.g:219:3: lv_dockerFileDir_7_0= RULE_STRING
+            	    // InternalContainer.g:218:1: (lv_dockerFilelocation_7_0= RULE_STRING )
+            	    // InternalContainer.g:219:3: lv_dockerFilelocation_7_0= RULE_STRING
             	    {
-            	    lv_dockerFileDir_7_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
+            	    lv_dockerFilelocation_7_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
-            	    			newLeafNode(lv_dockerFileDir_7_0, grammarAccess.getImageAccess().getDockerFileDirSTRINGTerminalRuleCall_3_1_1_0()); 
+            	    			newLeafNode(lv_dockerFilelocation_7_0, grammarAccess.getImageAccess().getDockerFilelocationSTRINGTerminalRuleCall_3_1_1_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -585,8 +587,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		setWithLastConsumed(
             	           			current, 
-            	           			"dockerFileDir",
-            	            		lv_dockerFileDir_7_0, 
+            	           			"dockerFilelocation",
+            	            		lv_dockerFilelocation_7_0, 
             	            		"org.eclipse.xtext.common.Terminals.STRING");
             	    	    
 
@@ -1709,7 +1711,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContainer"
-    // InternalContainer.g:699:1: ruleContainer returns [EObject current=null] : (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (otherlv_4= RULE_ID ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) ) ) otherlv_116= '}' ) ;
+    // InternalContainer.g:699:1: ruleContainer returns [EObject current=null] : (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (lv_image_4_0= RULE_STRING ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) ) ) otherlv_114= '}' ) ;
     public final EObject ruleContainer() throws RecognitionException {
         EObject current = null;
 
@@ -1717,7 +1719,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
         Token lv_name_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
+        Token lv_image_4_0=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_9=null;
@@ -1790,26 +1792,24 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
         Token otherlv_89=null;
         Token lv_pidMode_90_0=null;
         Token otherlv_91=null;
-        Token lv_cgroupParent_92_0=null;
+        Token lv_workingDir_92_0=null;
         Token otherlv_93=null;
-        Token lv_workingDir_94_0=null;
+        Token lv_user_94_0=null;
         Token otherlv_95=null;
-        Token lv_user_96_0=null;
         Token otherlv_97=null;
         Token otherlv_99=null;
+        Token otherlv_100=null;
         Token otherlv_101=null;
-        Token otherlv_102=null;
         Token otherlv_103=null;
+        Token otherlv_104=null;
         Token otherlv_105=null;
         Token otherlv_106=null;
-        Token otherlv_107=null;
         Token otherlv_108=null;
+        Token otherlv_109=null;
         Token otherlv_110=null;
         Token otherlv_111=null;
-        Token otherlv_112=null;
         Token otherlv_113=null;
-        Token otherlv_115=null;
-        Token otherlv_116=null;
+        Token otherlv_114=null;
         EObject lv_binds_8_0 = null;
 
         Enumerator lv_capabilityAdd_12_0 = null;
@@ -1838,25 +1838,25 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken lv_readonlyRootfs_88_0 = null;
 
-        AntlrDatatypeRuleToken lv_tty_98_0 = null;
+        AntlrDatatypeRuleToken lv_tty_96_0 = null;
 
-        EObject lv_restartPolicy_100_0 = null;
+        EObject lv_restartPolicy_98_0 = null;
 
-        EObject lv_volumes_104_0 = null;
+        EObject lv_volumes_102_0 = null;
 
-        EObject lv_volumesFrom_109_0 = null;
+        EObject lv_volumesFrom_107_0 = null;
 
-        EObject lv_ulimits_114_0 = null;
+        EObject lv_ulimits_112_0 = null;
 
 
          enterRule(); 
             
         try {
-            // InternalContainer.g:702:28: ( (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (otherlv_4= RULE_ID ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) ) ) otherlv_116= '}' ) )
-            // InternalContainer.g:703:1: (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (otherlv_4= RULE_ID ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) ) ) otherlv_116= '}' )
+            // InternalContainer.g:702:28: ( (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (lv_image_4_0= RULE_STRING ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) ) ) otherlv_114= '}' ) )
+            // InternalContainer.g:703:1: (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (lv_image_4_0= RULE_STRING ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) ) ) otherlv_114= '}' )
             {
-            // InternalContainer.g:703:1: (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (otherlv_4= RULE_ID ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) ) ) otherlv_116= '}' )
-            // InternalContainer.g:703:3: otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (otherlv_4= RULE_ID ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) ) ) otherlv_116= '}'
+            // InternalContainer.g:703:1: (otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (lv_image_4_0= RULE_STRING ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) ) ) otherlv_114= '}' )
+            // InternalContainer.g:703:3: otherlv_0= 'container' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'image' ( (lv_image_4_0= RULE_STRING ) ) ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) ) ) otherlv_114= '}'
             {
             otherlv_0=(Token)match(input,28,FOLLOW_11); 
 
@@ -1892,72 +1892,77 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_2());
                 
-            otherlv_3=(Token)match(input,11,FOLLOW_11); 
+            otherlv_3=(Token)match(input,11,FOLLOW_4); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getContainerAccess().getImageKeyword_3());
                 
-            // InternalContainer.g:733:1: ( (otherlv_4= RULE_ID ) )
-            // InternalContainer.g:734:1: (otherlv_4= RULE_ID )
+            // InternalContainer.g:733:1: ( (lv_image_4_0= RULE_STRING ) )
+            // InternalContainer.g:734:1: (lv_image_4_0= RULE_STRING )
             {
-            // InternalContainer.g:734:1: (otherlv_4= RULE_ID )
-            // InternalContainer.g:735:3: otherlv_4= RULE_ID
+            // InternalContainer.g:734:1: (lv_image_4_0= RULE_STRING )
+            // InternalContainer.g:735:3: lv_image_4_0= RULE_STRING
             {
+            lv_image_4_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-            			if (current==null) {
+            			newLeafNode(lv_image_4_0, grammarAccess.getContainerAccess().getImageSTRINGTerminalRuleCall_4_0()); 
+            		
+
+            	        if (current==null) {
             	            current = createModelElement(grammarAccess.getContainerRule());
             	        }
-                    
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_13); 
-
-            		newLeafNode(otherlv_4, grammarAccess.getContainerAccess().getImageImageCrossReference_4_0()); 
-            	
-
-            }
-
+                   		setWithLastConsumed(
+                   			current, 
+                   			"image",
+                    		lv_image_4_0, 
+                    		"org.eclipse.xtext.common.Terminals.STRING");
+            	    
 
             }
 
-            // InternalContainer.g:746:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) ) )
-            // InternalContainer.g:748:1: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) )
+
+            }
+
+            // InternalContainer.g:751:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) ) )
+            // InternalContainer.g:753:1: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) )
             {
-            // InternalContainer.g:748:1: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* ) )
-            // InternalContainer.g:749:2: ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* )
+            // InternalContainer.g:753:1: ( ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* ) )
+            // InternalContainer.g:754:2: ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* )
             {
              
             	  getUnorderedGroupHelper().enter(grammarAccess.getContainerAccess().getUnorderedGroup_5());
             	
-            // InternalContainer.g:752:2: ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )* )
-            // InternalContainer.g:753:3: ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )*
+            // InternalContainer.g:757:2: ( ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )* )
+            // InternalContainer.g:758:3: ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )*
             {
-            // InternalContainer.g:753:3: ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )*
+            // InternalContainer.g:758:3: ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )*
             loop22:
             do {
-                int alt22=38;
+                int alt22=37;
                 alt22 = dfa22.predict(input);
                 switch (alt22) {
             	case 1 :
-            	    // InternalContainer.g:755:4: ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) )
+            	    // InternalContainer.g:760:4: ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:755:4: ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) )
-            	    // InternalContainer.g:756:5: {...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) )
+            	    // InternalContainer.g:760:4: ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) )
+            	    // InternalContainer.g:761:5: {...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 0)");
             	    }
-            	    // InternalContainer.g:756:106: ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) )
-            	    // InternalContainer.g:757:6: ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) )
+            	    // InternalContainer.g:761:106: ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) )
+            	    // InternalContainer.g:762:6: ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 0);
             	    	 				
-            	    // InternalContainer.g:760:6: ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) )
-            	    // InternalContainer.g:760:7: {...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' )
+            	    // InternalContainer.g:765:6: ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) )
+            	    // InternalContainer.g:765:7: {...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:760:16: (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' )
-            	    // InternalContainer.g:760:18: otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}'
+            	    // InternalContainer.g:765:16: (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' )
+            	    // InternalContainer.g:765:18: otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}'
             	    {
             	    otherlv_6=(Token)match(input,29,FOLLOW_5); 
 
@@ -1967,7 +1972,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_7, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_0_1());
             	        
-            	    // InternalContainer.g:768:1: ( (lv_binds_8_0= ruleBind ) )+
+            	    // InternalContainer.g:773:1: ( (lv_binds_8_0= ruleBind ) )+
             	    int cnt5=0;
             	    loop5:
             	    do {
@@ -1981,10 +1986,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt5) {
             	    	case 1 :
-            	    	    // InternalContainer.g:769:1: (lv_binds_8_0= ruleBind )
+            	    	    // InternalContainer.g:774:1: (lv_binds_8_0= ruleBind )
             	    	    {
-            	    	    // InternalContainer.g:769:1: (lv_binds_8_0= ruleBind )
-            	    	    // InternalContainer.g:770:3: lv_binds_8_0= ruleBind
+            	    	    // InternalContainer.g:774:1: (lv_binds_8_0= ruleBind )
+            	    	    // InternalContainer.g:775:3: lv_binds_8_0= ruleBind
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getBindsBindParserRuleCall_5_0_2_0()); 
@@ -2044,28 +2049,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalContainer.g:797:4: ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) )
+            	    // InternalContainer.g:802:4: ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:797:4: ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) )
-            	    // InternalContainer.g:798:5: {...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) )
+            	    // InternalContainer.g:802:4: ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) )
+            	    // InternalContainer.g:803:5: {...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 1)");
             	    }
-            	    // InternalContainer.g:798:106: ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) )
-            	    // InternalContainer.g:799:6: ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) )
+            	    // InternalContainer.g:803:106: ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) )
+            	    // InternalContainer.g:804:6: ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 1);
             	    	 				
-            	    // InternalContainer.g:802:6: ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) )
-            	    // InternalContainer.g:802:7: {...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' )
+            	    // InternalContainer.g:807:6: ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) )
+            	    // InternalContainer.g:807:7: {...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:802:16: (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' )
-            	    // InternalContainer.g:802:18: otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}'
+            	    // InternalContainer.g:807:16: (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' )
+            	    // InternalContainer.g:807:18: otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}'
             	    {
             	    otherlv_10=(Token)match(input,30,FOLLOW_5); 
 
@@ -2075,24 +2080,24 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_11, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_1_1());
             	        
-            	    // InternalContainer.g:810:1: ( (lv_capabilityAdd_12_0= ruleCapability ) )+
+            	    // InternalContainer.g:815:1: ( (lv_capabilityAdd_12_0= ruleCapability ) )+
             	    int cnt6=0;
             	    loop6:
             	    do {
             	        int alt6=2;
             	        int LA6_0 = input.LA(1);
 
-            	        if ( ((LA6_0>=71 && LA6_0<=108)) ) {
+            	        if ( ((LA6_0>=73 && LA6_0<=110)) ) {
             	            alt6=1;
             	        }
 
 
             	        switch (alt6) {
             	    	case 1 :
-            	    	    // InternalContainer.g:811:1: (lv_capabilityAdd_12_0= ruleCapability )
+            	    	    // InternalContainer.g:816:1: (lv_capabilityAdd_12_0= ruleCapability )
             	    	    {
-            	    	    // InternalContainer.g:811:1: (lv_capabilityAdd_12_0= ruleCapability )
-            	    	    // InternalContainer.g:812:3: lv_capabilityAdd_12_0= ruleCapability
+            	    	    // InternalContainer.g:816:1: (lv_capabilityAdd_12_0= ruleCapability )
+            	    	    // InternalContainer.g:817:3: lv_capabilityAdd_12_0= ruleCapability
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getCapabilityAddCapabilityEnumRuleCall_5_1_2_0()); 
@@ -2152,28 +2157,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalContainer.g:839:4: ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) )
+            	    // InternalContainer.g:844:4: ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:839:4: ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) )
-            	    // InternalContainer.g:840:5: {...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) )
+            	    // InternalContainer.g:844:4: ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) )
+            	    // InternalContainer.g:845:5: {...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 2)");
             	    }
-            	    // InternalContainer.g:840:106: ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) )
-            	    // InternalContainer.g:841:6: ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) )
+            	    // InternalContainer.g:845:106: ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) )
+            	    // InternalContainer.g:846:6: ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 2);
             	    	 				
-            	    // InternalContainer.g:844:6: ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) )
-            	    // InternalContainer.g:844:7: {...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' )
+            	    // InternalContainer.g:849:6: ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) )
+            	    // InternalContainer.g:849:7: {...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:844:16: (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' )
-            	    // InternalContainer.g:844:18: otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}'
+            	    // InternalContainer.g:849:16: (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' )
+            	    // InternalContainer.g:849:18: otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}'
             	    {
             	    otherlv_14=(Token)match(input,31,FOLLOW_5); 
 
@@ -2183,24 +2188,24 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_15, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_2_1());
             	        
-            	    // InternalContainer.g:852:1: ( (lv_capabilityDrop_16_0= ruleCapability ) )+
+            	    // InternalContainer.g:857:1: ( (lv_capabilityDrop_16_0= ruleCapability ) )+
             	    int cnt7=0;
             	    loop7:
             	    do {
             	        int alt7=2;
             	        int LA7_0 = input.LA(1);
 
-            	        if ( ((LA7_0>=71 && LA7_0<=108)) ) {
+            	        if ( ((LA7_0>=73 && LA7_0<=110)) ) {
             	            alt7=1;
             	        }
 
 
             	        switch (alt7) {
             	    	case 1 :
-            	    	    // InternalContainer.g:853:1: (lv_capabilityDrop_16_0= ruleCapability )
+            	    	    // InternalContainer.g:858:1: (lv_capabilityDrop_16_0= ruleCapability )
             	    	    {
-            	    	    // InternalContainer.g:853:1: (lv_capabilityDrop_16_0= ruleCapability )
-            	    	    // InternalContainer.g:854:3: lv_capabilityDrop_16_0= ruleCapability
+            	    	    // InternalContainer.g:858:1: (lv_capabilityDrop_16_0= ruleCapability )
+            	    	    // InternalContainer.g:859:3: lv_capabilityDrop_16_0= ruleCapability
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getCapabilityDropCapabilityEnumRuleCall_5_2_2_0()); 
@@ -2260,28 +2265,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalContainer.g:881:4: ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) )
+            	    // InternalContainer.g:886:4: ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:881:4: ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) )
-            	    // InternalContainer.g:882:5: {...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) )
+            	    // InternalContainer.g:886:4: ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) )
+            	    // InternalContainer.g:887:5: {...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 3)");
             	    }
-            	    // InternalContainer.g:882:106: ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) )
-            	    // InternalContainer.g:883:6: ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) )
+            	    // InternalContainer.g:887:106: ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) )
+            	    // InternalContainer.g:888:6: ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 3);
             	    	 				
-            	    // InternalContainer.g:886:6: ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) )
-            	    // InternalContainer.g:886:7: {...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' )
+            	    // InternalContainer.g:891:6: ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) )
+            	    // InternalContainer.g:891:7: {...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:886:16: (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' )
-            	    // InternalContainer.g:886:18: otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}'
+            	    // InternalContainer.g:891:16: (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' )
+            	    // InternalContainer.g:891:18: otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}'
             	    {
             	    otherlv_18=(Token)match(input,32,FOLLOW_5); 
 
@@ -2291,7 +2296,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_19, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_3_1());
             	        
-            	    // InternalContainer.g:894:1: ( (lv_commands_20_0= RULE_STRING ) )+
+            	    // InternalContainer.g:899:1: ( (lv_commands_20_0= RULE_STRING ) )+
             	    int cnt8=0;
             	    loop8:
             	    do {
@@ -2305,10 +2310,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt8) {
             	    	case 1 :
-            	    	    // InternalContainer.g:895:1: (lv_commands_20_0= RULE_STRING )
+            	    	    // InternalContainer.g:900:1: (lv_commands_20_0= RULE_STRING )
             	    	    {
-            	    	    // InternalContainer.g:895:1: (lv_commands_20_0= RULE_STRING )
-            	    	    // InternalContainer.g:896:3: lv_commands_20_0= RULE_STRING
+            	    	    // InternalContainer.g:900:1: (lv_commands_20_0= RULE_STRING )
+            	    	    // InternalContainer.g:901:3: lv_commands_20_0= RULE_STRING
             	    	    {
             	    	    lv_commands_20_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -2363,38 +2368,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalContainer.g:923:4: ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:928:4: ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:923:4: ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:924:5: {...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:928:4: ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:929:5: {...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 4) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 4)");
             	    }
-            	    // InternalContainer.g:924:106: ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:925:6: ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:929:106: ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:930:6: ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 4);
             	    	 				
-            	    // InternalContainer.g:928:6: ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:928:7: {...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:933:6: ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:933:7: {...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:928:16: (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:928:18: otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) )
+            	    // InternalContainer.g:933:16: (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:933:18: otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) )
             	    {
             	    otherlv_22=(Token)match(input,33,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_22, grammarAccess.getContainerAccess().getContainerIDFileKeyword_5_4_0());
             	        
-            	    // InternalContainer.g:932:1: ( (lv_containerIDFile_23_0= RULE_STRING ) )
-            	    // InternalContainer.g:933:1: (lv_containerIDFile_23_0= RULE_STRING )
+            	    // InternalContainer.g:937:1: ( (lv_containerIDFile_23_0= RULE_STRING ) )
+            	    // InternalContainer.g:938:1: (lv_containerIDFile_23_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:933:1: (lv_containerIDFile_23_0= RULE_STRING )
-            	    // InternalContainer.g:934:3: lv_containerIDFile_23_0= RULE_STRING
+            	    // InternalContainer.g:938:1: (lv_containerIDFile_23_0= RULE_STRING )
+            	    // InternalContainer.g:939:3: lv_containerIDFile_23_0= RULE_STRING
             	    {
             	    lv_containerIDFile_23_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
@@ -2435,38 +2440,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 6 :
-            	    // InternalContainer.g:957:4: ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) )
+            	    // InternalContainer.g:962:4: ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:957:4: ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) )
-            	    // InternalContainer.g:958:5: {...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) )
+            	    // InternalContainer.g:962:4: ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) )
+            	    // InternalContainer.g:963:5: {...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 5) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 5)");
             	    }
-            	    // InternalContainer.g:958:106: ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) )
-            	    // InternalContainer.g:959:6: ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) )
+            	    // InternalContainer.g:963:106: ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) )
+            	    // InternalContainer.g:964:6: ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 5);
             	    	 				
-            	    // InternalContainer.g:962:6: ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) )
-            	    // InternalContainer.g:962:7: {...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) )
+            	    // InternalContainer.g:967:6: ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) )
+            	    // InternalContainer.g:967:7: {...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:962:16: (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) )
-            	    // InternalContainer.g:962:18: otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) )
+            	    // InternalContainer.g:967:16: (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) )
+            	    // InternalContainer.g:967:18: otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) )
             	    {
             	    otherlv_24=(Token)match(input,34,FOLLOW_10); 
 
             	        	newLeafNode(otherlv_24, grammarAccess.getContainerAccess().getCpuPeriodKeyword_5_5_0());
             	        
-            	    // InternalContainer.g:966:1: ( (lv_cpuPeriod_25_0= RULE_INT ) )
-            	    // InternalContainer.g:967:1: (lv_cpuPeriod_25_0= RULE_INT )
+            	    // InternalContainer.g:971:1: ( (lv_cpuPeriod_25_0= RULE_INT ) )
+            	    // InternalContainer.g:972:1: (lv_cpuPeriod_25_0= RULE_INT )
             	    {
-            	    // InternalContainer.g:967:1: (lv_cpuPeriod_25_0= RULE_INT )
-            	    // InternalContainer.g:968:3: lv_cpuPeriod_25_0= RULE_INT
+            	    // InternalContainer.g:972:1: (lv_cpuPeriod_25_0= RULE_INT )
+            	    // InternalContainer.g:973:3: lv_cpuPeriod_25_0= RULE_INT
             	    {
             	    lv_cpuPeriod_25_0=(Token)match(input,RULE_INT,FOLLOW_13); 
 
@@ -2507,42 +2512,42 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 7 :
-            	    // InternalContainer.g:991:4: ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) )
+            	    // InternalContainer.g:996:4: ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:991:4: ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) )
-            	    // InternalContainer.g:992:5: {...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) )
+            	    // InternalContainer.g:996:4: ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:997:5: {...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 6) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 6)");
             	    }
-            	    // InternalContainer.g:992:106: ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) )
-            	    // InternalContainer.g:993:6: ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) )
+            	    // InternalContainer.g:997:106: ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:998:6: ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 6);
             	    	 				
-            	    // InternalContainer.g:996:6: ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) )
-            	    // InternalContainer.g:996:7: {...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) )
+            	    // InternalContainer.g:1001:6: ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1001:7: {...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:996:16: (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) )
-            	    // InternalContainer.g:996:18: otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) )
+            	    // InternalContainer.g:1001:16: (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1001:18: otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) )
             	    {
-            	    otherlv_26=(Token)match(input,35,FOLLOW_10); 
+            	    otherlv_26=(Token)match(input,35,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_26, grammarAccess.getContainerAccess().getCpusetCpusKeyword_5_6_0());
             	        
-            	    // InternalContainer.g:1000:1: ( (lv_cpusetCpus_27_0= RULE_INT ) )
-            	    // InternalContainer.g:1001:1: (lv_cpusetCpus_27_0= RULE_INT )
+            	    // InternalContainer.g:1005:1: ( (lv_cpusetCpus_27_0= RULE_STRING ) )
+            	    // InternalContainer.g:1006:1: (lv_cpusetCpus_27_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1001:1: (lv_cpusetCpus_27_0= RULE_INT )
-            	    // InternalContainer.g:1002:3: lv_cpusetCpus_27_0= RULE_INT
+            	    // InternalContainer.g:1006:1: (lv_cpusetCpus_27_0= RULE_STRING )
+            	    // InternalContainer.g:1007:3: lv_cpusetCpus_27_0= RULE_STRING
             	    {
-            	    lv_cpusetCpus_27_0=(Token)match(input,RULE_INT,FOLLOW_13); 
+            	    lv_cpusetCpus_27_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-            	    			newLeafNode(lv_cpusetCpus_27_0, grammarAccess.getContainerAccess().getCpusetCpusINTTerminalRuleCall_5_6_1_0()); 
+            	    			newLeafNode(lv_cpusetCpus_27_0, grammarAccess.getContainerAccess().getCpusetCpusSTRINGTerminalRuleCall_5_6_1_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -2552,7 +2557,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"cpusetCpus",
             	            		lv_cpusetCpus_27_0, 
-            	            		"org.eclipse.xtext.common.Terminals.INT");
+            	            		"org.eclipse.xtext.common.Terminals.STRING");
             	    	    
 
             	    }
@@ -2579,38 +2584,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 8 :
-            	    // InternalContainer.g:1025:4: ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1030:4: ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1025:4: ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1026:5: {...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1030:4: ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1031:5: {...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 7) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 7)");
             	    }
-            	    // InternalContainer.g:1026:106: ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1027:6: ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1031:106: ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1032:6: ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 7);
             	    	 				
-            	    // InternalContainer.g:1030:6: ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1030:7: {...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1035:6: ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1035:7: {...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1030:16: (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1030:18: otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) )
+            	    // InternalContainer.g:1035:16: (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1035:18: otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) )
             	    {
             	    otherlv_28=(Token)match(input,36,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_28, grammarAccess.getContainerAccess().getCpusetMemsKeyword_5_7_0());
             	        
-            	    // InternalContainer.g:1034:1: ( (lv_cpusetMems_29_0= RULE_STRING ) )
-            	    // InternalContainer.g:1035:1: (lv_cpusetMems_29_0= RULE_STRING )
+            	    // InternalContainer.g:1039:1: ( (lv_cpusetMems_29_0= RULE_STRING ) )
+            	    // InternalContainer.g:1040:1: (lv_cpusetMems_29_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1035:1: (lv_cpusetMems_29_0= RULE_STRING )
-            	    // InternalContainer.g:1036:3: lv_cpusetMems_29_0= RULE_STRING
+            	    // InternalContainer.g:1040:1: (lv_cpusetMems_29_0= RULE_STRING )
+            	    // InternalContainer.g:1041:3: lv_cpusetMems_29_0= RULE_STRING
             	    {
             	    lv_cpusetMems_29_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
@@ -2651,38 +2656,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 9 :
-            	    // InternalContainer.g:1059:4: ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) )
+            	    // InternalContainer.g:1064:4: ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1059:4: ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) )
-            	    // InternalContainer.g:1060:5: {...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) )
+            	    // InternalContainer.g:1064:4: ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) )
+            	    // InternalContainer.g:1065:5: {...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 8) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 8)");
             	    }
-            	    // InternalContainer.g:1060:106: ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) )
-            	    // InternalContainer.g:1061:6: ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) )
+            	    // InternalContainer.g:1065:106: ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) )
+            	    // InternalContainer.g:1066:6: ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 8);
             	    	 				
-            	    // InternalContainer.g:1064:6: ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) )
-            	    // InternalContainer.g:1064:7: {...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) )
+            	    // InternalContainer.g:1069:6: ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) )
+            	    // InternalContainer.g:1069:7: {...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1064:16: (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) )
-            	    // InternalContainer.g:1064:18: otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) )
+            	    // InternalContainer.g:1069:16: (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) )
+            	    // InternalContainer.g:1069:18: otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) )
             	    {
             	    otherlv_30=(Token)match(input,37,FOLLOW_10); 
 
             	        	newLeafNode(otherlv_30, grammarAccess.getContainerAccess().getCpuSharesKeyword_5_8_0());
             	        
-            	    // InternalContainer.g:1068:1: ( (lv_cpuShares_31_0= RULE_INT ) )
-            	    // InternalContainer.g:1069:1: (lv_cpuShares_31_0= RULE_INT )
+            	    // InternalContainer.g:1073:1: ( (lv_cpuShares_31_0= RULE_INT ) )
+            	    // InternalContainer.g:1074:1: (lv_cpuShares_31_0= RULE_INT )
             	    {
-            	    // InternalContainer.g:1069:1: (lv_cpuShares_31_0= RULE_INT )
-            	    // InternalContainer.g:1070:3: lv_cpuShares_31_0= RULE_INT
+            	    // InternalContainer.g:1074:1: (lv_cpuShares_31_0= RULE_INT )
+            	    // InternalContainer.g:1075:3: lv_cpuShares_31_0= RULE_INT
             	    {
             	    lv_cpuShares_31_0=(Token)match(input,RULE_INT,FOLLOW_13); 
 
@@ -2723,28 +2728,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 10 :
-            	    // InternalContainer.g:1093:4: ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) )
+            	    // InternalContainer.g:1098:4: ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1093:4: ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) )
-            	    // InternalContainer.g:1094:5: {...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) )
+            	    // InternalContainer.g:1098:4: ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) )
+            	    // InternalContainer.g:1099:5: {...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 9) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 9)");
             	    }
-            	    // InternalContainer.g:1094:106: ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) )
-            	    // InternalContainer.g:1095:6: ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) )
+            	    // InternalContainer.g:1099:106: ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) )
+            	    // InternalContainer.g:1100:6: ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 9);
             	    	 				
-            	    // InternalContainer.g:1098:6: ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) )
-            	    // InternalContainer.g:1098:7: {...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' )
+            	    // InternalContainer.g:1103:6: ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) )
+            	    // InternalContainer.g:1103:7: {...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1098:16: (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' )
-            	    // InternalContainer.g:1098:18: otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}'
+            	    // InternalContainer.g:1103:16: (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' )
+            	    // InternalContainer.g:1103:18: otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}'
             	    {
             	    otherlv_32=(Token)match(input,38,FOLLOW_5); 
 
@@ -2754,7 +2759,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_33, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_9_1());
             	        
-            	    // InternalContainer.g:1106:1: ( (lv_devices_34_0= ruleDevice ) )+
+            	    // InternalContainer.g:1111:1: ( (lv_devices_34_0= ruleDevice ) )+
             	    int cnt9=0;
             	    loop9:
             	    do {
@@ -2768,10 +2773,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt9) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1107:1: (lv_devices_34_0= ruleDevice )
+            	    	    // InternalContainer.g:1112:1: (lv_devices_34_0= ruleDevice )
             	    	    {
-            	    	    // InternalContainer.g:1107:1: (lv_devices_34_0= ruleDevice )
-            	    	    // InternalContainer.g:1108:3: lv_devices_34_0= ruleDevice
+            	    	    // InternalContainer.g:1112:1: (lv_devices_34_0= ruleDevice )
+            	    	    // InternalContainer.g:1113:3: lv_devices_34_0= ruleDevice
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getDevicesDeviceParserRuleCall_5_9_2_0()); 
@@ -2831,34 +2836,34 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 11 :
-            	    // InternalContainer.g:1135:4: ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) )
+            	    // InternalContainer.g:1140:4: ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1135:4: ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) )
-            	    // InternalContainer.g:1136:5: {...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) )
+            	    // InternalContainer.g:1140:4: ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) )
+            	    // InternalContainer.g:1141:5: {...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 10) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 10)");
             	    }
-            	    // InternalContainer.g:1136:107: ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) )
-            	    // InternalContainer.g:1137:6: ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) )
+            	    // InternalContainer.g:1141:107: ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) )
+            	    // InternalContainer.g:1142:6: ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 10);
             	    	 				
-            	    // InternalContainer.g:1140:6: ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) )
-            	    // InternalContainer.g:1140:7: {...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' )
+            	    // InternalContainer.g:1145:6: ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) )
+            	    // InternalContainer.g:1145:7: {...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1140:16: (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' )
-            	    // InternalContainer.g:1140:18: otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}'
+            	    // InternalContainer.g:1145:16: (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' )
+            	    // InternalContainer.g:1145:18: otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}'
             	    {
             	    otherlv_36=(Token)match(input,39,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_36, grammarAccess.getContainerAccess().getDnsKeyword_5_10_0());
             	        
-            	    // InternalContainer.g:1144:1: ( (lv_dns_37_0= RULE_STRING ) )+
+            	    // InternalContainer.g:1149:1: ( (lv_dns_37_0= RULE_STRING ) )+
             	    int cnt10=0;
             	    loop10:
             	    do {
@@ -2872,10 +2877,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt10) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1145:1: (lv_dns_37_0= RULE_STRING )
+            	    	    // InternalContainer.g:1150:1: (lv_dns_37_0= RULE_STRING )
             	    	    {
-            	    	    // InternalContainer.g:1145:1: (lv_dns_37_0= RULE_STRING )
-            	    	    // InternalContainer.g:1146:3: lv_dns_37_0= RULE_STRING
+            	    	    // InternalContainer.g:1150:1: (lv_dns_37_0= RULE_STRING )
+            	    	    // InternalContainer.g:1151:3: lv_dns_37_0= RULE_STRING
             	    	    {
             	    	    lv_dns_37_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -2930,28 +2935,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 12 :
-            	    // InternalContainer.g:1173:4: ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) )
+            	    // InternalContainer.g:1178:4: ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1173:4: ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) )
-            	    // InternalContainer.g:1174:5: {...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) )
+            	    // InternalContainer.g:1178:4: ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) )
+            	    // InternalContainer.g:1179:5: {...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 11) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 11)");
             	    }
-            	    // InternalContainer.g:1174:107: ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) )
-            	    // InternalContainer.g:1175:6: ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) )
+            	    // InternalContainer.g:1179:107: ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) )
+            	    // InternalContainer.g:1180:6: ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 11);
             	    	 				
-            	    // InternalContainer.g:1178:6: ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) )
-            	    // InternalContainer.g:1178:7: {...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' )
+            	    // InternalContainer.g:1183:6: ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) )
+            	    // InternalContainer.g:1183:7: {...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1178:16: (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' )
-            	    // InternalContainer.g:1178:18: otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}'
+            	    // InternalContainer.g:1183:16: (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' )
+            	    // InternalContainer.g:1183:18: otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}'
             	    {
             	    otherlv_39=(Token)match(input,40,FOLLOW_5); 
 
@@ -2961,7 +2966,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_40, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_11_1());
             	        
-            	    // InternalContainer.g:1186:1: ( (lv_dnsSearch_41_0= RULE_STRING ) )+
+            	    // InternalContainer.g:1191:1: ( (lv_dnsSearch_41_0= RULE_STRING ) )+
             	    int cnt11=0;
             	    loop11:
             	    do {
@@ -2975,10 +2980,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt11) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1187:1: (lv_dnsSearch_41_0= RULE_STRING )
+            	    	    // InternalContainer.g:1192:1: (lv_dnsSearch_41_0= RULE_STRING )
             	    	    {
-            	    	    // InternalContainer.g:1187:1: (lv_dnsSearch_41_0= RULE_STRING )
-            	    	    // InternalContainer.g:1188:3: lv_dnsSearch_41_0= RULE_STRING
+            	    	    // InternalContainer.g:1192:1: (lv_dnsSearch_41_0= RULE_STRING )
+            	    	    // InternalContainer.g:1193:3: lv_dnsSearch_41_0= RULE_STRING
             	    	    {
             	    	    lv_dnsSearch_41_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -3033,38 +3038,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 13 :
-            	    // InternalContainer.g:1215:4: ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1220:4: ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1215:4: ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1216:5: {...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1220:4: ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1221:5: {...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 12) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 12)");
             	    }
-            	    // InternalContainer.g:1216:107: ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1217:6: ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1221:107: ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1222:6: ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 12);
             	    	 				
-            	    // InternalContainer.g:1220:6: ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1220:7: {...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1225:6: ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1225:7: {...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1220:16: (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1220:18: otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) )
+            	    // InternalContainer.g:1225:16: (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1225:18: otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) )
             	    {
             	    otherlv_43=(Token)match(input,41,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_43, grammarAccess.getContainerAccess().getDomainNameKeyword_5_12_0());
             	        
-            	    // InternalContainer.g:1224:1: ( (lv_domainName_44_0= RULE_STRING ) )
-            	    // InternalContainer.g:1225:1: (lv_domainName_44_0= RULE_STRING )
+            	    // InternalContainer.g:1229:1: ( (lv_domainName_44_0= RULE_STRING ) )
+            	    // InternalContainer.g:1230:1: (lv_domainName_44_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1225:1: (lv_domainName_44_0= RULE_STRING )
-            	    // InternalContainer.g:1226:3: lv_domainName_44_0= RULE_STRING
+            	    // InternalContainer.g:1230:1: (lv_domainName_44_0= RULE_STRING )
+            	    // InternalContainer.g:1231:3: lv_domainName_44_0= RULE_STRING
             	    {
             	    lv_domainName_44_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
@@ -3105,28 +3110,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 14 :
-            	    // InternalContainer.g:1249:4: ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) )
+            	    // InternalContainer.g:1254:4: ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1249:4: ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) )
-            	    // InternalContainer.g:1250:5: {...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) )
+            	    // InternalContainer.g:1254:4: ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) )
+            	    // InternalContainer.g:1255:5: {...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 13) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 13)");
             	    }
-            	    // InternalContainer.g:1250:107: ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) )
-            	    // InternalContainer.g:1251:6: ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) )
+            	    // InternalContainer.g:1255:107: ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) )
+            	    // InternalContainer.g:1256:6: ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 13);
             	    	 				
-            	    // InternalContainer.g:1254:6: ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) )
-            	    // InternalContainer.g:1254:7: {...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' )
+            	    // InternalContainer.g:1259:6: ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) )
+            	    // InternalContainer.g:1259:7: {...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1254:16: (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' )
-            	    // InternalContainer.g:1254:18: otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}'
+            	    // InternalContainer.g:1259:16: (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' )
+            	    // InternalContainer.g:1259:18: otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}'
             	    {
             	    otherlv_45=(Token)match(input,42,FOLLOW_5); 
 
@@ -3136,7 +3141,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_46, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_13_1());
             	        
-            	    // InternalContainer.g:1262:1: ( (lv_entrypoint_47_0= RULE_STRING ) )+
+            	    // InternalContainer.g:1267:1: ( (lv_entrypoint_47_0= RULE_STRING ) )+
             	    int cnt12=0;
             	    loop12:
             	    do {
@@ -3150,10 +3155,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt12) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1263:1: (lv_entrypoint_47_0= RULE_STRING )
+            	    	    // InternalContainer.g:1268:1: (lv_entrypoint_47_0= RULE_STRING )
             	    	    {
-            	    	    // InternalContainer.g:1263:1: (lv_entrypoint_47_0= RULE_STRING )
-            	    	    // InternalContainer.g:1264:3: lv_entrypoint_47_0= RULE_STRING
+            	    	    // InternalContainer.g:1268:1: (lv_entrypoint_47_0= RULE_STRING )
+            	    	    // InternalContainer.g:1269:3: lv_entrypoint_47_0= RULE_STRING
             	    	    {
             	    	    lv_entrypoint_47_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -3208,28 +3213,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 15 :
-            	    // InternalContainer.g:1291:4: ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) )
+            	    // InternalContainer.g:1296:4: ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1291:4: ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) )
-            	    // InternalContainer.g:1292:5: {...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) )
+            	    // InternalContainer.g:1296:4: ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) )
+            	    // InternalContainer.g:1297:5: {...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 14) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 14)");
             	    }
-            	    // InternalContainer.g:1292:107: ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) )
-            	    // InternalContainer.g:1293:6: ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) )
+            	    // InternalContainer.g:1297:107: ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) )
+            	    // InternalContainer.g:1298:6: ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 14);
             	    	 				
-            	    // InternalContainer.g:1296:6: ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) )
-            	    // InternalContainer.g:1296:7: {...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' )
+            	    // InternalContainer.g:1301:6: ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) )
+            	    // InternalContainer.g:1301:7: {...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1296:16: (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' )
-            	    // InternalContainer.g:1296:18: otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}'
+            	    // InternalContainer.g:1301:16: (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' )
+            	    // InternalContainer.g:1301:18: otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}'
             	    {
             	    otherlv_49=(Token)match(input,43,FOLLOW_5); 
 
@@ -3239,7 +3244,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_50, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_14_1());
             	        
-            	    // InternalContainer.g:1304:1: ( (lv_env_51_0= RULE_STRING ) )+
+            	    // InternalContainer.g:1309:1: ( (lv_env_51_0= RULE_STRING ) )+
             	    int cnt13=0;
             	    loop13:
             	    do {
@@ -3253,10 +3258,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt13) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1305:1: (lv_env_51_0= RULE_STRING )
+            	    	    // InternalContainer.g:1310:1: (lv_env_51_0= RULE_STRING )
             	    	    {
-            	    	    // InternalContainer.g:1305:1: (lv_env_51_0= RULE_STRING )
-            	    	    // InternalContainer.g:1306:3: lv_env_51_0= RULE_STRING
+            	    	    // InternalContainer.g:1310:1: (lv_env_51_0= RULE_STRING )
+            	    	    // InternalContainer.g:1311:3: lv_env_51_0= RULE_STRING
             	    	    {
             	    	    lv_env_51_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -3311,28 +3316,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 16 :
-            	    // InternalContainer.g:1333:4: ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) )
+            	    // InternalContainer.g:1338:4: ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1333:4: ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) )
-            	    // InternalContainer.g:1334:5: {...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) )
+            	    // InternalContainer.g:1338:4: ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) )
+            	    // InternalContainer.g:1339:5: {...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 15) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 15)");
             	    }
-            	    // InternalContainer.g:1334:107: ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) )
-            	    // InternalContainer.g:1335:6: ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) )
+            	    // InternalContainer.g:1339:107: ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) )
+            	    // InternalContainer.g:1340:6: ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 15);
             	    	 				
-            	    // InternalContainer.g:1338:6: ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) )
-            	    // InternalContainer.g:1338:7: {...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' )
+            	    // InternalContainer.g:1343:6: ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) )
+            	    // InternalContainer.g:1343:7: {...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1338:16: (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' )
-            	    // InternalContainer.g:1338:18: otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}'
+            	    // InternalContainer.g:1343:16: (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' )
+            	    // InternalContainer.g:1343:18: otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}'
             	    {
             	    otherlv_53=(Token)match(input,44,FOLLOW_5); 
 
@@ -3342,7 +3347,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_54, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_15_1());
             	        
-            	    // InternalContainer.g:1346:1: ( (lv_exposedPorts_55_0= ruleExposedPort ) )+
+            	    // InternalContainer.g:1351:1: ( (lv_exposedPorts_55_0= ruleExposedPort ) )+
             	    int cnt14=0;
             	    loop14:
             	    do {
@@ -3356,10 +3361,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt14) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1347:1: (lv_exposedPorts_55_0= ruleExposedPort )
+            	    	    // InternalContainer.g:1352:1: (lv_exposedPorts_55_0= ruleExposedPort )
             	    	    {
-            	    	    // InternalContainer.g:1347:1: (lv_exposedPorts_55_0= ruleExposedPort )
-            	    	    // InternalContainer.g:1348:3: lv_exposedPorts_55_0= ruleExposedPort
+            	    	    // InternalContainer.g:1352:1: (lv_exposedPorts_55_0= ruleExposedPort )
+            	    	    // InternalContainer.g:1353:3: lv_exposedPorts_55_0= ruleExposedPort
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getExposedPortsExposedPortParserRuleCall_5_15_2_0()); 
@@ -3419,28 +3424,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 17 :
-            	    // InternalContainer.g:1375:4: ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) )
+            	    // InternalContainer.g:1380:4: ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1375:4: ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) )
-            	    // InternalContainer.g:1376:5: {...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) )
+            	    // InternalContainer.g:1380:4: ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) )
+            	    // InternalContainer.g:1381:5: {...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 16) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 16)");
             	    }
-            	    // InternalContainer.g:1376:107: ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) )
-            	    // InternalContainer.g:1377:6: ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) )
+            	    // InternalContainer.g:1381:107: ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) )
+            	    // InternalContainer.g:1382:6: ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 16);
             	    	 				
-            	    // InternalContainer.g:1380:6: ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) )
-            	    // InternalContainer.g:1380:7: {...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' )
+            	    // InternalContainer.g:1385:6: ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) )
+            	    // InternalContainer.g:1385:7: {...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1380:16: (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' )
-            	    // InternalContainer.g:1380:18: otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}'
+            	    // InternalContainer.g:1385:16: (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' )
+            	    // InternalContainer.g:1385:18: otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}'
             	    {
             	    otherlv_57=(Token)match(input,45,FOLLOW_5); 
 
@@ -3450,7 +3455,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_58, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_16_1());
             	        
-            	    // InternalContainer.g:1388:1: ( (lv_extraHosts_59_0= RULE_STRING ) )+
+            	    // InternalContainer.g:1393:1: ( (lv_extraHosts_59_0= RULE_STRING ) )+
             	    int cnt15=0;
             	    loop15:
             	    do {
@@ -3464,10 +3469,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt15) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1389:1: (lv_extraHosts_59_0= RULE_STRING )
+            	    	    // InternalContainer.g:1394:1: (lv_extraHosts_59_0= RULE_STRING )
             	    	    {
-            	    	    // InternalContainer.g:1389:1: (lv_extraHosts_59_0= RULE_STRING )
-            	    	    // InternalContainer.g:1390:3: lv_extraHosts_59_0= RULE_STRING
+            	    	    // InternalContainer.g:1394:1: (lv_extraHosts_59_0= RULE_STRING )
+            	    	    // InternalContainer.g:1395:3: lv_extraHosts_59_0= RULE_STRING
             	    	    {
             	    	    lv_extraHosts_59_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
@@ -3522,28 +3527,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 18 :
-            	    // InternalContainer.g:1417:4: ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) )
+            	    // InternalContainer.g:1422:4: ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1417:4: ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) )
-            	    // InternalContainer.g:1418:5: {...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) )
+            	    // InternalContainer.g:1422:4: ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) )
+            	    // InternalContainer.g:1423:5: {...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 17) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 17)");
             	    }
-            	    // InternalContainer.g:1418:107: ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) )
-            	    // InternalContainer.g:1419:6: ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) )
+            	    // InternalContainer.g:1423:107: ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) )
+            	    // InternalContainer.g:1424:6: ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 17);
             	    	 				
-            	    // InternalContainer.g:1422:6: ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) )
-            	    // InternalContainer.g:1422:7: {...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' )
+            	    // InternalContainer.g:1427:6: ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) )
+            	    // InternalContainer.g:1427:7: {...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1422:16: (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' )
-            	    // InternalContainer.g:1422:18: otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}'
+            	    // InternalContainer.g:1427:16: (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' )
+            	    // InternalContainer.g:1427:18: otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}'
             	    {
             	    otherlv_61=(Token)match(input,46,FOLLOW_5); 
 
@@ -3553,7 +3558,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_62, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_17_1());
             	        
-            	    // InternalContainer.g:1430:1: ( (lv_labels_63_0= ruleLabel ) )+
+            	    // InternalContainer.g:1435:1: ( (lv_labels_63_0= ruleLabel ) )+
             	    int cnt16=0;
             	    loop16:
             	    do {
@@ -3567,10 +3572,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt16) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1431:1: (lv_labels_63_0= ruleLabel )
+            	    	    // InternalContainer.g:1436:1: (lv_labels_63_0= ruleLabel )
             	    	    {
-            	    	    // InternalContainer.g:1431:1: (lv_labels_63_0= ruleLabel )
-            	    	    // InternalContainer.g:1432:3: lv_labels_63_0= ruleLabel
+            	    	    // InternalContainer.g:1436:1: (lv_labels_63_0= ruleLabel )
+            	    	    // InternalContainer.g:1437:3: lv_labels_63_0= ruleLabel
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getLabelsLabelParserRuleCall_5_17_2_0()); 
@@ -3630,28 +3635,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 19 :
-            	    // InternalContainer.g:1459:4: ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) )
+            	    // InternalContainer.g:1464:4: ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1459:4: ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) )
-            	    // InternalContainer.g:1460:5: {...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) )
+            	    // InternalContainer.g:1464:4: ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) )
+            	    // InternalContainer.g:1465:5: {...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 18) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 18)");
             	    }
-            	    // InternalContainer.g:1460:107: ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) )
-            	    // InternalContainer.g:1461:6: ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) )
+            	    // InternalContainer.g:1465:107: ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) )
+            	    // InternalContainer.g:1466:6: ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 18);
             	    	 				
-            	    // InternalContainer.g:1464:6: ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) )
-            	    // InternalContainer.g:1464:7: {...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' )
+            	    // InternalContainer.g:1469:6: ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) )
+            	    // InternalContainer.g:1469:7: {...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1464:16: (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' )
-            	    // InternalContainer.g:1464:18: otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}'
+            	    // InternalContainer.g:1469:16: (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' )
+            	    // InternalContainer.g:1469:18: otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}'
             	    {
             	    otherlv_65=(Token)match(input,47,FOLLOW_5); 
 
@@ -3661,7 +3666,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_66, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_18_1());
             	        
-            	    // InternalContainer.g:1472:1: ( (lv_links_67_0= ruleLink ) )+
+            	    // InternalContainer.g:1477:1: ( (lv_links_67_0= ruleLink ) )+
             	    int cnt17=0;
             	    loop17:
             	    do {
@@ -3675,10 +3680,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt17) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1473:1: (lv_links_67_0= ruleLink )
+            	    	    // InternalContainer.g:1478:1: (lv_links_67_0= ruleLink )
             	    	    {
-            	    	    // InternalContainer.g:1473:1: (lv_links_67_0= ruleLink )
-            	    	    // InternalContainer.g:1474:3: lv_links_67_0= ruleLink
+            	    	    // InternalContainer.g:1478:1: (lv_links_67_0= ruleLink )
+            	    	    // InternalContainer.g:1479:3: lv_links_67_0= ruleLink
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getLinksLinkParserRuleCall_5_18_2_0()); 
@@ -3738,38 +3743,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 20 :
-            	    // InternalContainer.g:1501:4: ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1506:4: ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1501:4: ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1502:5: {...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1506:4: ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1507:5: {...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 19) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 19)");
             	    }
-            	    // InternalContainer.g:1502:107: ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1503:6: ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1507:107: ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1508:6: ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 19);
             	    	 				
-            	    // InternalContainer.g:1506:6: ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1506:7: {...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1511:6: ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1511:7: {...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1506:16: (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1506:18: otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) )
+            	    // InternalContainer.g:1511:16: (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1511:18: otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) )
             	    {
             	    otherlv_69=(Token)match(input,48,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_69, grammarAccess.getContainerAccess().getMacAddressKeyword_5_19_0());
             	        
-            	    // InternalContainer.g:1510:1: ( (lv_macAddress_70_0= RULE_STRING ) )
-            	    // InternalContainer.g:1511:1: (lv_macAddress_70_0= RULE_STRING )
+            	    // InternalContainer.g:1515:1: ( (lv_macAddress_70_0= RULE_STRING ) )
+            	    // InternalContainer.g:1516:1: (lv_macAddress_70_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1511:1: (lv_macAddress_70_0= RULE_STRING )
-            	    // InternalContainer.g:1512:3: lv_macAddress_70_0= RULE_STRING
+            	    // InternalContainer.g:1516:1: (lv_macAddress_70_0= RULE_STRING )
+            	    // InternalContainer.g:1517:3: lv_macAddress_70_0= RULE_STRING
             	    {
             	    lv_macAddress_70_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
@@ -3810,38 +3815,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 21 :
-            	    // InternalContainer.g:1535:4: ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) )
+            	    // InternalContainer.g:1540:4: ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1535:4: ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) )
-            	    // InternalContainer.g:1536:5: {...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) )
+            	    // InternalContainer.g:1540:4: ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) )
+            	    // InternalContainer.g:1541:5: {...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 20) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 20)");
             	    }
-            	    // InternalContainer.g:1536:107: ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) )
-            	    // InternalContainer.g:1537:6: ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) )
+            	    // InternalContainer.g:1541:107: ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) )
+            	    // InternalContainer.g:1542:6: ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 20);
             	    	 				
-            	    // InternalContainer.g:1540:6: ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) )
-            	    // InternalContainer.g:1540:7: {...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) )
+            	    // InternalContainer.g:1545:6: ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) )
+            	    // InternalContainer.g:1545:7: {...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1540:16: (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) )
-            	    // InternalContainer.g:1540:18: otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) )
+            	    // InternalContainer.g:1545:16: (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) )
+            	    // InternalContainer.g:1545:18: otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) )
             	    {
             	    otherlv_71=(Token)match(input,17,FOLLOW_10); 
 
             	        	newLeafNode(otherlv_71, grammarAccess.getContainerAccess().getMemoryKeyword_5_20_0());
             	        
-            	    // InternalContainer.g:1544:1: ( (lv_memory_72_0= ruleElong ) )
-            	    // InternalContainer.g:1545:1: (lv_memory_72_0= ruleElong )
+            	    // InternalContainer.g:1549:1: ( (lv_memory_72_0= ruleElong ) )
+            	    // InternalContainer.g:1550:1: (lv_memory_72_0= ruleElong )
             	    {
-            	    // InternalContainer.g:1545:1: (lv_memory_72_0= ruleElong )
-            	    // InternalContainer.g:1546:3: lv_memory_72_0= ruleElong
+            	    // InternalContainer.g:1550:1: (lv_memory_72_0= ruleElong )
+            	    // InternalContainer.g:1551:3: lv_memory_72_0= ruleElong
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getContainerAccess().getMemoryElongParserRuleCall_5_20_1_0()); 
@@ -3887,38 +3892,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 22 :
-            	    // InternalContainer.g:1569:4: ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) )
+            	    // InternalContainer.g:1574:4: ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1569:4: ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) )
-            	    // InternalContainer.g:1570:5: {...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) )
+            	    // InternalContainer.g:1574:4: ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) )
+            	    // InternalContainer.g:1575:5: {...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 21) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 21)");
             	    }
-            	    // InternalContainer.g:1570:107: ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) )
-            	    // InternalContainer.g:1571:6: ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) )
+            	    // InternalContainer.g:1575:107: ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) )
+            	    // InternalContainer.g:1576:6: ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 21);
             	    	 				
-            	    // InternalContainer.g:1574:6: ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) )
-            	    // InternalContainer.g:1574:7: {...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) )
+            	    // InternalContainer.g:1579:6: ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) )
+            	    // InternalContainer.g:1579:7: {...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1574:16: (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) )
-            	    // InternalContainer.g:1574:18: otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) )
+            	    // InternalContainer.g:1579:16: (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) )
+            	    // InternalContainer.g:1579:18: otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) )
             	    {
             	    otherlv_73=(Token)match(input,49,FOLLOW_10); 
 
             	        	newLeafNode(otherlv_73, grammarAccess.getContainerAccess().getMemorySwapKeyword_5_21_0());
             	        
-            	    // InternalContainer.g:1578:1: ( (lv_memorySwap_74_0= ruleElong ) )
-            	    // InternalContainer.g:1579:1: (lv_memorySwap_74_0= ruleElong )
+            	    // InternalContainer.g:1583:1: ( (lv_memorySwap_74_0= ruleElong ) )
+            	    // InternalContainer.g:1584:1: (lv_memorySwap_74_0= ruleElong )
             	    {
-            	    // InternalContainer.g:1579:1: (lv_memorySwap_74_0= ruleElong )
-            	    // InternalContainer.g:1580:3: lv_memorySwap_74_0= ruleElong
+            	    // InternalContainer.g:1584:1: (lv_memorySwap_74_0= ruleElong )
+            	    // InternalContainer.g:1585:3: lv_memorySwap_74_0= ruleElong
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getContainerAccess().getMemorySwapElongParserRuleCall_5_21_1_0()); 
@@ -3964,38 +3969,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 23 :
-            	    // InternalContainer.g:1603:4: ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1608:4: ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1603:4: ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalContainer.g:1604:5: {...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1608:4: ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1609:5: {...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 22) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 22)");
             	    }
-            	    // InternalContainer.g:1604:107: ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) )
-            	    // InternalContainer.g:1605:6: ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1609:107: ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1610:6: ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 22);
             	    	 				
-            	    // InternalContainer.g:1608:6: ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) )
-            	    // InternalContainer.g:1608:7: {...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1613:6: ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1613:7: {...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1608:16: (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) )
-            	    // InternalContainer.g:1608:18: otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1613:16: (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1613:18: otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) )
             	    {
             	    otherlv_75=(Token)match(input,50,FOLLOW_9); 
 
             	        	newLeafNode(otherlv_75, grammarAccess.getContainerAccess().getDisableNetworkKeyword_5_22_0());
             	        
-            	    // InternalContainer.g:1612:1: ( (lv_disableNetwork_76_0= ruleEBoolean ) )
-            	    // InternalContainer.g:1613:1: (lv_disableNetwork_76_0= ruleEBoolean )
+            	    // InternalContainer.g:1617:1: ( (lv_disableNetwork_76_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1618:1: (lv_disableNetwork_76_0= ruleEBoolean )
             	    {
-            	    // InternalContainer.g:1613:1: (lv_disableNetwork_76_0= ruleEBoolean )
-            	    // InternalContainer.g:1614:3: lv_disableNetwork_76_0= ruleEBoolean
+            	    // InternalContainer.g:1618:1: (lv_disableNetwork_76_0= ruleEBoolean )
+            	    // InternalContainer.g:1619:3: lv_disableNetwork_76_0= ruleEBoolean
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getContainerAccess().getDisableNetworkEBooleanParserRuleCall_5_22_1_0()); 
@@ -4041,38 +4046,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 24 :
-            	    // InternalContainer.g:1637:4: ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1642:4: ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1637:4: ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1638:5: {...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1642:4: ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1643:5: {...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 23) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 23)");
             	    }
-            	    // InternalContainer.g:1638:107: ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1639:6: ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1643:107: ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1644:6: ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 23);
             	    	 				
-            	    // InternalContainer.g:1642:6: ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1642:7: {...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1647:6: ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1647:7: {...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1642:16: (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1642:18: otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) )
+            	    // InternalContainer.g:1647:16: (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1647:18: otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) )
             	    {
             	    otherlv_77=(Token)match(input,51,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_77, grammarAccess.getContainerAccess().getNetworkModeKeyword_5_23_0());
             	        
-            	    // InternalContainer.g:1646:1: ( (lv_networkMode_78_0= RULE_STRING ) )
-            	    // InternalContainer.g:1647:1: (lv_networkMode_78_0= RULE_STRING )
+            	    // InternalContainer.g:1651:1: ( (lv_networkMode_78_0= RULE_STRING ) )
+            	    // InternalContainer.g:1652:1: (lv_networkMode_78_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1647:1: (lv_networkMode_78_0= RULE_STRING )
-            	    // InternalContainer.g:1648:3: lv_networkMode_78_0= RULE_STRING
+            	    // InternalContainer.g:1652:1: (lv_networkMode_78_0= RULE_STRING )
+            	    // InternalContainer.g:1653:3: lv_networkMode_78_0= RULE_STRING
             	    {
             	    lv_networkMode_78_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
@@ -4113,28 +4118,28 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 25 :
-            	    // InternalContainer.g:1671:4: ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) )
+            	    // InternalContainer.g:1676:4: ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:1671:4: ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) )
-            	    // InternalContainer.g:1672:5: {...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) )
+            	    // InternalContainer.g:1676:4: ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) )
+            	    // InternalContainer.g:1677:5: {...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 24) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 24)");
             	    }
-            	    // InternalContainer.g:1672:107: ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) )
-            	    // InternalContainer.g:1673:6: ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) )
+            	    // InternalContainer.g:1677:107: ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) )
+            	    // InternalContainer.g:1678:6: ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 24);
             	    	 				
-            	    // InternalContainer.g:1676:6: ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) )
-            	    // InternalContainer.g:1676:7: {...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' )
+            	    // InternalContainer.g:1681:6: ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) )
+            	    // InternalContainer.g:1681:7: {...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1676:16: (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' )
-            	    // InternalContainer.g:1676:18: otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}'
+            	    // InternalContainer.g:1681:16: (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' )
+            	    // InternalContainer.g:1681:18: otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}'
             	    {
             	    otherlv_79=(Token)match(input,52,FOLLOW_5); 
 
@@ -4144,7 +4149,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        	newLeafNode(otherlv_80, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_24_1());
             	        
-            	    // InternalContainer.g:1684:1: ( (lv_portBindings_81_0= rulePortBinding ) )+
+            	    // InternalContainer.g:1689:1: ( (lv_portBindings_81_0= rulePortBinding ) )+
             	    int cnt18=0;
             	    loop18:
             	    do {
@@ -4158,10 +4163,10 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt18) {
             	    	case 1 :
-            	    	    // InternalContainer.g:1685:1: (lv_portBindings_81_0= rulePortBinding )
+            	    	    // InternalContainer.g:1690:1: (lv_portBindings_81_0= rulePortBinding )
             	    	    {
-            	    	    // InternalContainer.g:1685:1: (lv_portBindings_81_0= rulePortBinding )
-            	    	    // InternalContainer.g:1686:3: lv_portBindings_81_0= rulePortBinding
+            	    	    // InternalContainer.g:1690:1: (lv_portBindings_81_0= rulePortBinding )
+            	    	    // InternalContainer.g:1691:3: lv_portBindings_81_0= rulePortBinding
             	    	    {
             	    	     
             	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getPortBindingsPortBindingParserRuleCall_5_24_2_0()); 
@@ -4221,38 +4226,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 26 :
-            	    // InternalContainer.g:1713:4: ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1718:4: ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1713:4: ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalContainer.g:1714:5: {...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1718:4: ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1719:5: {...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 25) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 25)");
             	    }
-            	    // InternalContainer.g:1714:107: ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) )
-            	    // InternalContainer.g:1715:6: ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1719:107: ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1720:6: ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 25);
             	    	 				
-            	    // InternalContainer.g:1718:6: ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) )
-            	    // InternalContainer.g:1718:7: {...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1723:6: ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1723:7: {...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1718:16: (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) )
-            	    // InternalContainer.g:1718:18: otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1723:16: (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1723:18: otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) )
             	    {
             	    otherlv_83=(Token)match(input,53,FOLLOW_9); 
 
             	        	newLeafNode(otherlv_83, grammarAccess.getContainerAccess().getPrivilegedKeyword_5_25_0());
             	        
-            	    // InternalContainer.g:1722:1: ( (lv_privileged_84_0= ruleEBoolean ) )
-            	    // InternalContainer.g:1723:1: (lv_privileged_84_0= ruleEBoolean )
+            	    // InternalContainer.g:1727:1: ( (lv_privileged_84_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1728:1: (lv_privileged_84_0= ruleEBoolean )
             	    {
-            	    // InternalContainer.g:1723:1: (lv_privileged_84_0= ruleEBoolean )
-            	    // InternalContainer.g:1724:3: lv_privileged_84_0= ruleEBoolean
+            	    // InternalContainer.g:1728:1: (lv_privileged_84_0= ruleEBoolean )
+            	    // InternalContainer.g:1729:3: lv_privileged_84_0= ruleEBoolean
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getContainerAccess().getPrivilegedEBooleanParserRuleCall_5_25_1_0()); 
@@ -4298,38 +4303,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 27 :
-            	    // InternalContainer.g:1747:4: ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1752:4: ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1747:4: ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalContainer.g:1748:5: {...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1752:4: ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1753:5: {...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 26) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 26)");
             	    }
-            	    // InternalContainer.g:1748:107: ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) )
-            	    // InternalContainer.g:1749:6: ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1753:107: ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1754:6: ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 26);
             	    	 				
-            	    // InternalContainer.g:1752:6: ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) )
-            	    // InternalContainer.g:1752:7: {...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1757:6: ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1757:7: {...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1752:16: (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) )
-            	    // InternalContainer.g:1752:18: otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1757:16: (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1757:18: otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) )
             	    {
             	    otherlv_85=(Token)match(input,54,FOLLOW_9); 
 
             	        	newLeafNode(otherlv_85, grammarAccess.getContainerAccess().getPublishAllPortsKeyword_5_26_0());
             	        
-            	    // InternalContainer.g:1756:1: ( (lv_publishAllPorts_86_0= ruleEBoolean ) )
-            	    // InternalContainer.g:1757:1: (lv_publishAllPorts_86_0= ruleEBoolean )
+            	    // InternalContainer.g:1761:1: ( (lv_publishAllPorts_86_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1762:1: (lv_publishAllPorts_86_0= ruleEBoolean )
             	    {
-            	    // InternalContainer.g:1757:1: (lv_publishAllPorts_86_0= ruleEBoolean )
-            	    // InternalContainer.g:1758:3: lv_publishAllPorts_86_0= ruleEBoolean
+            	    // InternalContainer.g:1762:1: (lv_publishAllPorts_86_0= ruleEBoolean )
+            	    // InternalContainer.g:1763:3: lv_publishAllPorts_86_0= ruleEBoolean
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getContainerAccess().getPublishAllPortsEBooleanParserRuleCall_5_26_1_0()); 
@@ -4375,38 +4380,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 28 :
-            	    // InternalContainer.g:1781:4: ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1786:4: ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1781:4: ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalContainer.g:1782:5: {...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1786:4: ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1787:5: {...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 27) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 27)");
             	    }
-            	    // InternalContainer.g:1782:107: ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) )
-            	    // InternalContainer.g:1783:6: ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1787:107: ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1788:6: ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 27);
             	    	 				
-            	    // InternalContainer.g:1786:6: ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) )
-            	    // InternalContainer.g:1786:7: {...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1791:6: ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1791:7: {...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1786:16: (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) )
-            	    // InternalContainer.g:1786:18: otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1791:16: (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1791:18: otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) )
             	    {
             	    otherlv_87=(Token)match(input,55,FOLLOW_9); 
 
             	        	newLeafNode(otherlv_87, grammarAccess.getContainerAccess().getReadonlyRootfsKeyword_5_27_0());
             	        
-            	    // InternalContainer.g:1790:1: ( (lv_readonlyRootfs_88_0= ruleEBoolean ) )
-            	    // InternalContainer.g:1791:1: (lv_readonlyRootfs_88_0= ruleEBoolean )
+            	    // InternalContainer.g:1795:1: ( (lv_readonlyRootfs_88_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1796:1: (lv_readonlyRootfs_88_0= ruleEBoolean )
             	    {
-            	    // InternalContainer.g:1791:1: (lv_readonlyRootfs_88_0= ruleEBoolean )
-            	    // InternalContainer.g:1792:3: lv_readonlyRootfs_88_0= ruleEBoolean
+            	    // InternalContainer.g:1796:1: (lv_readonlyRootfs_88_0= ruleEBoolean )
+            	    // InternalContainer.g:1797:3: lv_readonlyRootfs_88_0= ruleEBoolean
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getContainerAccess().getReadonlyRootfsEBooleanParserRuleCall_5_27_1_0()); 
@@ -4452,38 +4457,38 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 29 :
-            	    // InternalContainer.g:1815:4: ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1820:4: ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1815:4: ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1816:5: {...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1820:4: ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1821:5: {...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 28) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 28)");
             	    }
-            	    // InternalContainer.g:1816:107: ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1817:6: ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1821:107: ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1822:6: ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 28);
             	    	 				
-            	    // InternalContainer.g:1820:6: ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1820:7: {...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1825:6: ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1825:7: {...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1820:16: (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1820:18: otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) )
+            	    // InternalContainer.g:1825:16: (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1825:18: otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) )
             	    {
             	    otherlv_89=(Token)match(input,56,FOLLOW_4); 
 
             	        	newLeafNode(otherlv_89, grammarAccess.getContainerAccess().getPidModeKeyword_5_28_0());
             	        
-            	    // InternalContainer.g:1824:1: ( (lv_pidMode_90_0= RULE_STRING ) )
-            	    // InternalContainer.g:1825:1: (lv_pidMode_90_0= RULE_STRING )
+            	    // InternalContainer.g:1829:1: ( (lv_pidMode_90_0= RULE_STRING ) )
+            	    // InternalContainer.g:1830:1: (lv_pidMode_90_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1825:1: (lv_pidMode_90_0= RULE_STRING )
-            	    // InternalContainer.g:1826:3: lv_pidMode_90_0= RULE_STRING
+            	    // InternalContainer.g:1830:1: (lv_pidMode_90_0= RULE_STRING )
+            	    // InternalContainer.g:1831:3: lv_pidMode_90_0= RULE_STRING
             	    {
             	    lv_pidMode_90_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
@@ -4524,42 +4529,42 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 30 :
-            	    // InternalContainer.g:1849:4: ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1854:4: ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1849:4: ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1850:5: {...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1854:4: ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1855:5: {...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 29) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 29)");
             	    }
-            	    // InternalContainer.g:1850:107: ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1851:6: ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1855:107: ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1856:6: ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 29);
             	    	 				
-            	    // InternalContainer.g:1854:6: ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1854:7: {...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1859:6: ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1859:7: {...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1854:16: (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1854:18: otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) )
+            	    // InternalContainer.g:1859:16: (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1859:18: otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) )
             	    {
             	    otherlv_91=(Token)match(input,57,FOLLOW_4); 
 
-            	        	newLeafNode(otherlv_91, grammarAccess.getContainerAccess().getCgroupParentKeyword_5_29_0());
+            	        	newLeafNode(otherlv_91, grammarAccess.getContainerAccess().getWorkingDirKeyword_5_29_0());
             	        
-            	    // InternalContainer.g:1858:1: ( (lv_cgroupParent_92_0= RULE_STRING ) )
-            	    // InternalContainer.g:1859:1: (lv_cgroupParent_92_0= RULE_STRING )
+            	    // InternalContainer.g:1863:1: ( (lv_workingDir_92_0= RULE_STRING ) )
+            	    // InternalContainer.g:1864:1: (lv_workingDir_92_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1859:1: (lv_cgroupParent_92_0= RULE_STRING )
-            	    // InternalContainer.g:1860:3: lv_cgroupParent_92_0= RULE_STRING
+            	    // InternalContainer.g:1864:1: (lv_workingDir_92_0= RULE_STRING )
+            	    // InternalContainer.g:1865:3: lv_workingDir_92_0= RULE_STRING
             	    {
-            	    lv_cgroupParent_92_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+            	    lv_workingDir_92_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-            	    			newLeafNode(lv_cgroupParent_92_0, grammarAccess.getContainerAccess().getCgroupParentSTRINGTerminalRuleCall_5_29_1_0()); 
+            	    			newLeafNode(lv_workingDir_92_0, grammarAccess.getContainerAccess().getWorkingDirSTRINGTerminalRuleCall_5_29_1_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -4567,8 +4572,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		setWithLastConsumed(
             	           			current, 
-            	           			"cgroupParent",
-            	            		lv_cgroupParent_92_0, 
+            	           			"workingDir",
+            	            		lv_workingDir_92_0, 
             	            		"org.eclipse.xtext.common.Terminals.STRING");
             	    	    
 
@@ -4596,42 +4601,42 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 31 :
-            	    // InternalContainer.g:1883:4: ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1888:4: ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1883:4: ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1884:5: {...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1888:4: ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1889:5: {...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 30) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 30)");
             	    }
-            	    // InternalContainer.g:1884:107: ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1885:6: ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1889:107: ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1890:6: ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 30);
             	    	 				
-            	    // InternalContainer.g:1888:6: ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1888:7: {...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1893:6: ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1893:7: {...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1888:16: (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1888:18: otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) )
+            	    // InternalContainer.g:1893:16: (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1893:18: otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) )
             	    {
             	    otherlv_93=(Token)match(input,58,FOLLOW_4); 
 
-            	        	newLeafNode(otherlv_93, grammarAccess.getContainerAccess().getWorkingDirKeyword_5_30_0());
+            	        	newLeafNode(otherlv_93, grammarAccess.getContainerAccess().getUserKeyword_5_30_0());
             	        
-            	    // InternalContainer.g:1892:1: ( (lv_workingDir_94_0= RULE_STRING ) )
-            	    // InternalContainer.g:1893:1: (lv_workingDir_94_0= RULE_STRING )
+            	    // InternalContainer.g:1897:1: ( (lv_user_94_0= RULE_STRING ) )
+            	    // InternalContainer.g:1898:1: (lv_user_94_0= RULE_STRING )
             	    {
-            	    // InternalContainer.g:1893:1: (lv_workingDir_94_0= RULE_STRING )
-            	    // InternalContainer.g:1894:3: lv_workingDir_94_0= RULE_STRING
+            	    // InternalContainer.g:1898:1: (lv_user_94_0= RULE_STRING )
+            	    // InternalContainer.g:1899:3: lv_user_94_0= RULE_STRING
             	    {
-            	    lv_workingDir_94_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+            	    lv_user_94_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
 
-            	    			newLeafNode(lv_workingDir_94_0, grammarAccess.getContainerAccess().getWorkingDirSTRINGTerminalRuleCall_5_30_1_0()); 
+            	    			newLeafNode(lv_user_94_0, grammarAccess.getContainerAccess().getUserSTRINGTerminalRuleCall_5_30_1_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -4639,8 +4644,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		setWithLastConsumed(
             	           			current, 
-            	           			"workingDir",
-            	            		lv_workingDir_94_0, 
+            	           			"user",
+            	            		lv_user_94_0, 
             	            		"org.eclipse.xtext.common.Terminals.STRING");
             	    	    
 
@@ -4668,116 +4673,44 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 32 :
-            	    // InternalContainer.g:1917:4: ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) )
+            	    // InternalContainer.g:1922:4: ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1917:4: ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) )
-            	    // InternalContainer.g:1918:5: {...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) )
+            	    // InternalContainer.g:1922:4: ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) )
+            	    // InternalContainer.g:1923:5: {...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 31) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 31)");
             	    }
-            	    // InternalContainer.g:1918:107: ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) )
-            	    // InternalContainer.g:1919:6: ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) )
+            	    // InternalContainer.g:1923:107: ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) )
+            	    // InternalContainer.g:1924:6: ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) )
             	    {
             	     
             	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 31);
             	    	 				
-            	    // InternalContainer.g:1922:6: ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) )
-            	    // InternalContainer.g:1922:7: {...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) )
+            	    // InternalContainer.g:1927:6: ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1927:7: {...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1922:16: (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) )
-            	    // InternalContainer.g:1922:18: otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) )
+            	    // InternalContainer.g:1927:16: (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) )
+            	    // InternalContainer.g:1927:18: otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) )
             	    {
-            	    otherlv_95=(Token)match(input,59,FOLLOW_4); 
+            	    otherlv_95=(Token)match(input,59,FOLLOW_9); 
 
-            	        	newLeafNode(otherlv_95, grammarAccess.getContainerAccess().getUserKeyword_5_31_0());
+            	        	newLeafNode(otherlv_95, grammarAccess.getContainerAccess().getTtyKeyword_5_31_0());
             	        
-            	    // InternalContainer.g:1926:1: ( (lv_user_96_0= RULE_STRING ) )
-            	    // InternalContainer.g:1927:1: (lv_user_96_0= RULE_STRING )
+            	    // InternalContainer.g:1931:1: ( (lv_tty_96_0= ruleEBoolean ) )
+            	    // InternalContainer.g:1932:1: (lv_tty_96_0= ruleEBoolean )
             	    {
-            	    // InternalContainer.g:1927:1: (lv_user_96_0= RULE_STRING )
-            	    // InternalContainer.g:1928:3: lv_user_96_0= RULE_STRING
-            	    {
-            	    lv_user_96_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
-
-            	    			newLeafNode(lv_user_96_0, grammarAccess.getContainerAccess().getUserSTRINGTerminalRuleCall_5_31_1_0()); 
-            	    		
-
-            	    	        if (current==null) {
-            	    	            current = createModelElement(grammarAccess.getContainerRule());
-            	    	        }
-            	           		setWithLastConsumed(
-            	           			current, 
-            	           			"user",
-            	            		lv_user_96_0, 
-            	            		"org.eclipse.xtext.common.Terminals.STRING");
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getContainerAccess().getUnorderedGroup_5());
-            	    	 				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 33 :
-            	    // InternalContainer.g:1951:4: ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) )
-            	    {
-            	    // InternalContainer.g:1951:4: ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) )
-            	    // InternalContainer.g:1952:5: {...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 32) ) {
-            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 32)");
-            	    }
-            	    // InternalContainer.g:1952:107: ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) )
-            	    // InternalContainer.g:1953:6: ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) )
+            	    // InternalContainer.g:1932:1: (lv_tty_96_0= ruleEBoolean )
+            	    // InternalContainer.g:1933:3: lv_tty_96_0= ruleEBoolean
             	    {
             	     
-            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 32);
-            	    	 				
-            	    // InternalContainer.g:1956:6: ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) )
-            	    // InternalContainer.g:1956:7: {...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleContainer", "true");
-            	    }
-            	    // InternalContainer.g:1956:16: (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) )
-            	    // InternalContainer.g:1956:18: otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) )
-            	    {
-            	    otherlv_97=(Token)match(input,60,FOLLOW_9); 
-
-            	        	newLeafNode(otherlv_97, grammarAccess.getContainerAccess().getTtyKeyword_5_32_0());
-            	        
-            	    // InternalContainer.g:1960:1: ( (lv_tty_98_0= ruleEBoolean ) )
-            	    // InternalContainer.g:1961:1: (lv_tty_98_0= ruleEBoolean )
-            	    {
-            	    // InternalContainer.g:1961:1: (lv_tty_98_0= ruleEBoolean )
-            	    // InternalContainer.g:1962:3: lv_tty_98_0= ruleEBoolean
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getContainerAccess().getTtyEBooleanParserRuleCall_5_32_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getContainerAccess().getTtyEBooleanParserRuleCall_5_31_1_0()); 
             	    	    
             	    pushFollow(FOLLOW_13);
-            	    lv_tty_98_0=ruleEBoolean();
+            	    lv_tty_96_0=ruleEBoolean();
 
             	    state._fsp--;
 
@@ -4788,7 +4721,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	           		set(
             	           			current, 
             	           			"tty",
-            	            		lv_tty_98_0, 
+            	            		lv_tty_96_0, 
             	            		"org.eclipse.docker.language.Container.EBoolean");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -4816,45 +4749,45 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	    }
             	    break;
-            	case 34 :
-            	    // InternalContainer.g:1985:4: ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) )
+            	case 33 :
+            	    // InternalContainer.g:1956:4: ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) )
             	    {
-            	    // InternalContainer.g:1985:4: ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) )
-            	    // InternalContainer.g:1986:5: {...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) )
+            	    // InternalContainer.g:1956:4: ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) )
+            	    // InternalContainer.g:1957:5: {...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 33) ) {
-            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 33)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 32) ) {
+            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 32)");
             	    }
-            	    // InternalContainer.g:1986:107: ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) )
-            	    // InternalContainer.g:1987:6: ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) )
+            	    // InternalContainer.g:1957:107: ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) )
+            	    // InternalContainer.g:1958:6: ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) )
             	    {
             	     
-            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 33);
+            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 32);
             	    	 				
-            	    // InternalContainer.g:1990:6: ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) )
-            	    // InternalContainer.g:1990:7: {...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) )
+            	    // InternalContainer.g:1961:6: ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) )
+            	    // InternalContainer.g:1961:7: {...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:1990:16: (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) )
-            	    // InternalContainer.g:1990:18: otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) )
+            	    // InternalContainer.g:1961:16: (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) )
+            	    // InternalContainer.g:1961:18: otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) )
             	    {
-            	    otherlv_99=(Token)match(input,61,FOLLOW_7); 
+            	    otherlv_97=(Token)match(input,60,FOLLOW_18); 
 
-            	        	newLeafNode(otherlv_99, grammarAccess.getContainerAccess().getRestartPolicyKeyword_5_33_0());
+            	        	newLeafNode(otherlv_97, grammarAccess.getContainerAccess().getRestartPolicyKeyword_5_32_0());
             	        
-            	    // InternalContainer.g:1994:1: ( (lv_restartPolicy_100_0= ruleRestartPolicy ) )
-            	    // InternalContainer.g:1995:1: (lv_restartPolicy_100_0= ruleRestartPolicy )
+            	    // InternalContainer.g:1965:1: ( (lv_restartPolicy_98_0= ruleRestartPolicy ) )
+            	    // InternalContainer.g:1966:1: (lv_restartPolicy_98_0= ruleRestartPolicy )
             	    {
-            	    // InternalContainer.g:1995:1: (lv_restartPolicy_100_0= ruleRestartPolicy )
-            	    // InternalContainer.g:1996:3: lv_restartPolicy_100_0= ruleRestartPolicy
+            	    // InternalContainer.g:1966:1: (lv_restartPolicy_98_0= ruleRestartPolicy )
+            	    // InternalContainer.g:1967:3: lv_restartPolicy_98_0= ruleRestartPolicy
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getContainerAccess().getRestartPolicyRestartPolicyParserRuleCall_5_33_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getContainerAccess().getRestartPolicyRestartPolicyParserRuleCall_5_32_1_0()); 
             	    	    
             	    pushFollow(FOLLOW_13);
-            	    lv_restartPolicy_100_0=ruleRestartPolicy();
+            	    lv_restartPolicy_98_0=ruleRestartPolicy();
 
             	    state._fsp--;
 
@@ -4865,7 +4798,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	           		set(
             	           			current, 
             	           			"restartPolicy",
-            	            		lv_restartPolicy_100_0, 
+            	            		lv_restartPolicy_98_0, 
             	            		"org.eclipse.docker.language.Container.RestartPolicy");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -4893,39 +4826,39 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	    }
             	    break;
-            	case 35 :
-            	    // InternalContainer.g:2019:4: ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) )
+            	case 34 :
+            	    // InternalContainer.g:1990:4: ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:2019:4: ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) )
-            	    // InternalContainer.g:2020:5: {...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) )
+            	    // InternalContainer.g:1990:4: ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) )
+            	    // InternalContainer.g:1991:5: {...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 34) ) {
-            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 34)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 33) ) {
+            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 33)");
             	    }
-            	    // InternalContainer.g:2020:107: ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) )
-            	    // InternalContainer.g:2021:6: ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) )
+            	    // InternalContainer.g:1991:107: ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) )
+            	    // InternalContainer.g:1992:6: ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) )
             	    {
             	     
-            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 34);
+            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 33);
             	    	 				
-            	    // InternalContainer.g:2024:6: ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) )
-            	    // InternalContainer.g:2024:7: {...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' )
+            	    // InternalContainer.g:1995:6: ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) )
+            	    // InternalContainer.g:1995:7: {...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:2024:16: (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' )
-            	    // InternalContainer.g:2024:18: otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}'
+            	    // InternalContainer.g:1995:16: (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' )
+            	    // InternalContainer.g:1995:18: otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}'
             	    {
-            	    otherlv_101=(Token)match(input,62,FOLLOW_5); 
+            	    otherlv_99=(Token)match(input,61,FOLLOW_5); 
 
-            	        	newLeafNode(otherlv_101, grammarAccess.getContainerAccess().getVolumesKeyword_5_34_0());
+            	        	newLeafNode(otherlv_99, grammarAccess.getContainerAccess().getVolumesKeyword_5_33_0());
             	        
-            	    otherlv_102=(Token)match(input,12,FOLLOW_7); 
+            	    otherlv_100=(Token)match(input,12,FOLLOW_7); 
 
-            	        	newLeafNode(otherlv_102, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_34_1());
+            	        	newLeafNode(otherlv_100, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_33_1());
             	        
-            	    // InternalContainer.g:2032:1: (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+
+            	    // InternalContainer.g:2003:1: (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+
             	    int cnt19=0;
             	    loop19:
             	    do {
@@ -4939,23 +4872,23 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt19) {
             	    	case 1 :
-            	    	    // InternalContainer.g:2032:3: otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) )
+            	    	    // InternalContainer.g:2003:3: otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) )
             	    	    {
-            	    	    otherlv_103=(Token)match(input,25,FOLLOW_4); 
+            	    	    otherlv_101=(Token)match(input,25,FOLLOW_4); 
 
-            	    	        	newLeafNode(otherlv_103, grammarAccess.getContainerAccess().getHyphenMinusKeyword_5_34_2_0());
+            	    	        	newLeafNode(otherlv_101, grammarAccess.getContainerAccess().getHyphenMinusKeyword_5_33_2_0());
             	    	        
-            	    	    // InternalContainer.g:2036:1: ( (lv_volumes_104_0= ruleVolume ) )
-            	    	    // InternalContainer.g:2037:1: (lv_volumes_104_0= ruleVolume )
+            	    	    // InternalContainer.g:2007:1: ( (lv_volumes_102_0= ruleVolume ) )
+            	    	    // InternalContainer.g:2008:1: (lv_volumes_102_0= ruleVolume )
             	    	    {
-            	    	    // InternalContainer.g:2037:1: (lv_volumes_104_0= ruleVolume )
-            	    	    // InternalContainer.g:2038:3: lv_volumes_104_0= ruleVolume
+            	    	    // InternalContainer.g:2008:1: (lv_volumes_102_0= ruleVolume )
+            	    	    // InternalContainer.g:2009:3: lv_volumes_102_0= ruleVolume
             	    	    {
             	    	     
-            	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getVolumesVolumeParserRuleCall_5_34_2_1_0()); 
+            	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getVolumesVolumeParserRuleCall_5_33_2_1_0()); 
             	    	    	    
             	    	    pushFollow(FOLLOW_14);
-            	    	    lv_volumes_104_0=ruleVolume();
+            	    	    lv_volumes_102_0=ruleVolume();
 
             	    	    state._fsp--;
 
@@ -4966,7 +4899,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    	           		add(
             	    	           			current, 
             	    	           			"volumes",
-            	    	            		lv_volumes_104_0, 
+            	    	            		lv_volumes_102_0, 
             	    	            		"org.eclipse.docker.language.Container.Volume");
             	    	    	        afterParserOrEnumRuleCall();
             	    	    	    
@@ -4989,9 +4922,9 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	        cnt19++;
             	    } while (true);
 
-            	    otherlv_105=(Token)match(input,24,FOLLOW_13); 
+            	    otherlv_103=(Token)match(input,24,FOLLOW_13); 
 
-            	        	newLeafNode(otherlv_105, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_34_3());
+            	        	newLeafNode(otherlv_103, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_33_3());
             	        
 
             	    }
@@ -5011,39 +4944,39 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	    }
             	    break;
-            	case 36 :
-            	    // InternalContainer.g:2065:4: ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) )
+            	case 35 :
+            	    // InternalContainer.g:2036:4: ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:2065:4: ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) )
-            	    // InternalContainer.g:2066:5: {...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) )
+            	    // InternalContainer.g:2036:4: ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) )
+            	    // InternalContainer.g:2037:5: {...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 35) ) {
-            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 35)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 34) ) {
+            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 34)");
             	    }
-            	    // InternalContainer.g:2066:107: ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) )
-            	    // InternalContainer.g:2067:6: ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) )
+            	    // InternalContainer.g:2037:107: ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) )
+            	    // InternalContainer.g:2038:6: ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) )
             	    {
             	     
-            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 35);
+            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 34);
             	    	 				
-            	    // InternalContainer.g:2070:6: ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) )
-            	    // InternalContainer.g:2070:7: {...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' )
+            	    // InternalContainer.g:2041:6: ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) )
+            	    // InternalContainer.g:2041:7: {...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:2070:16: (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' )
-            	    // InternalContainer.g:2070:18: otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}'
+            	    // InternalContainer.g:2041:16: (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' )
+            	    // InternalContainer.g:2041:18: otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}'
             	    {
-            	    otherlv_106=(Token)match(input,63,FOLLOW_5); 
+            	    otherlv_104=(Token)match(input,62,FOLLOW_5); 
 
-            	        	newLeafNode(otherlv_106, grammarAccess.getContainerAccess().getVolumesFromKeyword_5_35_0());
+            	        	newLeafNode(otherlv_104, grammarAccess.getContainerAccess().getVolumesFromKeyword_5_34_0());
             	        
-            	    otherlv_107=(Token)match(input,12,FOLLOW_7); 
+            	    otherlv_105=(Token)match(input,12,FOLLOW_7); 
 
-            	        	newLeafNode(otherlv_107, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_35_1());
+            	        	newLeafNode(otherlv_105, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_34_1());
             	        
-            	    // InternalContainer.g:2078:1: (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+
+            	    // InternalContainer.g:2049:1: (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+
             	    int cnt20=0;
             	    loop20:
             	    do {
@@ -5057,23 +4990,23 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt20) {
             	    	case 1 :
-            	    	    // InternalContainer.g:2078:3: otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) )
+            	    	    // InternalContainer.g:2049:3: otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) )
             	    	    {
-            	    	    otherlv_108=(Token)match(input,25,FOLLOW_7); 
+            	    	    otherlv_106=(Token)match(input,25,FOLLOW_7); 
 
-            	    	        	newLeafNode(otherlv_108, grammarAccess.getContainerAccess().getHyphenMinusKeyword_5_35_2_0());
+            	    	        	newLeafNode(otherlv_106, grammarAccess.getContainerAccess().getHyphenMinusKeyword_5_34_2_0());
             	    	        
-            	    	    // InternalContainer.g:2082:1: ( (lv_volumesFrom_109_0= ruleVolumesFrom ) )
-            	    	    // InternalContainer.g:2083:1: (lv_volumesFrom_109_0= ruleVolumesFrom )
+            	    	    // InternalContainer.g:2053:1: ( (lv_volumesFrom_107_0= ruleVolumesFrom ) )
+            	    	    // InternalContainer.g:2054:1: (lv_volumesFrom_107_0= ruleVolumesFrom )
             	    	    {
-            	    	    // InternalContainer.g:2083:1: (lv_volumesFrom_109_0= ruleVolumesFrom )
-            	    	    // InternalContainer.g:2084:3: lv_volumesFrom_109_0= ruleVolumesFrom
+            	    	    // InternalContainer.g:2054:1: (lv_volumesFrom_107_0= ruleVolumesFrom )
+            	    	    // InternalContainer.g:2055:3: lv_volumesFrom_107_0= ruleVolumesFrom
             	    	    {
             	    	     
-            	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getVolumesFromVolumesFromParserRuleCall_5_35_2_1_0()); 
+            	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getVolumesFromVolumesFromParserRuleCall_5_34_2_1_0()); 
             	    	    	    
             	    	    pushFollow(FOLLOW_14);
-            	    	    lv_volumesFrom_109_0=ruleVolumesFrom();
+            	    	    lv_volumesFrom_107_0=ruleVolumesFrom();
 
             	    	    state._fsp--;
 
@@ -5084,7 +5017,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    	           		add(
             	    	           			current, 
             	    	           			"volumesFrom",
-            	    	            		lv_volumesFrom_109_0, 
+            	    	            		lv_volumesFrom_107_0, 
             	    	            		"org.eclipse.docker.language.Container.VolumesFrom");
             	    	    	        afterParserOrEnumRuleCall();
             	    	    	    
@@ -5107,9 +5040,9 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	        cnt20++;
             	    } while (true);
 
-            	    otherlv_110=(Token)match(input,24,FOLLOW_13); 
+            	    otherlv_108=(Token)match(input,24,FOLLOW_13); 
 
-            	        	newLeafNode(otherlv_110, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_35_3());
+            	        	newLeafNode(otherlv_108, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_34_3());
             	        
 
             	    }
@@ -5129,39 +5062,39 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	    }
             	    break;
-            	case 37 :
-            	    // InternalContainer.g:2111:4: ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) )
+            	case 36 :
+            	    // InternalContainer.g:2082:4: ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) )
             	    {
-            	    // InternalContainer.g:2111:4: ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) )
-            	    // InternalContainer.g:2112:5: {...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) )
+            	    // InternalContainer.g:2082:4: ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) )
+            	    // InternalContainer.g:2083:5: {...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 36) ) {
-            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 36)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 35) ) {
+            	        throw new FailedPredicateException(input, "ruleContainer", "getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 35)");
             	    }
-            	    // InternalContainer.g:2112:107: ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) )
-            	    // InternalContainer.g:2113:6: ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) )
+            	    // InternalContainer.g:2083:107: ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) )
+            	    // InternalContainer.g:2084:6: ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) )
             	    {
             	     
-            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 36);
+            	    	 				  getUnorderedGroupHelper().select(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 35);
             	    	 				
-            	    // InternalContainer.g:2116:6: ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) )
-            	    // InternalContainer.g:2116:7: {...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' )
+            	    // InternalContainer.g:2087:6: ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) )
+            	    // InternalContainer.g:2087:7: {...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleContainer", "true");
             	    }
-            	    // InternalContainer.g:2116:16: (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' )
-            	    // InternalContainer.g:2116:18: otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}'
+            	    // InternalContainer.g:2087:16: (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' )
+            	    // InternalContainer.g:2087:18: otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}'
             	    {
-            	    otherlv_111=(Token)match(input,64,FOLLOW_5); 
+            	    otherlv_109=(Token)match(input,63,FOLLOW_5); 
 
-            	        	newLeafNode(otherlv_111, grammarAccess.getContainerAccess().getUlimitsKeyword_5_36_0());
+            	        	newLeafNode(otherlv_109, grammarAccess.getContainerAccess().getUlimitsKeyword_5_35_0());
             	        
-            	    otherlv_112=(Token)match(input,12,FOLLOW_7); 
+            	    otherlv_110=(Token)match(input,12,FOLLOW_7); 
 
-            	        	newLeafNode(otherlv_112, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_36_1());
+            	        	newLeafNode(otherlv_110, grammarAccess.getContainerAccess().getLeftCurlyBracketKeyword_5_35_1());
             	        
-            	    // InternalContainer.g:2124:1: (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+
+            	    // InternalContainer.g:2095:1: (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+
             	    int cnt21=0;
             	    loop21:
             	    do {
@@ -5175,23 +5108,23 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             	        switch (alt21) {
             	    	case 1 :
-            	    	    // InternalContainer.g:2124:3: otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) )
+            	    	    // InternalContainer.g:2095:3: otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) )
             	    	    {
-            	    	    otherlv_113=(Token)match(input,25,FOLLOW_7); 
+            	    	    otherlv_111=(Token)match(input,25,FOLLOW_7); 
 
-            	    	        	newLeafNode(otherlv_113, grammarAccess.getContainerAccess().getHyphenMinusKeyword_5_36_2_0());
+            	    	        	newLeafNode(otherlv_111, grammarAccess.getContainerAccess().getHyphenMinusKeyword_5_35_2_0());
             	    	        
-            	    	    // InternalContainer.g:2128:1: ( (lv_ulimits_114_0= ruleUlimit ) )
-            	    	    // InternalContainer.g:2129:1: (lv_ulimits_114_0= ruleUlimit )
+            	    	    // InternalContainer.g:2099:1: ( (lv_ulimits_112_0= ruleUlimit ) )
+            	    	    // InternalContainer.g:2100:1: (lv_ulimits_112_0= ruleUlimit )
             	    	    {
-            	    	    // InternalContainer.g:2129:1: (lv_ulimits_114_0= ruleUlimit )
-            	    	    // InternalContainer.g:2130:3: lv_ulimits_114_0= ruleUlimit
+            	    	    // InternalContainer.g:2100:1: (lv_ulimits_112_0= ruleUlimit )
+            	    	    // InternalContainer.g:2101:3: lv_ulimits_112_0= ruleUlimit
             	    	    {
             	    	     
-            	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getUlimitsUlimitParserRuleCall_5_36_2_1_0()); 
+            	    	    	        newCompositeNode(grammarAccess.getContainerAccess().getUlimitsUlimitParserRuleCall_5_35_2_1_0()); 
             	    	    	    
             	    	    pushFollow(FOLLOW_14);
-            	    	    lv_ulimits_114_0=ruleUlimit();
+            	    	    lv_ulimits_112_0=ruleUlimit();
 
             	    	    state._fsp--;
 
@@ -5202,7 +5135,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	    	           		add(
             	    	           			current, 
             	    	           			"ulimits",
-            	    	            		lv_ulimits_114_0, 
+            	    	            		lv_ulimits_112_0, 
             	    	            		"org.eclipse.docker.language.Container.Ulimit");
             	    	    	        afterParserOrEnumRuleCall();
             	    	    	    
@@ -5225,9 +5158,9 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             	        cnt21++;
             	    } while (true);
 
-            	    otherlv_115=(Token)match(input,24,FOLLOW_13); 
+            	    otherlv_113=(Token)match(input,24,FOLLOW_13); 
 
-            	        	newLeafNode(otherlv_115, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_36_3());
+            	        	newLeafNode(otherlv_113, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_5_35_3());
             	        
 
             	    }
@@ -5265,9 +5198,9 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_116=(Token)match(input,24,FOLLOW_2); 
+            otherlv_114=(Token)match(input,24,FOLLOW_2); 
 
-                	newLeafNode(otherlv_116, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_6());
+                	newLeafNode(otherlv_114, grammarAccess.getContainerAccess().getRightCurlyBracketKeyword_6());
                 
 
             }
@@ -5290,7 +5223,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVolumesFrom"
-    // InternalContainer.g:2176:1: entryRuleVolumesFrom returns [EObject current=null] : iv_ruleVolumesFrom= ruleVolumesFrom EOF ;
+    // InternalContainer.g:2147:1: entryRuleVolumesFrom returns [EObject current=null] : iv_ruleVolumesFrom= ruleVolumesFrom EOF ;
     public final EObject entryRuleVolumesFrom() throws RecognitionException {
         EObject current = null;
 
@@ -5298,8 +5231,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2177:2: (iv_ruleVolumesFrom= ruleVolumesFrom EOF )
-            // InternalContainer.g:2178:2: iv_ruleVolumesFrom= ruleVolumesFrom EOF
+            // InternalContainer.g:2148:2: (iv_ruleVolumesFrom= ruleVolumesFrom EOF )
+            // InternalContainer.g:2149:2: iv_ruleVolumesFrom= ruleVolumesFrom EOF
             {
              newCompositeNode(grammarAccess.getVolumesFromRule()); 
             pushFollow(FOLLOW_1);
@@ -5326,77 +5259,98 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVolumesFrom"
-    // InternalContainer.g:2185:1: ruleVolumesFrom returns [EObject current=null] : (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) ( (lv_accessMode_2_0= ruleAccessMode ) ) ) ;
+    // InternalContainer.g:2156:1: ruleVolumesFrom returns [EObject current=null] : (otherlv_0= '-' ( (lv_container_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_accessMode_3_0= ruleAccessMode ) )? ) ;
     public final EObject ruleVolumesFrom() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
-        Enumerator lv_accessMode_2_0 = null;
+        Token lv_container_1_0=null;
+        Token otherlv_2=null;
+        Enumerator lv_accessMode_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // InternalContainer.g:2188:28: ( (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) ( (lv_accessMode_2_0= ruleAccessMode ) ) ) )
-            // InternalContainer.g:2189:1: (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) ( (lv_accessMode_2_0= ruleAccessMode ) ) )
+            // InternalContainer.g:2159:28: ( (otherlv_0= '-' ( (lv_container_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_accessMode_3_0= ruleAccessMode ) )? ) )
+            // InternalContainer.g:2160:1: (otherlv_0= '-' ( (lv_container_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_accessMode_3_0= ruleAccessMode ) )? )
             {
-            // InternalContainer.g:2189:1: (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) ( (lv_accessMode_2_0= ruleAccessMode ) ) )
-            // InternalContainer.g:2189:3: otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) ( (lv_accessMode_2_0= ruleAccessMode ) )
+            // InternalContainer.g:2160:1: (otherlv_0= '-' ( (lv_container_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_accessMode_3_0= ruleAccessMode ) )? )
+            // InternalContainer.g:2160:3: otherlv_0= '-' ( (lv_container_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_accessMode_3_0= ruleAccessMode ) )?
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_11); 
+            otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getVolumesFromAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2193:1: ( (otherlv_1= RULE_ID ) )
-            // InternalContainer.g:2194:1: (otherlv_1= RULE_ID )
+            // InternalContainer.g:2164:1: ( (lv_container_1_0= RULE_STRING ) )
+            // InternalContainer.g:2165:1: (lv_container_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2194:1: (otherlv_1= RULE_ID )
-            // InternalContainer.g:2195:3: otherlv_1= RULE_ID
+            // InternalContainer.g:2165:1: (lv_container_1_0= RULE_STRING )
+            // InternalContainer.g:2166:3: lv_container_1_0= RULE_STRING
             {
+            lv_container_1_0=(Token)match(input,RULE_STRING,FOLLOW_19); 
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getVolumesFromRule());
-            	        }
-                    
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_18); 
-
-            		newLeafNode(otherlv_1, grammarAccess.getVolumesFromAccess().getContainerContainerCrossReference_1_0()); 
-            	
-
-            }
-
-
-            }
-
-            // InternalContainer.g:2206:2: ( (lv_accessMode_2_0= ruleAccessMode ) )
-            // InternalContainer.g:2207:1: (lv_accessMode_2_0= ruleAccessMode )
-            {
-            // InternalContainer.g:2207:1: (lv_accessMode_2_0= ruleAccessMode )
-            // InternalContainer.g:2208:3: lv_accessMode_2_0= ruleAccessMode
-            {
-             
-            	        newCompositeNode(grammarAccess.getVolumesFromAccess().getAccessModeAccessModeEnumRuleCall_2_0()); 
-            	    
-            pushFollow(FOLLOW_2);
-            lv_accessMode_2_0=ruleAccessMode();
-
-            state._fsp--;
-
+            			newLeafNode(lv_container_1_0, grammarAccess.getVolumesFromAccess().getContainerSTRINGTerminalRuleCall_1_0()); 
+            		
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getVolumesFromRule());
+            	            current = createModelElement(grammarAccess.getVolumesFromRule());
             	        }
-                   		set(
+                   		setWithLastConsumed(
                    			current, 
-                   			"accessMode",
-                    		lv_accessMode_2_0, 
-                    		"org.eclipse.docker.language.Container.AccessMode");
-            	        afterParserOrEnumRuleCall();
+                   			"container",
+                    		lv_container_1_0, 
+                    		"org.eclipse.xtext.common.Terminals.STRING");
             	    
 
             }
 
+
+            }
+
+            otherlv_2=(Token)match(input,64,FOLLOW_20); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getVolumesFromAccess().getColonKeyword_2());
+                
+            // InternalContainer.g:2186:1: ( (lv_accessMode_3_0= ruleAccessMode ) )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
+
+            if ( ((LA23_0>=71 && LA23_0<=72)) ) {
+                alt23=1;
+            }
+            switch (alt23) {
+                case 1 :
+                    // InternalContainer.g:2187:1: (lv_accessMode_3_0= ruleAccessMode )
+                    {
+                    // InternalContainer.g:2187:1: (lv_accessMode_3_0= ruleAccessMode )
+                    // InternalContainer.g:2188:3: lv_accessMode_3_0= ruleAccessMode
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getVolumesFromAccess().getAccessModeAccessModeEnumRuleCall_3_0()); 
+                    	    
+                    pushFollow(FOLLOW_2);
+                    lv_accessMode_3_0=ruleAccessMode();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getVolumesFromRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"accessMode",
+                            		lv_accessMode_3_0, 
+                            		"org.eclipse.docker.language.Container.AccessMode");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -5421,7 +5375,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRestartPolicy"
-    // InternalContainer.g:2232:1: entryRuleRestartPolicy returns [EObject current=null] : iv_ruleRestartPolicy= ruleRestartPolicy EOF ;
+    // InternalContainer.g:2212:1: entryRuleRestartPolicy returns [EObject current=null] : iv_ruleRestartPolicy= ruleRestartPolicy EOF ;
     public final EObject entryRuleRestartPolicy() throws RecognitionException {
         EObject current = null;
 
@@ -5429,8 +5383,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2233:2: (iv_ruleRestartPolicy= ruleRestartPolicy EOF )
-            // InternalContainer.g:2234:2: iv_ruleRestartPolicy= ruleRestartPolicy EOF
+            // InternalContainer.g:2213:2: (iv_ruleRestartPolicy= ruleRestartPolicy EOF )
+            // InternalContainer.g:2214:2: iv_ruleRestartPolicy= ruleRestartPolicy EOF
             {
              newCompositeNode(grammarAccess.getRestartPolicyRule()); 
             pushFollow(FOLLOW_1);
@@ -5457,79 +5411,138 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRestartPolicy"
-    // InternalContainer.g:2241:1: ruleRestartPolicy returns [EObject current=null] : (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_maximumRetryCount_2_0= RULE_INT ) ) ) ;
+    // InternalContainer.g:2221:1: ruleRestartPolicy returns [EObject current=null] : ( (otherlv_0= '-' ( (lv_value_1_0= 'always' ) ) ) | otherlv_2= 'onFailure' | (otherlv_3= 'none' ( (lv_maximumRetryCount_4_0= RULE_INT ) ) ) ) ;
     public final EObject ruleRestartPolicy() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
-        Token lv_maximumRetryCount_2_0=null;
+        Token lv_value_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_maximumRetryCount_4_0=null;
 
          enterRule(); 
             
         try {
-            // InternalContainer.g:2244:28: ( (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_maximumRetryCount_2_0= RULE_INT ) ) ) )
-            // InternalContainer.g:2245:1: (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_maximumRetryCount_2_0= RULE_INT ) ) )
+            // InternalContainer.g:2224:28: ( ( (otherlv_0= '-' ( (lv_value_1_0= 'always' ) ) ) | otherlv_2= 'onFailure' | (otherlv_3= 'none' ( (lv_maximumRetryCount_4_0= RULE_INT ) ) ) ) )
+            // InternalContainer.g:2225:1: ( (otherlv_0= '-' ( (lv_value_1_0= 'always' ) ) ) | otherlv_2= 'onFailure' | (otherlv_3= 'none' ( (lv_maximumRetryCount_4_0= RULE_INT ) ) ) )
             {
-            // InternalContainer.g:2245:1: (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_maximumRetryCount_2_0= RULE_INT ) ) )
-            // InternalContainer.g:2245:3: otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_maximumRetryCount_2_0= RULE_INT ) )
-            {
-            otherlv_0=(Token)match(input,25,FOLLOW_4); 
+            // InternalContainer.g:2225:1: ( (otherlv_0= '-' ( (lv_value_1_0= 'always' ) ) ) | otherlv_2= 'onFailure' | (otherlv_3= 'none' ( (lv_maximumRetryCount_4_0= RULE_INT ) ) ) )
+            int alt24=3;
+            switch ( input.LA(1) ) {
+            case 25:
+                {
+                alt24=1;
+                }
+                break;
+            case 66:
+                {
+                alt24=2;
+                }
+                break;
+            case 67:
+                {
+                alt24=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 24, 0, input);
 
-                	newLeafNode(otherlv_0, grammarAccess.getRestartPolicyAccess().getHyphenMinusKeyword_0());
-                
-            // InternalContainer.g:2249:1: ( (lv_name_1_0= RULE_STRING ) )
-            // InternalContainer.g:2250:1: (lv_name_1_0= RULE_STRING )
-            {
-            // InternalContainer.g:2250:1: (lv_name_1_0= RULE_STRING )
-            // InternalContainer.g:2251:3: lv_name_1_0= RULE_STRING
-            {
-            lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
-
-            			newLeafNode(lv_name_1_0, grammarAccess.getRestartPolicyAccess().getNameSTRINGTerminalRuleCall_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getRestartPolicyRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_1_0, 
-                    		"org.eclipse.xtext.common.Terminals.STRING");
-            	    
-
+                throw nvae;
             }
 
+            switch (alt24) {
+                case 1 :
+                    // InternalContainer.g:2225:2: (otherlv_0= '-' ( (lv_value_1_0= 'always' ) ) )
+                    {
+                    // InternalContainer.g:2225:2: (otherlv_0= '-' ( (lv_value_1_0= 'always' ) ) )
+                    // InternalContainer.g:2225:4: otherlv_0= '-' ( (lv_value_1_0= 'always' ) )
+                    {
+                    otherlv_0=(Token)match(input,25,FOLLOW_21); 
 
-            }
+                        	newLeafNode(otherlv_0, grammarAccess.getRestartPolicyAccess().getHyphenMinusKeyword_0_0());
+                        
+                    // InternalContainer.g:2229:1: ( (lv_value_1_0= 'always' ) )
+                    // InternalContainer.g:2230:1: (lv_value_1_0= 'always' )
+                    {
+                    // InternalContainer.g:2230:1: (lv_value_1_0= 'always' )
+                    // InternalContainer.g:2231:3: lv_value_1_0= 'always'
+                    {
+                    lv_value_1_0=(Token)match(input,65,FOLLOW_2); 
 
-            // InternalContainer.g:2267:2: ( (lv_maximumRetryCount_2_0= RULE_INT ) )
-            // InternalContainer.g:2268:1: (lv_maximumRetryCount_2_0= RULE_INT )
-            {
-            // InternalContainer.g:2268:1: (lv_maximumRetryCount_2_0= RULE_INT )
-            // InternalContainer.g:2269:3: lv_maximumRetryCount_2_0= RULE_INT
-            {
-            lv_maximumRetryCount_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+                            newLeafNode(lv_value_1_0, grammarAccess.getRestartPolicyAccess().getValueAlwaysKeyword_0_1_0());
+                        
 
-            			newLeafNode(lv_maximumRetryCount_2_0, grammarAccess.getRestartPolicyAccess().getMaximumRetryCountINTTerminalRuleCall_2_0()); 
-            		
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getRestartPolicyRule());
+                    	        }
+                           		setWithLastConsumed(current, "value", lv_value_1_0, "always");
+                    	    
 
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getRestartPolicyRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"maximumRetryCount",
-                    		lv_maximumRetryCount_2_0, 
-                    		"org.eclipse.xtext.common.Terminals.INT");
-            	    
-
-            }
+                    }
 
 
-            }
+                    }
 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalContainer.g:2245:7: otherlv_2= 'onFailure'
+                    {
+                    otherlv_2=(Token)match(input,66,FOLLOW_2); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getRestartPolicyAccess().getOnFailureKeyword_1());
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // InternalContainer.g:2250:6: (otherlv_3= 'none' ( (lv_maximumRetryCount_4_0= RULE_INT ) ) )
+                    {
+                    // InternalContainer.g:2250:6: (otherlv_3= 'none' ( (lv_maximumRetryCount_4_0= RULE_INT ) ) )
+                    // InternalContainer.g:2250:8: otherlv_3= 'none' ( (lv_maximumRetryCount_4_0= RULE_INT ) )
+                    {
+                    otherlv_3=(Token)match(input,67,FOLLOW_10); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getRestartPolicyAccess().getNoneKeyword_2_0());
+                        
+                    // InternalContainer.g:2254:1: ( (lv_maximumRetryCount_4_0= RULE_INT ) )
+                    // InternalContainer.g:2255:1: (lv_maximumRetryCount_4_0= RULE_INT )
+                    {
+                    // InternalContainer.g:2255:1: (lv_maximumRetryCount_4_0= RULE_INT )
+                    // InternalContainer.g:2256:3: lv_maximumRetryCount_4_0= RULE_INT
+                    {
+                    lv_maximumRetryCount_4_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+                    			newLeafNode(lv_maximumRetryCount_4_0, grammarAccess.getRestartPolicyAccess().getMaximumRetryCountINTTerminalRuleCall_2_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getRestartPolicyRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"maximumRetryCount",
+                            		lv_maximumRetryCount_4_0, 
+                            		"org.eclipse.xtext.common.Terminals.INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -5551,7 +5564,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePortBinding"
-    // InternalContainer.g:2293:1: entryRulePortBinding returns [EObject current=null] : iv_rulePortBinding= rulePortBinding EOF ;
+    // InternalContainer.g:2280:1: entryRulePortBinding returns [EObject current=null] : iv_rulePortBinding= rulePortBinding EOF ;
     public final EObject entryRulePortBinding() throws RecognitionException {
         EObject current = null;
 
@@ -5559,8 +5572,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2294:2: (iv_rulePortBinding= rulePortBinding EOF )
-            // InternalContainer.g:2295:2: iv_rulePortBinding= rulePortBinding EOF
+            // InternalContainer.g:2281:2: (iv_rulePortBinding= rulePortBinding EOF )
+            // InternalContainer.g:2282:2: iv_rulePortBinding= rulePortBinding EOF
             {
              newCompositeNode(grammarAccess.getPortBindingRule()); 
             pushFollow(FOLLOW_1);
@@ -5587,7 +5600,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePortBinding"
-    // InternalContainer.g:2302:1: rulePortBinding returns [EObject current=null] : (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) ) ;
+    // InternalContainer.g:2289:1: rulePortBinding returns [EObject current=null] : (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) ) ;
     public final EObject rulePortBinding() throws RecognitionException {
         EObject current = null;
 
@@ -5599,21 +5612,21 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2305:28: ( (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) ) )
-            // InternalContainer.g:2306:1: (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) )
+            // InternalContainer.g:2292:28: ( (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) ) )
+            // InternalContainer.g:2293:1: (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) )
             {
-            // InternalContainer.g:2306:1: (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) )
-            // InternalContainer.g:2306:3: otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) )
+            // InternalContainer.g:2293:1: (otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) ) )
+            // InternalContainer.g:2293:3: otherlv_0= '-' ( (lv_binding_1_0= ruleBinding ) ) ( (otherlv_2= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,25,FOLLOW_7); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getPortBindingAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2310:1: ( (lv_binding_1_0= ruleBinding ) )
-            // InternalContainer.g:2311:1: (lv_binding_1_0= ruleBinding )
+            // InternalContainer.g:2297:1: ( (lv_binding_1_0= ruleBinding ) )
+            // InternalContainer.g:2298:1: (lv_binding_1_0= ruleBinding )
             {
-            // InternalContainer.g:2311:1: (lv_binding_1_0= ruleBinding )
-            // InternalContainer.g:2312:3: lv_binding_1_0= ruleBinding
+            // InternalContainer.g:2298:1: (lv_binding_1_0= ruleBinding )
+            // InternalContainer.g:2299:3: lv_binding_1_0= ruleBinding
             {
              
             	        newCompositeNode(grammarAccess.getPortBindingAccess().getBindingBindingParserRuleCall_1_0()); 
@@ -5640,11 +5653,11 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalContainer.g:2328:2: ( (otherlv_2= RULE_STRING ) )
-            // InternalContainer.g:2329:1: (otherlv_2= RULE_STRING )
+            // InternalContainer.g:2315:2: ( (otherlv_2= RULE_STRING ) )
+            // InternalContainer.g:2316:1: (otherlv_2= RULE_STRING )
             {
-            // InternalContainer.g:2329:1: (otherlv_2= RULE_STRING )
-            // InternalContainer.g:2330:3: otherlv_2= RULE_STRING
+            // InternalContainer.g:2316:1: (otherlv_2= RULE_STRING )
+            // InternalContainer.g:2317:3: otherlv_2= RULE_STRING
             {
 
             			if (current==null) {
@@ -5682,7 +5695,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBinding"
-    // InternalContainer.g:2349:1: entryRuleBinding returns [EObject current=null] : iv_ruleBinding= ruleBinding EOF ;
+    // InternalContainer.g:2336:1: entryRuleBinding returns [EObject current=null] : iv_ruleBinding= ruleBinding EOF ;
     public final EObject entryRuleBinding() throws RecognitionException {
         EObject current = null;
 
@@ -5690,8 +5703,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2350:2: (iv_ruleBinding= ruleBinding EOF )
-            // InternalContainer.g:2351:2: iv_ruleBinding= ruleBinding EOF
+            // InternalContainer.g:2337:2: (iv_ruleBinding= ruleBinding EOF )
+            // InternalContainer.g:2338:2: iv_ruleBinding= ruleBinding EOF
             {
              newCompositeNode(grammarAccess.getBindingRule()); 
             pushFollow(FOLLOW_1);
@@ -5718,7 +5731,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinding"
-    // InternalContainer.g:2358:1: ruleBinding returns [EObject current=null] : (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) ) ;
+    // InternalContainer.g:2345:1: ruleBinding returns [EObject current=null] : (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) ) ;
     public final EObject ruleBinding() throws RecognitionException {
         EObject current = null;
 
@@ -5730,21 +5743,21 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2361:28: ( (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) ) )
-            // InternalContainer.g:2362:1: (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) )
+            // InternalContainer.g:2348:28: ( (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) ) )
+            // InternalContainer.g:2349:1: (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) )
             {
-            // InternalContainer.g:2362:1: (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) )
-            // InternalContainer.g:2362:3: otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) )
+            // InternalContainer.g:2349:1: (otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) ) )
+            // InternalContainer.g:2349:3: otherlv_0= '-' ( (lv_hostIP_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_hostPort_3_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBindingAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2366:1: ( (lv_hostIP_1_0= RULE_STRING ) )
-            // InternalContainer.g:2367:1: (lv_hostIP_1_0= RULE_STRING )
+            // InternalContainer.g:2353:1: ( (lv_hostIP_1_0= RULE_STRING ) )
+            // InternalContainer.g:2354:1: (lv_hostIP_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2367:1: (lv_hostIP_1_0= RULE_STRING )
-            // InternalContainer.g:2368:3: lv_hostIP_1_0= RULE_STRING
+            // InternalContainer.g:2354:1: (lv_hostIP_1_0= RULE_STRING )
+            // InternalContainer.g:2355:3: lv_hostIP_1_0= RULE_STRING
             {
             lv_hostIP_1_0=(Token)match(input,RULE_STRING,FOLLOW_19); 
 
@@ -5766,15 +5779,15 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,65,FOLLOW_10); 
+            otherlv_2=(Token)match(input,64,FOLLOW_10); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getBindingAccess().getColonKeyword_2());
                 
-            // InternalContainer.g:2388:1: ( (lv_hostPort_3_0= RULE_INT ) )
-            // InternalContainer.g:2389:1: (lv_hostPort_3_0= RULE_INT )
+            // InternalContainer.g:2375:1: ( (lv_hostPort_3_0= RULE_INT ) )
+            // InternalContainer.g:2376:1: (lv_hostPort_3_0= RULE_INT )
             {
-            // InternalContainer.g:2389:1: (lv_hostPort_3_0= RULE_INT )
-            // InternalContainer.g:2390:3: lv_hostPort_3_0= RULE_INT
+            // InternalContainer.g:2376:1: (lv_hostPort_3_0= RULE_INT )
+            // InternalContainer.g:2377:3: lv_hostPort_3_0= RULE_INT
             {
             lv_hostPort_3_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -5817,7 +5830,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLink"
-    // InternalContainer.g:2414:1: entryRuleLink returns [EObject current=null] : iv_ruleLink= ruleLink EOF ;
+    // InternalContainer.g:2401:1: entryRuleLink returns [EObject current=null] : iv_ruleLink= ruleLink EOF ;
     public final EObject entryRuleLink() throws RecognitionException {
         EObject current = null;
 
@@ -5825,8 +5838,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2415:2: (iv_ruleLink= ruleLink EOF )
-            // InternalContainer.g:2416:2: iv_ruleLink= ruleLink EOF
+            // InternalContainer.g:2402:2: (iv_ruleLink= ruleLink EOF )
+            // InternalContainer.g:2403:2: iv_ruleLink= ruleLink EOF
             {
              newCompositeNode(grammarAccess.getLinkRule()); 
             pushFollow(FOLLOW_1);
@@ -5853,58 +5866,63 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLink"
-    // InternalContainer.g:2423:1: ruleLink returns [EObject current=null] : (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) ) ;
+    // InternalContainer.g:2410:1: ruleLink returns [EObject current=null] : (otherlv_0= '-' ( (lv_containerLink_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) ) ;
     public final EObject ruleLink() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
+        Token lv_containerLink_1_0=null;
         Token otherlv_2=null;
         Token lv_alias_3_0=null;
 
          enterRule(); 
             
         try {
-            // InternalContainer.g:2426:28: ( (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) ) )
-            // InternalContainer.g:2427:1: (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) )
+            // InternalContainer.g:2413:28: ( (otherlv_0= '-' ( (lv_containerLink_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) ) )
+            // InternalContainer.g:2414:1: (otherlv_0= '-' ( (lv_containerLink_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) )
             {
-            // InternalContainer.g:2427:1: (otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) )
-            // InternalContainer.g:2427:3: otherlv_0= '-' ( (otherlv_1= RULE_ID ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) )
+            // InternalContainer.g:2414:1: (otherlv_0= '-' ( (lv_containerLink_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) ) )
+            // InternalContainer.g:2414:3: otherlv_0= '-' ( (lv_containerLink_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_alias_3_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_11); 
+            otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getLinkAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2431:1: ( (otherlv_1= RULE_ID ) )
-            // InternalContainer.g:2432:1: (otherlv_1= RULE_ID )
+            // InternalContainer.g:2418:1: ( (lv_containerLink_1_0= RULE_STRING ) )
+            // InternalContainer.g:2419:1: (lv_containerLink_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2432:1: (otherlv_1= RULE_ID )
-            // InternalContainer.g:2433:3: otherlv_1= RULE_ID
+            // InternalContainer.g:2419:1: (lv_containerLink_1_0= RULE_STRING )
+            // InternalContainer.g:2420:3: lv_containerLink_1_0= RULE_STRING
             {
+            lv_containerLink_1_0=(Token)match(input,RULE_STRING,FOLLOW_19); 
 
-            			if (current==null) {
+            			newLeafNode(lv_containerLink_1_0, grammarAccess.getLinkAccess().getContainerLinkSTRINGTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
             	            current = createModelElement(grammarAccess.getLinkRule());
             	        }
-                    
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_19); 
-
-            		newLeafNode(otherlv_1, grammarAccess.getLinkAccess().getContainerLinkContainerCrossReference_1_0()); 
-            	
-
-            }
-
+                   		setWithLastConsumed(
+                   			current, 
+                   			"containerLink",
+                    		lv_containerLink_1_0, 
+                    		"org.eclipse.xtext.common.Terminals.STRING");
+            	    
 
             }
 
-            otherlv_2=(Token)match(input,65,FOLLOW_4); 
+
+            }
+
+            otherlv_2=(Token)match(input,64,FOLLOW_4); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getLinkAccess().getColonKeyword_2());
                 
-            // InternalContainer.g:2448:1: ( (lv_alias_3_0= RULE_STRING ) )
-            // InternalContainer.g:2449:1: (lv_alias_3_0= RULE_STRING )
+            // InternalContainer.g:2440:1: ( (lv_alias_3_0= RULE_STRING ) )
+            // InternalContainer.g:2441:1: (lv_alias_3_0= RULE_STRING )
             {
-            // InternalContainer.g:2449:1: (lv_alias_3_0= RULE_STRING )
-            // InternalContainer.g:2450:3: lv_alias_3_0= RULE_STRING
+            // InternalContainer.g:2441:1: (lv_alias_3_0= RULE_STRING )
+            // InternalContainer.g:2442:3: lv_alias_3_0= RULE_STRING
             {
             lv_alias_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -5947,7 +5965,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUlimit"
-    // InternalContainer.g:2474:1: entryRuleUlimit returns [EObject current=null] : iv_ruleUlimit= ruleUlimit EOF ;
+    // InternalContainer.g:2466:1: entryRuleUlimit returns [EObject current=null] : iv_ruleUlimit= ruleUlimit EOF ;
     public final EObject entryRuleUlimit() throws RecognitionException {
         EObject current = null;
 
@@ -5955,8 +5973,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2475:2: (iv_ruleUlimit= ruleUlimit EOF )
-            // InternalContainer.g:2476:2: iv_ruleUlimit= ruleUlimit EOF
+            // InternalContainer.g:2467:2: (iv_ruleUlimit= ruleUlimit EOF )
+            // InternalContainer.g:2468:2: iv_ruleUlimit= ruleUlimit EOF
             {
              newCompositeNode(grammarAccess.getUlimitRule()); 
             pushFollow(FOLLOW_1);
@@ -5983,7 +6001,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUlimit"
-    // InternalContainer.g:2483:1: ruleUlimit returns [EObject current=null] : (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) ) ;
+    // InternalContainer.g:2475:1: ruleUlimit returns [EObject current=null] : (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) ) ;
     public final EObject ruleUlimit() throws RecognitionException {
         EObject current = null;
 
@@ -5995,21 +6013,21 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2486:28: ( (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) ) )
-            // InternalContainer.g:2487:1: (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) )
+            // InternalContainer.g:2478:28: ( (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) ) )
+            // InternalContainer.g:2479:1: (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) )
             {
-            // InternalContainer.g:2487:1: (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) )
-            // InternalContainer.g:2487:3: otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) )
+            // InternalContainer.g:2479:1: (otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) ) )
+            // InternalContainer.g:2479:3: otherlv_0= '-' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_soft_2_0= RULE_INT ) ) ( (lv_hard_3_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getUlimitAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2491:1: ( (lv_name_1_0= RULE_STRING ) )
-            // InternalContainer.g:2492:1: (lv_name_1_0= RULE_STRING )
+            // InternalContainer.g:2483:1: ( (lv_name_1_0= RULE_STRING ) )
+            // InternalContainer.g:2484:1: (lv_name_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2492:1: (lv_name_1_0= RULE_STRING )
-            // InternalContainer.g:2493:3: lv_name_1_0= RULE_STRING
+            // InternalContainer.g:2484:1: (lv_name_1_0= RULE_STRING )
+            // InternalContainer.g:2485:3: lv_name_1_0= RULE_STRING
             {
             lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
@@ -6031,11 +6049,11 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalContainer.g:2509:2: ( (lv_soft_2_0= RULE_INT ) )
-            // InternalContainer.g:2510:1: (lv_soft_2_0= RULE_INT )
+            // InternalContainer.g:2501:2: ( (lv_soft_2_0= RULE_INT ) )
+            // InternalContainer.g:2502:1: (lv_soft_2_0= RULE_INT )
             {
-            // InternalContainer.g:2510:1: (lv_soft_2_0= RULE_INT )
-            // InternalContainer.g:2511:3: lv_soft_2_0= RULE_INT
+            // InternalContainer.g:2502:1: (lv_soft_2_0= RULE_INT )
+            // InternalContainer.g:2503:3: lv_soft_2_0= RULE_INT
             {
             lv_soft_2_0=(Token)match(input,RULE_INT,FOLLOW_10); 
 
@@ -6057,11 +6075,11 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalContainer.g:2527:2: ( (lv_hard_3_0= RULE_INT ) )
-            // InternalContainer.g:2528:1: (lv_hard_3_0= RULE_INT )
+            // InternalContainer.g:2519:2: ( (lv_hard_3_0= RULE_INT ) )
+            // InternalContainer.g:2520:1: (lv_hard_3_0= RULE_INT )
             {
-            // InternalContainer.g:2528:1: (lv_hard_3_0= RULE_INT )
-            // InternalContainer.g:2529:3: lv_hard_3_0= RULE_INT
+            // InternalContainer.g:2520:1: (lv_hard_3_0= RULE_INT )
+            // InternalContainer.g:2521:3: lv_hard_3_0= RULE_INT
             {
             lv_hard_3_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -6104,7 +6122,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLabel"
-    // InternalContainer.g:2553:1: entryRuleLabel returns [EObject current=null] : iv_ruleLabel= ruleLabel EOF ;
+    // InternalContainer.g:2545:1: entryRuleLabel returns [EObject current=null] : iv_ruleLabel= ruleLabel EOF ;
     public final EObject entryRuleLabel() throws RecognitionException {
         EObject current = null;
 
@@ -6112,8 +6130,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2554:2: (iv_ruleLabel= ruleLabel EOF )
-            // InternalContainer.g:2555:2: iv_ruleLabel= ruleLabel EOF
+            // InternalContainer.g:2546:2: (iv_ruleLabel= ruleLabel EOF )
+            // InternalContainer.g:2547:2: iv_ruleLabel= ruleLabel EOF
             {
              newCompositeNode(grammarAccess.getLabelRule()); 
             pushFollow(FOLLOW_1);
@@ -6140,7 +6158,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLabel"
-    // InternalContainer.g:2562:1: ruleLabel returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) ) ;
+    // InternalContainer.g:2554:1: ruleLabel returns [EObject current=null] : ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleLabel() throws RecognitionException {
         EObject current = null;
 
@@ -6150,17 +6168,17 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2565:28: ( ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) ) )
-            // InternalContainer.g:2566:1: ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) )
+            // InternalContainer.g:2557:28: ( ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) ) )
+            // InternalContainer.g:2558:1: ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) )
             {
-            // InternalContainer.g:2566:1: ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) )
-            // InternalContainer.g:2566:2: ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) )
+            // InternalContainer.g:2558:1: ( ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) ) )
+            // InternalContainer.g:2558:2: ( (lv_key_0_0= RULE_STRING ) ) ( (lv_value_1_0= RULE_STRING ) )
             {
-            // InternalContainer.g:2566:2: ( (lv_key_0_0= RULE_STRING ) )
-            // InternalContainer.g:2567:1: (lv_key_0_0= RULE_STRING )
+            // InternalContainer.g:2558:2: ( (lv_key_0_0= RULE_STRING ) )
+            // InternalContainer.g:2559:1: (lv_key_0_0= RULE_STRING )
             {
-            // InternalContainer.g:2567:1: (lv_key_0_0= RULE_STRING )
-            // InternalContainer.g:2568:3: lv_key_0_0= RULE_STRING
+            // InternalContainer.g:2559:1: (lv_key_0_0= RULE_STRING )
+            // InternalContainer.g:2560:3: lv_key_0_0= RULE_STRING
             {
             lv_key_0_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
 
@@ -6182,11 +6200,11 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalContainer.g:2584:2: ( (lv_value_1_0= RULE_STRING ) )
-            // InternalContainer.g:2585:1: (lv_value_1_0= RULE_STRING )
+            // InternalContainer.g:2576:2: ( (lv_value_1_0= RULE_STRING ) )
+            // InternalContainer.g:2577:1: (lv_value_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2585:1: (lv_value_1_0= RULE_STRING )
-            // InternalContainer.g:2586:3: lv_value_1_0= RULE_STRING
+            // InternalContainer.g:2577:1: (lv_value_1_0= RULE_STRING )
+            // InternalContainer.g:2578:3: lv_value_1_0= RULE_STRING
             {
             lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6229,7 +6247,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExposedPort"
-    // InternalContainer.g:2610:1: entryRuleExposedPort returns [EObject current=null] : iv_ruleExposedPort= ruleExposedPort EOF ;
+    // InternalContainer.g:2602:1: entryRuleExposedPort returns [EObject current=null] : iv_ruleExposedPort= ruleExposedPort EOF ;
     public final EObject entryRuleExposedPort() throws RecognitionException {
         EObject current = null;
 
@@ -6237,8 +6255,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2611:2: (iv_ruleExposedPort= ruleExposedPort EOF )
-            // InternalContainer.g:2612:2: iv_ruleExposedPort= ruleExposedPort EOF
+            // InternalContainer.g:2603:2: (iv_ruleExposedPort= ruleExposedPort EOF )
+            // InternalContainer.g:2604:2: iv_ruleExposedPort= ruleExposedPort EOF
             {
              newCompositeNode(grammarAccess.getExposedPortRule()); 
             pushFollow(FOLLOW_1);
@@ -6265,7 +6283,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExposedPort"
-    // InternalContainer.g:2619:1: ruleExposedPort returns [EObject current=null] : (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) ) ;
+    // InternalContainer.g:2611:1: ruleExposedPort returns [EObject current=null] : (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) ) ;
     public final EObject ruleExposedPort() throws RecognitionException {
         EObject current = null;
 
@@ -6278,23 +6296,23 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2622:28: ( (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) ) )
-            // InternalContainer.g:2623:1: (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) )
+            // InternalContainer.g:2614:28: ( (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) ) )
+            // InternalContainer.g:2615:1: (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) )
             {
-            // InternalContainer.g:2623:1: (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) )
-            // InternalContainer.g:2623:3: otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) )
+            // InternalContainer.g:2615:1: (otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) ) )
+            // InternalContainer.g:2615:3: otherlv_0= '-' ( (lv_port_1_0= RULE_STRING ) ) otherlv_2= '/' ( (lv_protocol_3_0= ruleInternalProtocol ) )
             {
             otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getExposedPortAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2627:1: ( (lv_port_1_0= RULE_STRING ) )
-            // InternalContainer.g:2628:1: (lv_port_1_0= RULE_STRING )
+            // InternalContainer.g:2619:1: ( (lv_port_1_0= RULE_STRING ) )
+            // InternalContainer.g:2620:1: (lv_port_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2628:1: (lv_port_1_0= RULE_STRING )
-            // InternalContainer.g:2629:3: lv_port_1_0= RULE_STRING
+            // InternalContainer.g:2620:1: (lv_port_1_0= RULE_STRING )
+            // InternalContainer.g:2621:3: lv_port_1_0= RULE_STRING
             {
-            lv_port_1_0=(Token)match(input,RULE_STRING,FOLLOW_20); 
+            lv_port_1_0=(Token)match(input,RULE_STRING,FOLLOW_22); 
 
             			newLeafNode(lv_port_1_0, grammarAccess.getExposedPortAccess().getPortSTRINGTerminalRuleCall_1_0()); 
             		
@@ -6314,15 +6332,15 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,66,FOLLOW_21); 
+            otherlv_2=(Token)match(input,68,FOLLOW_23); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getExposedPortAccess().getSolidusKeyword_2());
                 
-            // InternalContainer.g:2649:1: ( (lv_protocol_3_0= ruleInternalProtocol ) )
-            // InternalContainer.g:2650:1: (lv_protocol_3_0= ruleInternalProtocol )
+            // InternalContainer.g:2641:1: ( (lv_protocol_3_0= ruleInternalProtocol ) )
+            // InternalContainer.g:2642:1: (lv_protocol_3_0= ruleInternalProtocol )
             {
-            // InternalContainer.g:2650:1: (lv_protocol_3_0= ruleInternalProtocol )
-            // InternalContainer.g:2651:3: lv_protocol_3_0= ruleInternalProtocol
+            // InternalContainer.g:2642:1: (lv_protocol_3_0= ruleInternalProtocol )
+            // InternalContainer.g:2643:3: lv_protocol_3_0= ruleInternalProtocol
             {
              
             	        newCompositeNode(grammarAccess.getExposedPortAccess().getProtocolInternalProtocolEnumRuleCall_3_0()); 
@@ -6370,7 +6388,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDevice"
-    // InternalContainer.g:2675:1: entryRuleDevice returns [EObject current=null] : iv_ruleDevice= ruleDevice EOF ;
+    // InternalContainer.g:2667:1: entryRuleDevice returns [EObject current=null] : iv_ruleDevice= ruleDevice EOF ;
     public final EObject entryRuleDevice() throws RecognitionException {
         EObject current = null;
 
@@ -6378,8 +6396,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2676:2: (iv_ruleDevice= ruleDevice EOF )
-            // InternalContainer.g:2677:2: iv_ruleDevice= ruleDevice EOF
+            // InternalContainer.g:2668:2: (iv_ruleDevice= ruleDevice EOF )
+            // InternalContainer.g:2669:2: iv_ruleDevice= ruleDevice EOF
             {
              newCompositeNode(grammarAccess.getDeviceRule()); 
             pushFollow(FOLLOW_1);
@@ -6406,7 +6424,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDevice"
-    // InternalContainer.g:2684:1: ruleDevice returns [EObject current=null] : (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) ) ;
+    // InternalContainer.g:2676:1: ruleDevice returns [EObject current=null] : (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) ) ;
     public final EObject ruleDevice() throws RecognitionException {
         EObject current = null;
 
@@ -6418,21 +6436,21 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2687:28: ( (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) ) )
-            // InternalContainer.g:2688:1: (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) )
+            // InternalContainer.g:2679:28: ( (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) ) )
+            // InternalContainer.g:2680:1: (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) )
             {
-            // InternalContainer.g:2688:1: (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) )
-            // InternalContainer.g:2688:3: otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) )
+            // InternalContainer.g:2680:1: (otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) ) )
+            // InternalContainer.g:2680:3: otherlv_0= '-' ( (lv_cGroupPermissions_1_0= RULE_STRING ) ) ( (lv_pathOnHost_2_0= RULE_STRING ) ) ( (lv_pathInContainer_3_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDeviceAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2692:1: ( (lv_cGroupPermissions_1_0= RULE_STRING ) )
-            // InternalContainer.g:2693:1: (lv_cGroupPermissions_1_0= RULE_STRING )
+            // InternalContainer.g:2684:1: ( (lv_cGroupPermissions_1_0= RULE_STRING ) )
+            // InternalContainer.g:2685:1: (lv_cGroupPermissions_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2693:1: (lv_cGroupPermissions_1_0= RULE_STRING )
-            // InternalContainer.g:2694:3: lv_cGroupPermissions_1_0= RULE_STRING
+            // InternalContainer.g:2685:1: (lv_cGroupPermissions_1_0= RULE_STRING )
+            // InternalContainer.g:2686:3: lv_cGroupPermissions_1_0= RULE_STRING
             {
             lv_cGroupPermissions_1_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
 
@@ -6454,11 +6472,11 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalContainer.g:2710:2: ( (lv_pathOnHost_2_0= RULE_STRING ) )
-            // InternalContainer.g:2711:1: (lv_pathOnHost_2_0= RULE_STRING )
+            // InternalContainer.g:2702:2: ( (lv_pathOnHost_2_0= RULE_STRING ) )
+            // InternalContainer.g:2703:1: (lv_pathOnHost_2_0= RULE_STRING )
             {
-            // InternalContainer.g:2711:1: (lv_pathOnHost_2_0= RULE_STRING )
-            // InternalContainer.g:2712:3: lv_pathOnHost_2_0= RULE_STRING
+            // InternalContainer.g:2703:1: (lv_pathOnHost_2_0= RULE_STRING )
+            // InternalContainer.g:2704:3: lv_pathOnHost_2_0= RULE_STRING
             {
             lv_pathOnHost_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
 
@@ -6480,11 +6498,11 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalContainer.g:2728:2: ( (lv_pathInContainer_3_0= RULE_STRING ) )
-            // InternalContainer.g:2729:1: (lv_pathInContainer_3_0= RULE_STRING )
+            // InternalContainer.g:2720:2: ( (lv_pathInContainer_3_0= RULE_STRING ) )
+            // InternalContainer.g:2721:1: (lv_pathInContainer_3_0= RULE_STRING )
             {
-            // InternalContainer.g:2729:1: (lv_pathInContainer_3_0= RULE_STRING )
-            // InternalContainer.g:2730:3: lv_pathInContainer_3_0= RULE_STRING
+            // InternalContainer.g:2721:1: (lv_pathInContainer_3_0= RULE_STRING )
+            // InternalContainer.g:2722:3: lv_pathInContainer_3_0= RULE_STRING
             {
             lv_pathInContainer_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6527,7 +6545,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBind"
-    // InternalContainer.g:2754:1: entryRuleBind returns [EObject current=null] : iv_ruleBind= ruleBind EOF ;
+    // InternalContainer.g:2746:1: entryRuleBind returns [EObject current=null] : iv_ruleBind= ruleBind EOF ;
     public final EObject entryRuleBind() throws RecognitionException {
         EObject current = null;
 
@@ -6535,8 +6553,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2755:2: (iv_ruleBind= ruleBind EOF )
-            // InternalContainer.g:2756:2: iv_ruleBind= ruleBind EOF
+            // InternalContainer.g:2747:2: (iv_ruleBind= ruleBind EOF )
+            // InternalContainer.g:2748:2: iv_ruleBind= ruleBind EOF
             {
              newCompositeNode(grammarAccess.getBindRule()); 
             pushFollow(FOLLOW_1);
@@ -6563,7 +6581,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBind"
-    // InternalContainer.g:2763:1: ruleBind returns [EObject current=null] : (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) ) ;
+    // InternalContainer.g:2755:1: ruleBind returns [EObject current=null] : (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) (otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )? ) ;
     public final EObject ruleBind() throws RecognitionException {
         EObject current = null;
 
@@ -6579,21 +6597,21 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2766:28: ( (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) ) )
-            // InternalContainer.g:2767:1: (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )
+            // InternalContainer.g:2758:28: ( (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) (otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )? ) )
+            // InternalContainer.g:2759:1: (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) (otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )? )
             {
-            // InternalContainer.g:2767:1: (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )
-            // InternalContainer.g:2767:3: otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) )
+            // InternalContainer.g:2759:1: (otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) (otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )? )
+            // InternalContainer.g:2759:3: otherlv_0= '-' ( (lv_location_1_0= RULE_STRING ) ) otherlv_2= ':' ( (lv_volume_3_0= ruleVolume ) ) (otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )?
             {
             otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBindAccess().getHyphenMinusKeyword_0());
                 
-            // InternalContainer.g:2771:1: ( (lv_location_1_0= RULE_STRING ) )
-            // InternalContainer.g:2772:1: (lv_location_1_0= RULE_STRING )
+            // InternalContainer.g:2763:1: ( (lv_location_1_0= RULE_STRING ) )
+            // InternalContainer.g:2764:1: (lv_location_1_0= RULE_STRING )
             {
-            // InternalContainer.g:2772:1: (lv_location_1_0= RULE_STRING )
-            // InternalContainer.g:2773:3: lv_location_1_0= RULE_STRING
+            // InternalContainer.g:2764:1: (lv_location_1_0= RULE_STRING )
+            // InternalContainer.g:2765:3: lv_location_1_0= RULE_STRING
             {
             lv_location_1_0=(Token)match(input,RULE_STRING,FOLLOW_19); 
 
@@ -6615,20 +6633,20 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,65,FOLLOW_4); 
+            otherlv_2=(Token)match(input,64,FOLLOW_4); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getBindAccess().getColonKeyword_2());
                 
-            // InternalContainer.g:2793:1: ( (lv_volume_3_0= ruleVolume ) )
-            // InternalContainer.g:2794:1: (lv_volume_3_0= ruleVolume )
+            // InternalContainer.g:2785:1: ( (lv_volume_3_0= ruleVolume ) )
+            // InternalContainer.g:2786:1: (lv_volume_3_0= ruleVolume )
             {
-            // InternalContainer.g:2794:1: (lv_volume_3_0= ruleVolume )
-            // InternalContainer.g:2795:3: lv_volume_3_0= ruleVolume
+            // InternalContainer.g:2786:1: (lv_volume_3_0= ruleVolume )
+            // InternalContainer.g:2787:3: lv_volume_3_0= ruleVolume
             {
              
             	        newCompositeNode(grammarAccess.getBindAccess().getVolumeVolumeParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_24);
             lv_volume_3_0=ruleVolume();
 
             state._fsp--;
@@ -6650,38 +6668,55 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,65,FOLLOW_18); 
+            // InternalContainer.g:2803:2: (otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) ) )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-                	newLeafNode(otherlv_4, grammarAccess.getBindAccess().getColonKeyword_4());
-                
-            // InternalContainer.g:2815:1: ( (lv_accessMode1_5_0= ruleAccessMode ) )
-            // InternalContainer.g:2816:1: (lv_accessMode1_5_0= ruleAccessMode )
-            {
-            // InternalContainer.g:2816:1: (lv_accessMode1_5_0= ruleAccessMode )
-            // InternalContainer.g:2817:3: lv_accessMode1_5_0= ruleAccessMode
-            {
-             
-            	        newCompositeNode(grammarAccess.getBindAccess().getAccessMode1AccessModeEnumRuleCall_5_0()); 
-            	    
-            pushFollow(FOLLOW_2);
-            lv_accessMode1_5_0=ruleAccessMode();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getBindRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"accessMode1",
-                    		lv_accessMode1_5_0, 
-                    		"org.eclipse.docker.language.Container.AccessMode");
-            	        afterParserOrEnumRuleCall();
-            	    
-
+            if ( (LA25_0==64) ) {
+                alt25=1;
             }
+            switch (alt25) {
+                case 1 :
+                    // InternalContainer.g:2803:4: otherlv_4= ':' ( (lv_accessMode1_5_0= ruleAccessMode ) )
+                    {
+                    otherlv_4=(Token)match(input,64,FOLLOW_25); 
 
+                        	newLeafNode(otherlv_4, grammarAccess.getBindAccess().getColonKeyword_4_0());
+                        
+                    // InternalContainer.g:2807:1: ( (lv_accessMode1_5_0= ruleAccessMode ) )
+                    // InternalContainer.g:2808:1: (lv_accessMode1_5_0= ruleAccessMode )
+                    {
+                    // InternalContainer.g:2808:1: (lv_accessMode1_5_0= ruleAccessMode )
+                    // InternalContainer.g:2809:3: lv_accessMode1_5_0= ruleAccessMode
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getBindAccess().getAccessMode1AccessModeEnumRuleCall_4_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_2);
+                    lv_accessMode1_5_0=ruleAccessMode();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getBindRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"accessMode1",
+                            		lv_accessMode1_5_0, 
+                            		"org.eclipse.docker.language.Container.AccessMode");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -6706,7 +6741,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVolume"
-    // InternalContainer.g:2841:1: entryRuleVolume returns [EObject current=null] : iv_ruleVolume= ruleVolume EOF ;
+    // InternalContainer.g:2833:1: entryRuleVolume returns [EObject current=null] : iv_ruleVolume= ruleVolume EOF ;
     public final EObject entryRuleVolume() throws RecognitionException {
         EObject current = null;
 
@@ -6714,8 +6749,8 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalContainer.g:2842:2: (iv_ruleVolume= ruleVolume EOF )
-            // InternalContainer.g:2843:2: iv_ruleVolume= ruleVolume EOF
+            // InternalContainer.g:2834:2: (iv_ruleVolume= ruleVolume EOF )
+            // InternalContainer.g:2835:2: iv_ruleVolume= ruleVolume EOF
             {
              newCompositeNode(grammarAccess.getVolumeRule()); 
             pushFollow(FOLLOW_1);
@@ -6742,7 +6777,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVolume"
-    // InternalContainer.g:2850:1: ruleVolume returns [EObject current=null] : ( (lv_path_0_0= RULE_STRING ) ) ;
+    // InternalContainer.g:2842:1: ruleVolume returns [EObject current=null] : ( (lv_path_0_0= RULE_STRING ) ) ;
     public final EObject ruleVolume() throws RecognitionException {
         EObject current = null;
 
@@ -6751,14 +6786,14 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalContainer.g:2853:28: ( ( (lv_path_0_0= RULE_STRING ) ) )
-            // InternalContainer.g:2854:1: ( (lv_path_0_0= RULE_STRING ) )
+            // InternalContainer.g:2845:28: ( ( (lv_path_0_0= RULE_STRING ) ) )
+            // InternalContainer.g:2846:1: ( (lv_path_0_0= RULE_STRING ) )
             {
-            // InternalContainer.g:2854:1: ( (lv_path_0_0= RULE_STRING ) )
-            // InternalContainer.g:2855:1: (lv_path_0_0= RULE_STRING )
+            // InternalContainer.g:2846:1: ( (lv_path_0_0= RULE_STRING ) )
+            // InternalContainer.g:2847:1: (lv_path_0_0= RULE_STRING )
             {
-            // InternalContainer.g:2855:1: (lv_path_0_0= RULE_STRING )
-            // InternalContainer.g:2856:3: lv_path_0_0= RULE_STRING
+            // InternalContainer.g:2847:1: (lv_path_0_0= RULE_STRING )
+            // InternalContainer.g:2848:3: lv_path_0_0= RULE_STRING
             {
             lv_path_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6798,7 +6833,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInternalProtocol"
-    // InternalContainer.g:2880:1: ruleInternalProtocol returns [Enumerator current=null] : ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) ) ;
+    // InternalContainer.g:2872:1: ruleInternalProtocol returns [Enumerator current=null] : ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) ) ;
     public final Enumerator ruleInternalProtocol() throws RecognitionException {
         Enumerator current = null;
 
@@ -6807,33 +6842,33 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalContainer.g:2882:28: ( ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) ) )
-            // InternalContainer.g:2883:1: ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) )
+            // InternalContainer.g:2874:28: ( ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) ) )
+            // InternalContainer.g:2875:1: ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) )
             {
-            // InternalContainer.g:2883:1: ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) )
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalContainer.g:2875:1: ( (enumLiteral_0= 'TCP' ) | (enumLiteral_1= 'UDP' ) )
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA23_0==67) ) {
-                alt23=1;
+            if ( (LA26_0==69) ) {
+                alt26=1;
             }
-            else if ( (LA23_0==68) ) {
-                alt23=2;
+            else if ( (LA26_0==70) ) {
+                alt26=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
-            switch (alt23) {
+            switch (alt26) {
                 case 1 :
-                    // InternalContainer.g:2883:2: (enumLiteral_0= 'TCP' )
+                    // InternalContainer.g:2875:2: (enumLiteral_0= 'TCP' )
                     {
-                    // InternalContainer.g:2883:2: (enumLiteral_0= 'TCP' )
-                    // InternalContainer.g:2883:4: enumLiteral_0= 'TCP'
+                    // InternalContainer.g:2875:2: (enumLiteral_0= 'TCP' )
+                    // InternalContainer.g:2875:4: enumLiteral_0= 'TCP'
                     {
-                    enumLiteral_0=(Token)match(input,67,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,69,FOLLOW_2); 
 
                             current = grammarAccess.getInternalProtocolAccess().getTCPEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getInternalProtocolAccess().getTCPEnumLiteralDeclaration_0()); 
@@ -6845,12 +6880,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalContainer.g:2889:6: (enumLiteral_1= 'UDP' )
+                    // InternalContainer.g:2881:6: (enumLiteral_1= 'UDP' )
                     {
-                    // InternalContainer.g:2889:6: (enumLiteral_1= 'UDP' )
-                    // InternalContainer.g:2889:8: enumLiteral_1= 'UDP'
+                    // InternalContainer.g:2881:6: (enumLiteral_1= 'UDP' )
+                    // InternalContainer.g:2881:8: enumLiteral_1= 'UDP'
                     {
-                    enumLiteral_1=(Token)match(input,68,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,70,FOLLOW_2); 
 
                             current = grammarAccess.getInternalProtocolAccess().getUDPEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getInternalProtocolAccess().getUDPEnumLiteralDeclaration_1()); 
@@ -6882,7 +6917,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAccessMode"
-    // InternalContainer.g:2899:1: ruleAccessMode returns [Enumerator current=null] : ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) ) ;
+    // InternalContainer.g:2891:1: ruleAccessMode returns [Enumerator current=null] : ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) ) ;
     public final Enumerator ruleAccessMode() throws RecognitionException {
         Enumerator current = null;
 
@@ -6891,33 +6926,33 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalContainer.g:2901:28: ( ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) ) )
-            // InternalContainer.g:2902:1: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) )
+            // InternalContainer.g:2893:28: ( ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) ) )
+            // InternalContainer.g:2894:1: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) )
             {
-            // InternalContainer.g:2902:1: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalContainer.g:2894:1: ( (enumLiteral_0= 'rw' ) | (enumLiteral_1= 'ro' ) )
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA24_0==69) ) {
-                alt24=1;
+            if ( (LA27_0==71) ) {
+                alt27=1;
             }
-            else if ( (LA24_0==70) ) {
-                alt24=2;
+            else if ( (LA27_0==72) ) {
+                alt27=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt27) {
                 case 1 :
-                    // InternalContainer.g:2902:2: (enumLiteral_0= 'rw' )
+                    // InternalContainer.g:2894:2: (enumLiteral_0= 'rw' )
                     {
-                    // InternalContainer.g:2902:2: (enumLiteral_0= 'rw' )
-                    // InternalContainer.g:2902:4: enumLiteral_0= 'rw'
+                    // InternalContainer.g:2894:2: (enumLiteral_0= 'rw' )
+                    // InternalContainer.g:2894:4: enumLiteral_0= 'rw'
                     {
-                    enumLiteral_0=(Token)match(input,69,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,71,FOLLOW_2); 
 
                             current = grammarAccess.getAccessModeAccess().getRwEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getAccessModeAccess().getRwEnumLiteralDeclaration_0()); 
@@ -6929,12 +6964,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalContainer.g:2908:6: (enumLiteral_1= 'ro' )
+                    // InternalContainer.g:2900:6: (enumLiteral_1= 'ro' )
                     {
-                    // InternalContainer.g:2908:6: (enumLiteral_1= 'ro' )
-                    // InternalContainer.g:2908:8: enumLiteral_1= 'ro'
+                    // InternalContainer.g:2900:6: (enumLiteral_1= 'ro' )
+                    // InternalContainer.g:2900:8: enumLiteral_1= 'ro'
                     {
-                    enumLiteral_1=(Token)match(input,70,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,72,FOLLOW_2); 
 
                             current = grammarAccess.getAccessModeAccess().getRoEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getAccessModeAccess().getRoEnumLiteralDeclaration_1()); 
@@ -6966,7 +7001,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCapability"
-    // InternalContainer.g:2918:1: ruleCapability returns [Enumerator current=null] : ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) ) ;
+    // InternalContainer.g:2910:1: ruleCapability returns [Enumerator current=null] : ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) ) ;
     public final Enumerator ruleCapability() throws RecognitionException {
         Enumerator current = null;
 
@@ -7011,217 +7046,217 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // InternalContainer.g:2920:28: ( ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) ) )
-            // InternalContainer.g:2921:1: ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) )
+            // InternalContainer.g:2912:28: ( ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) ) )
+            // InternalContainer.g:2913:1: ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) )
             {
-            // InternalContainer.g:2921:1: ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) )
-            int alt25=38;
+            // InternalContainer.g:2913:1: ( (enumLiteral_0= 'ALL' ) | (enumLiteral_1= 'AUDIT_CONTROL' ) | (enumLiteral_2= 'AUDIT_WRITE' ) | (enumLiteral_3= 'BLOCK_SUSPEND' ) | (enumLiteral_4= 'CHOWN' ) | (enumLiteral_5= 'DAC_OVERRIDE' ) | (enumLiteral_6= 'DAC_READ_SEARCH' ) | (enumLiteral_7= 'FOWNER' ) | (enumLiteral_8= 'FSETID' ) | (enumLiteral_9= 'IPC_LOCK' ) | (enumLiteral_10= 'IPC_OWNER' ) | (enumLiteral_11= 'KILL' ) | (enumLiteral_12= 'LEASE' ) | (enumLiteral_13= 'LINUX_IMMUTABLE' ) | (enumLiteral_14= 'MAC_ADMIN' ) | (enumLiteral_15= 'MAC_OVERRIDE' ) | (enumLiteral_16= 'MKNOD' ) | (enumLiteral_17= 'NET_ADMIN' ) | (enumLiteral_18= 'NET_BIND_SERVICE' ) | (enumLiteral_19= 'NET_BROADCAST' ) | (enumLiteral_20= 'NET_RAW' ) | (enumLiteral_21= 'SETFCAP' ) | (enumLiteral_22= 'SETGID' ) | (enumLiteral_23= 'SETPCAP' ) | (enumLiteral_24= 'SETUID' ) | (enumLiteral_25= 'SYS_ADMIN' ) | (enumLiteral_26= 'SYS_BOOT' ) | (enumLiteral_27= 'SYS_CHROOT' ) | (enumLiteral_28= 'SYSLOG' ) | (enumLiteral_29= 'SYS_MODULE' ) | (enumLiteral_30= 'SYS_NICE' ) | (enumLiteral_31= 'SYS_PACCT' ) | (enumLiteral_32= 'SYS_PTRACE' ) | (enumLiteral_33= 'SYS_RAWIO' ) | (enumLiteral_34= 'SYS_RESOURCE' ) | (enumLiteral_35= 'SYS_TIME' ) | (enumLiteral_36= 'SYS_TTY_CONFIG' ) | (enumLiteral_37= 'WAKE_ALARM' ) )
+            int alt28=38;
             switch ( input.LA(1) ) {
-            case 71:
-                {
-                alt25=1;
-                }
-                break;
-            case 72:
-                {
-                alt25=2;
-                }
-                break;
             case 73:
                 {
-                alt25=3;
+                alt28=1;
                 }
                 break;
             case 74:
                 {
-                alt25=4;
+                alt28=2;
                 }
                 break;
             case 75:
                 {
-                alt25=5;
+                alt28=3;
                 }
                 break;
             case 76:
                 {
-                alt25=6;
+                alt28=4;
                 }
                 break;
             case 77:
                 {
-                alt25=7;
+                alt28=5;
                 }
                 break;
             case 78:
                 {
-                alt25=8;
+                alt28=6;
                 }
                 break;
             case 79:
                 {
-                alt25=9;
+                alt28=7;
                 }
                 break;
             case 80:
                 {
-                alt25=10;
+                alt28=8;
                 }
                 break;
             case 81:
                 {
-                alt25=11;
+                alt28=9;
                 }
                 break;
             case 82:
                 {
-                alt25=12;
+                alt28=10;
                 }
                 break;
             case 83:
                 {
-                alt25=13;
+                alt28=11;
                 }
                 break;
             case 84:
                 {
-                alt25=14;
+                alt28=12;
                 }
                 break;
             case 85:
                 {
-                alt25=15;
+                alt28=13;
                 }
                 break;
             case 86:
                 {
-                alt25=16;
+                alt28=14;
                 }
                 break;
             case 87:
                 {
-                alt25=17;
+                alt28=15;
                 }
                 break;
             case 88:
                 {
-                alt25=18;
+                alt28=16;
                 }
                 break;
             case 89:
                 {
-                alt25=19;
+                alt28=17;
                 }
                 break;
             case 90:
                 {
-                alt25=20;
+                alt28=18;
                 }
                 break;
             case 91:
                 {
-                alt25=21;
+                alt28=19;
                 }
                 break;
             case 92:
                 {
-                alt25=22;
+                alt28=20;
                 }
                 break;
             case 93:
                 {
-                alt25=23;
+                alt28=21;
                 }
                 break;
             case 94:
                 {
-                alt25=24;
+                alt28=22;
                 }
                 break;
             case 95:
                 {
-                alt25=25;
+                alt28=23;
                 }
                 break;
             case 96:
                 {
-                alt25=26;
+                alt28=24;
                 }
                 break;
             case 97:
                 {
-                alt25=27;
+                alt28=25;
                 }
                 break;
             case 98:
                 {
-                alt25=28;
+                alt28=26;
                 }
                 break;
             case 99:
                 {
-                alt25=29;
+                alt28=27;
                 }
                 break;
             case 100:
                 {
-                alt25=30;
+                alt28=28;
                 }
                 break;
             case 101:
                 {
-                alt25=31;
+                alt28=29;
                 }
                 break;
             case 102:
                 {
-                alt25=32;
+                alt28=30;
                 }
                 break;
             case 103:
                 {
-                alt25=33;
+                alt28=31;
                 }
                 break;
             case 104:
                 {
-                alt25=34;
+                alt28=32;
                 }
                 break;
             case 105:
                 {
-                alt25=35;
+                alt28=33;
                 }
                 break;
             case 106:
                 {
-                alt25=36;
+                alt28=34;
                 }
                 break;
             case 107:
                 {
-                alt25=37;
+                alt28=35;
                 }
                 break;
             case 108:
                 {
-                alt25=38;
+                alt28=36;
+                }
+                break;
+            case 109:
+                {
+                alt28=37;
+                }
+                break;
+            case 110:
+                {
+                alt28=38;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt25) {
+            switch (alt28) {
                 case 1 :
-                    // InternalContainer.g:2921:2: (enumLiteral_0= 'ALL' )
+                    // InternalContainer.g:2913:2: (enumLiteral_0= 'ALL' )
                     {
-                    // InternalContainer.g:2921:2: (enumLiteral_0= 'ALL' )
-                    // InternalContainer.g:2921:4: enumLiteral_0= 'ALL'
+                    // InternalContainer.g:2913:2: (enumLiteral_0= 'ALL' )
+                    // InternalContainer.g:2913:4: enumLiteral_0= 'ALL'
                     {
-                    enumLiteral_0=(Token)match(input,71,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,73,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getALLEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCapabilityAccess().getALLEnumLiteralDeclaration_0()); 
@@ -7233,12 +7268,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalContainer.g:2927:6: (enumLiteral_1= 'AUDIT_CONTROL' )
+                    // InternalContainer.g:2919:6: (enumLiteral_1= 'AUDIT_CONTROL' )
                     {
-                    // InternalContainer.g:2927:6: (enumLiteral_1= 'AUDIT_CONTROL' )
-                    // InternalContainer.g:2927:8: enumLiteral_1= 'AUDIT_CONTROL'
+                    // InternalContainer.g:2919:6: (enumLiteral_1= 'AUDIT_CONTROL' )
+                    // InternalContainer.g:2919:8: enumLiteral_1= 'AUDIT_CONTROL'
                     {
-                    enumLiteral_1=(Token)match(input,72,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,74,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getAUDIT_CONTROLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCapabilityAccess().getAUDIT_CONTROLEnumLiteralDeclaration_1()); 
@@ -7250,12 +7285,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalContainer.g:2933:6: (enumLiteral_2= 'AUDIT_WRITE' )
+                    // InternalContainer.g:2925:6: (enumLiteral_2= 'AUDIT_WRITE' )
                     {
-                    // InternalContainer.g:2933:6: (enumLiteral_2= 'AUDIT_WRITE' )
-                    // InternalContainer.g:2933:8: enumLiteral_2= 'AUDIT_WRITE'
+                    // InternalContainer.g:2925:6: (enumLiteral_2= 'AUDIT_WRITE' )
+                    // InternalContainer.g:2925:8: enumLiteral_2= 'AUDIT_WRITE'
                     {
-                    enumLiteral_2=(Token)match(input,73,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,75,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getAUDIT_WRITEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getCapabilityAccess().getAUDIT_WRITEEnumLiteralDeclaration_2()); 
@@ -7267,12 +7302,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalContainer.g:2939:6: (enumLiteral_3= 'BLOCK_SUSPEND' )
+                    // InternalContainer.g:2931:6: (enumLiteral_3= 'BLOCK_SUSPEND' )
                     {
-                    // InternalContainer.g:2939:6: (enumLiteral_3= 'BLOCK_SUSPEND' )
-                    // InternalContainer.g:2939:8: enumLiteral_3= 'BLOCK_SUSPEND'
+                    // InternalContainer.g:2931:6: (enumLiteral_3= 'BLOCK_SUSPEND' )
+                    // InternalContainer.g:2931:8: enumLiteral_3= 'BLOCK_SUSPEND'
                     {
-                    enumLiteral_3=(Token)match(input,74,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,76,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getBLOCK_SUSPENDEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getCapabilityAccess().getBLOCK_SUSPENDEnumLiteralDeclaration_3()); 
@@ -7284,12 +7319,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalContainer.g:2945:6: (enumLiteral_4= 'CHOWN' )
+                    // InternalContainer.g:2937:6: (enumLiteral_4= 'CHOWN' )
                     {
-                    // InternalContainer.g:2945:6: (enumLiteral_4= 'CHOWN' )
-                    // InternalContainer.g:2945:8: enumLiteral_4= 'CHOWN'
+                    // InternalContainer.g:2937:6: (enumLiteral_4= 'CHOWN' )
+                    // InternalContainer.g:2937:8: enumLiteral_4= 'CHOWN'
                     {
-                    enumLiteral_4=(Token)match(input,75,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,77,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getCHOWNEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getCapabilityAccess().getCHOWNEnumLiteralDeclaration_4()); 
@@ -7301,12 +7336,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalContainer.g:2951:6: (enumLiteral_5= 'DAC_OVERRIDE' )
+                    // InternalContainer.g:2943:6: (enumLiteral_5= 'DAC_OVERRIDE' )
                     {
-                    // InternalContainer.g:2951:6: (enumLiteral_5= 'DAC_OVERRIDE' )
-                    // InternalContainer.g:2951:8: enumLiteral_5= 'DAC_OVERRIDE'
+                    // InternalContainer.g:2943:6: (enumLiteral_5= 'DAC_OVERRIDE' )
+                    // InternalContainer.g:2943:8: enumLiteral_5= 'DAC_OVERRIDE'
                     {
-                    enumLiteral_5=(Token)match(input,76,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,78,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getDAC_OVERRIDEEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getCapabilityAccess().getDAC_OVERRIDEEnumLiteralDeclaration_5()); 
@@ -7318,12 +7353,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalContainer.g:2957:6: (enumLiteral_6= 'DAC_READ_SEARCH' )
+                    // InternalContainer.g:2949:6: (enumLiteral_6= 'DAC_READ_SEARCH' )
                     {
-                    // InternalContainer.g:2957:6: (enumLiteral_6= 'DAC_READ_SEARCH' )
-                    // InternalContainer.g:2957:8: enumLiteral_6= 'DAC_READ_SEARCH'
+                    // InternalContainer.g:2949:6: (enumLiteral_6= 'DAC_READ_SEARCH' )
+                    // InternalContainer.g:2949:8: enumLiteral_6= 'DAC_READ_SEARCH'
                     {
-                    enumLiteral_6=(Token)match(input,77,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,79,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getDAC_READ_SEARCHEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_6, grammarAccess.getCapabilityAccess().getDAC_READ_SEARCHEnumLiteralDeclaration_6()); 
@@ -7335,12 +7370,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalContainer.g:2963:6: (enumLiteral_7= 'FOWNER' )
+                    // InternalContainer.g:2955:6: (enumLiteral_7= 'FOWNER' )
                     {
-                    // InternalContainer.g:2963:6: (enumLiteral_7= 'FOWNER' )
-                    // InternalContainer.g:2963:8: enumLiteral_7= 'FOWNER'
+                    // InternalContainer.g:2955:6: (enumLiteral_7= 'FOWNER' )
+                    // InternalContainer.g:2955:8: enumLiteral_7= 'FOWNER'
                     {
-                    enumLiteral_7=(Token)match(input,78,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,80,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getFOWNEREnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_7, grammarAccess.getCapabilityAccess().getFOWNEREnumLiteralDeclaration_7()); 
@@ -7352,12 +7387,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalContainer.g:2969:6: (enumLiteral_8= 'FSETID' )
+                    // InternalContainer.g:2961:6: (enumLiteral_8= 'FSETID' )
                     {
-                    // InternalContainer.g:2969:6: (enumLiteral_8= 'FSETID' )
-                    // InternalContainer.g:2969:8: enumLiteral_8= 'FSETID'
+                    // InternalContainer.g:2961:6: (enumLiteral_8= 'FSETID' )
+                    // InternalContainer.g:2961:8: enumLiteral_8= 'FSETID'
                     {
-                    enumLiteral_8=(Token)match(input,79,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,81,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getFSETIDEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_8, grammarAccess.getCapabilityAccess().getFSETIDEnumLiteralDeclaration_8()); 
@@ -7369,12 +7404,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalContainer.g:2975:6: (enumLiteral_9= 'IPC_LOCK' )
+                    // InternalContainer.g:2967:6: (enumLiteral_9= 'IPC_LOCK' )
                     {
-                    // InternalContainer.g:2975:6: (enumLiteral_9= 'IPC_LOCK' )
-                    // InternalContainer.g:2975:8: enumLiteral_9= 'IPC_LOCK'
+                    // InternalContainer.g:2967:6: (enumLiteral_9= 'IPC_LOCK' )
+                    // InternalContainer.g:2967:8: enumLiteral_9= 'IPC_LOCK'
                     {
-                    enumLiteral_9=(Token)match(input,80,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,82,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getIPC_LOCKEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_9, grammarAccess.getCapabilityAccess().getIPC_LOCKEnumLiteralDeclaration_9()); 
@@ -7386,12 +7421,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalContainer.g:2981:6: (enumLiteral_10= 'IPC_OWNER' )
+                    // InternalContainer.g:2973:6: (enumLiteral_10= 'IPC_OWNER' )
                     {
-                    // InternalContainer.g:2981:6: (enumLiteral_10= 'IPC_OWNER' )
-                    // InternalContainer.g:2981:8: enumLiteral_10= 'IPC_OWNER'
+                    // InternalContainer.g:2973:6: (enumLiteral_10= 'IPC_OWNER' )
+                    // InternalContainer.g:2973:8: enumLiteral_10= 'IPC_OWNER'
                     {
-                    enumLiteral_10=(Token)match(input,81,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,83,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getIPC_OWNEREnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_10, grammarAccess.getCapabilityAccess().getIPC_OWNEREnumLiteralDeclaration_10()); 
@@ -7403,12 +7438,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalContainer.g:2987:6: (enumLiteral_11= 'KILL' )
+                    // InternalContainer.g:2979:6: (enumLiteral_11= 'KILL' )
                     {
-                    // InternalContainer.g:2987:6: (enumLiteral_11= 'KILL' )
-                    // InternalContainer.g:2987:8: enumLiteral_11= 'KILL'
+                    // InternalContainer.g:2979:6: (enumLiteral_11= 'KILL' )
+                    // InternalContainer.g:2979:8: enumLiteral_11= 'KILL'
                     {
-                    enumLiteral_11=(Token)match(input,82,FOLLOW_2); 
+                    enumLiteral_11=(Token)match(input,84,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getKILLEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_11, grammarAccess.getCapabilityAccess().getKILLEnumLiteralDeclaration_11()); 
@@ -7420,12 +7455,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalContainer.g:2993:6: (enumLiteral_12= 'LEASE' )
+                    // InternalContainer.g:2985:6: (enumLiteral_12= 'LEASE' )
                     {
-                    // InternalContainer.g:2993:6: (enumLiteral_12= 'LEASE' )
-                    // InternalContainer.g:2993:8: enumLiteral_12= 'LEASE'
+                    // InternalContainer.g:2985:6: (enumLiteral_12= 'LEASE' )
+                    // InternalContainer.g:2985:8: enumLiteral_12= 'LEASE'
                     {
-                    enumLiteral_12=(Token)match(input,83,FOLLOW_2); 
+                    enumLiteral_12=(Token)match(input,85,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getLEASEEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_12, grammarAccess.getCapabilityAccess().getLEASEEnumLiteralDeclaration_12()); 
@@ -7437,12 +7472,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalContainer.g:2999:6: (enumLiteral_13= 'LINUX_IMMUTABLE' )
+                    // InternalContainer.g:2991:6: (enumLiteral_13= 'LINUX_IMMUTABLE' )
                     {
-                    // InternalContainer.g:2999:6: (enumLiteral_13= 'LINUX_IMMUTABLE' )
-                    // InternalContainer.g:2999:8: enumLiteral_13= 'LINUX_IMMUTABLE'
+                    // InternalContainer.g:2991:6: (enumLiteral_13= 'LINUX_IMMUTABLE' )
+                    // InternalContainer.g:2991:8: enumLiteral_13= 'LINUX_IMMUTABLE'
                     {
-                    enumLiteral_13=(Token)match(input,84,FOLLOW_2); 
+                    enumLiteral_13=(Token)match(input,86,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getLINUX_IMMUTABLEEnumLiteralDeclaration_13().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_13, grammarAccess.getCapabilityAccess().getLINUX_IMMUTABLEEnumLiteralDeclaration_13()); 
@@ -7454,12 +7489,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalContainer.g:3005:6: (enumLiteral_14= 'MAC_ADMIN' )
+                    // InternalContainer.g:2997:6: (enumLiteral_14= 'MAC_ADMIN' )
                     {
-                    // InternalContainer.g:3005:6: (enumLiteral_14= 'MAC_ADMIN' )
-                    // InternalContainer.g:3005:8: enumLiteral_14= 'MAC_ADMIN'
+                    // InternalContainer.g:2997:6: (enumLiteral_14= 'MAC_ADMIN' )
+                    // InternalContainer.g:2997:8: enumLiteral_14= 'MAC_ADMIN'
                     {
-                    enumLiteral_14=(Token)match(input,85,FOLLOW_2); 
+                    enumLiteral_14=(Token)match(input,87,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getMAC_ADMINEnumLiteralDeclaration_14().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_14, grammarAccess.getCapabilityAccess().getMAC_ADMINEnumLiteralDeclaration_14()); 
@@ -7471,12 +7506,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalContainer.g:3011:6: (enumLiteral_15= 'MAC_OVERRIDE' )
+                    // InternalContainer.g:3003:6: (enumLiteral_15= 'MAC_OVERRIDE' )
                     {
-                    // InternalContainer.g:3011:6: (enumLiteral_15= 'MAC_OVERRIDE' )
-                    // InternalContainer.g:3011:8: enumLiteral_15= 'MAC_OVERRIDE'
+                    // InternalContainer.g:3003:6: (enumLiteral_15= 'MAC_OVERRIDE' )
+                    // InternalContainer.g:3003:8: enumLiteral_15= 'MAC_OVERRIDE'
                     {
-                    enumLiteral_15=(Token)match(input,86,FOLLOW_2); 
+                    enumLiteral_15=(Token)match(input,88,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getMAC_OVERRIDEEnumLiteralDeclaration_15().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_15, grammarAccess.getCapabilityAccess().getMAC_OVERRIDEEnumLiteralDeclaration_15()); 
@@ -7488,12 +7523,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalContainer.g:3017:6: (enumLiteral_16= 'MKNOD' )
+                    // InternalContainer.g:3009:6: (enumLiteral_16= 'MKNOD' )
                     {
-                    // InternalContainer.g:3017:6: (enumLiteral_16= 'MKNOD' )
-                    // InternalContainer.g:3017:8: enumLiteral_16= 'MKNOD'
+                    // InternalContainer.g:3009:6: (enumLiteral_16= 'MKNOD' )
+                    // InternalContainer.g:3009:8: enumLiteral_16= 'MKNOD'
                     {
-                    enumLiteral_16=(Token)match(input,87,FOLLOW_2); 
+                    enumLiteral_16=(Token)match(input,89,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getMKNODEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_16, grammarAccess.getCapabilityAccess().getMKNODEnumLiteralDeclaration_16()); 
@@ -7505,12 +7540,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalContainer.g:3023:6: (enumLiteral_17= 'NET_ADMIN' )
+                    // InternalContainer.g:3015:6: (enumLiteral_17= 'NET_ADMIN' )
                     {
-                    // InternalContainer.g:3023:6: (enumLiteral_17= 'NET_ADMIN' )
-                    // InternalContainer.g:3023:8: enumLiteral_17= 'NET_ADMIN'
+                    // InternalContainer.g:3015:6: (enumLiteral_17= 'NET_ADMIN' )
+                    // InternalContainer.g:3015:8: enumLiteral_17= 'NET_ADMIN'
                     {
-                    enumLiteral_17=(Token)match(input,88,FOLLOW_2); 
+                    enumLiteral_17=(Token)match(input,90,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getNET_ADMINEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_17, grammarAccess.getCapabilityAccess().getNET_ADMINEnumLiteralDeclaration_17()); 
@@ -7522,12 +7557,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalContainer.g:3029:6: (enumLiteral_18= 'NET_BIND_SERVICE' )
+                    // InternalContainer.g:3021:6: (enumLiteral_18= 'NET_BIND_SERVICE' )
                     {
-                    // InternalContainer.g:3029:6: (enumLiteral_18= 'NET_BIND_SERVICE' )
-                    // InternalContainer.g:3029:8: enumLiteral_18= 'NET_BIND_SERVICE'
+                    // InternalContainer.g:3021:6: (enumLiteral_18= 'NET_BIND_SERVICE' )
+                    // InternalContainer.g:3021:8: enumLiteral_18= 'NET_BIND_SERVICE'
                     {
-                    enumLiteral_18=(Token)match(input,89,FOLLOW_2); 
+                    enumLiteral_18=(Token)match(input,91,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getNET_BIND_SERVICEEnumLiteralDeclaration_18().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_18, grammarAccess.getCapabilityAccess().getNET_BIND_SERVICEEnumLiteralDeclaration_18()); 
@@ -7539,12 +7574,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalContainer.g:3035:6: (enumLiteral_19= 'NET_BROADCAST' )
+                    // InternalContainer.g:3027:6: (enumLiteral_19= 'NET_BROADCAST' )
                     {
-                    // InternalContainer.g:3035:6: (enumLiteral_19= 'NET_BROADCAST' )
-                    // InternalContainer.g:3035:8: enumLiteral_19= 'NET_BROADCAST'
+                    // InternalContainer.g:3027:6: (enumLiteral_19= 'NET_BROADCAST' )
+                    // InternalContainer.g:3027:8: enumLiteral_19= 'NET_BROADCAST'
                     {
-                    enumLiteral_19=(Token)match(input,90,FOLLOW_2); 
+                    enumLiteral_19=(Token)match(input,92,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getNET_BROADCASTEnumLiteralDeclaration_19().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_19, grammarAccess.getCapabilityAccess().getNET_BROADCASTEnumLiteralDeclaration_19()); 
@@ -7556,12 +7591,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalContainer.g:3041:6: (enumLiteral_20= 'NET_RAW' )
+                    // InternalContainer.g:3033:6: (enumLiteral_20= 'NET_RAW' )
                     {
-                    // InternalContainer.g:3041:6: (enumLiteral_20= 'NET_RAW' )
-                    // InternalContainer.g:3041:8: enumLiteral_20= 'NET_RAW'
+                    // InternalContainer.g:3033:6: (enumLiteral_20= 'NET_RAW' )
+                    // InternalContainer.g:3033:8: enumLiteral_20= 'NET_RAW'
                     {
-                    enumLiteral_20=(Token)match(input,91,FOLLOW_2); 
+                    enumLiteral_20=(Token)match(input,93,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getNET_RAWEnumLiteralDeclaration_20().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_20, grammarAccess.getCapabilityAccess().getNET_RAWEnumLiteralDeclaration_20()); 
@@ -7573,12 +7608,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalContainer.g:3047:6: (enumLiteral_21= 'SETFCAP' )
+                    // InternalContainer.g:3039:6: (enumLiteral_21= 'SETFCAP' )
                     {
-                    // InternalContainer.g:3047:6: (enumLiteral_21= 'SETFCAP' )
-                    // InternalContainer.g:3047:8: enumLiteral_21= 'SETFCAP'
+                    // InternalContainer.g:3039:6: (enumLiteral_21= 'SETFCAP' )
+                    // InternalContainer.g:3039:8: enumLiteral_21= 'SETFCAP'
                     {
-                    enumLiteral_21=(Token)match(input,92,FOLLOW_2); 
+                    enumLiteral_21=(Token)match(input,94,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSETFCAPEnumLiteralDeclaration_21().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_21, grammarAccess.getCapabilityAccess().getSETFCAPEnumLiteralDeclaration_21()); 
@@ -7590,12 +7625,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalContainer.g:3053:6: (enumLiteral_22= 'SETGID' )
+                    // InternalContainer.g:3045:6: (enumLiteral_22= 'SETGID' )
                     {
-                    // InternalContainer.g:3053:6: (enumLiteral_22= 'SETGID' )
-                    // InternalContainer.g:3053:8: enumLiteral_22= 'SETGID'
+                    // InternalContainer.g:3045:6: (enumLiteral_22= 'SETGID' )
+                    // InternalContainer.g:3045:8: enumLiteral_22= 'SETGID'
                     {
-                    enumLiteral_22=(Token)match(input,93,FOLLOW_2); 
+                    enumLiteral_22=(Token)match(input,95,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSETGIDEnumLiteralDeclaration_22().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_22, grammarAccess.getCapabilityAccess().getSETGIDEnumLiteralDeclaration_22()); 
@@ -7607,12 +7642,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalContainer.g:3059:6: (enumLiteral_23= 'SETPCAP' )
+                    // InternalContainer.g:3051:6: (enumLiteral_23= 'SETPCAP' )
                     {
-                    // InternalContainer.g:3059:6: (enumLiteral_23= 'SETPCAP' )
-                    // InternalContainer.g:3059:8: enumLiteral_23= 'SETPCAP'
+                    // InternalContainer.g:3051:6: (enumLiteral_23= 'SETPCAP' )
+                    // InternalContainer.g:3051:8: enumLiteral_23= 'SETPCAP'
                     {
-                    enumLiteral_23=(Token)match(input,94,FOLLOW_2); 
+                    enumLiteral_23=(Token)match(input,96,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSETPCAPEnumLiteralDeclaration_23().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_23, grammarAccess.getCapabilityAccess().getSETPCAPEnumLiteralDeclaration_23()); 
@@ -7624,12 +7659,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // InternalContainer.g:3065:6: (enumLiteral_24= 'SETUID' )
+                    // InternalContainer.g:3057:6: (enumLiteral_24= 'SETUID' )
                     {
-                    // InternalContainer.g:3065:6: (enumLiteral_24= 'SETUID' )
-                    // InternalContainer.g:3065:8: enumLiteral_24= 'SETUID'
+                    // InternalContainer.g:3057:6: (enumLiteral_24= 'SETUID' )
+                    // InternalContainer.g:3057:8: enumLiteral_24= 'SETUID'
                     {
-                    enumLiteral_24=(Token)match(input,95,FOLLOW_2); 
+                    enumLiteral_24=(Token)match(input,97,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSETUIDEnumLiteralDeclaration_24().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_24, grammarAccess.getCapabilityAccess().getSETUIDEnumLiteralDeclaration_24()); 
@@ -7641,12 +7676,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // InternalContainer.g:3071:6: (enumLiteral_25= 'SYS_ADMIN' )
+                    // InternalContainer.g:3063:6: (enumLiteral_25= 'SYS_ADMIN' )
                     {
-                    // InternalContainer.g:3071:6: (enumLiteral_25= 'SYS_ADMIN' )
-                    // InternalContainer.g:3071:8: enumLiteral_25= 'SYS_ADMIN'
+                    // InternalContainer.g:3063:6: (enumLiteral_25= 'SYS_ADMIN' )
+                    // InternalContainer.g:3063:8: enumLiteral_25= 'SYS_ADMIN'
                     {
-                    enumLiteral_25=(Token)match(input,96,FOLLOW_2); 
+                    enumLiteral_25=(Token)match(input,98,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_ADMINEnumLiteralDeclaration_25().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_25, grammarAccess.getCapabilityAccess().getSYS_ADMINEnumLiteralDeclaration_25()); 
@@ -7658,12 +7693,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // InternalContainer.g:3077:6: (enumLiteral_26= 'SYS_BOOT' )
+                    // InternalContainer.g:3069:6: (enumLiteral_26= 'SYS_BOOT' )
                     {
-                    // InternalContainer.g:3077:6: (enumLiteral_26= 'SYS_BOOT' )
-                    // InternalContainer.g:3077:8: enumLiteral_26= 'SYS_BOOT'
+                    // InternalContainer.g:3069:6: (enumLiteral_26= 'SYS_BOOT' )
+                    // InternalContainer.g:3069:8: enumLiteral_26= 'SYS_BOOT'
                     {
-                    enumLiteral_26=(Token)match(input,97,FOLLOW_2); 
+                    enumLiteral_26=(Token)match(input,99,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_BOOTEnumLiteralDeclaration_26().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_26, grammarAccess.getCapabilityAccess().getSYS_BOOTEnumLiteralDeclaration_26()); 
@@ -7675,12 +7710,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // InternalContainer.g:3083:6: (enumLiteral_27= 'SYS_CHROOT' )
+                    // InternalContainer.g:3075:6: (enumLiteral_27= 'SYS_CHROOT' )
                     {
-                    // InternalContainer.g:3083:6: (enumLiteral_27= 'SYS_CHROOT' )
-                    // InternalContainer.g:3083:8: enumLiteral_27= 'SYS_CHROOT'
+                    // InternalContainer.g:3075:6: (enumLiteral_27= 'SYS_CHROOT' )
+                    // InternalContainer.g:3075:8: enumLiteral_27= 'SYS_CHROOT'
                     {
-                    enumLiteral_27=(Token)match(input,98,FOLLOW_2); 
+                    enumLiteral_27=(Token)match(input,100,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_CHROOTEnumLiteralDeclaration_27().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_27, grammarAccess.getCapabilityAccess().getSYS_CHROOTEnumLiteralDeclaration_27()); 
@@ -7692,12 +7727,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // InternalContainer.g:3089:6: (enumLiteral_28= 'SYSLOG' )
+                    // InternalContainer.g:3081:6: (enumLiteral_28= 'SYSLOG' )
                     {
-                    // InternalContainer.g:3089:6: (enumLiteral_28= 'SYSLOG' )
-                    // InternalContainer.g:3089:8: enumLiteral_28= 'SYSLOG'
+                    // InternalContainer.g:3081:6: (enumLiteral_28= 'SYSLOG' )
+                    // InternalContainer.g:3081:8: enumLiteral_28= 'SYSLOG'
                     {
-                    enumLiteral_28=(Token)match(input,99,FOLLOW_2); 
+                    enumLiteral_28=(Token)match(input,101,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYSLOGEnumLiteralDeclaration_28().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_28, grammarAccess.getCapabilityAccess().getSYSLOGEnumLiteralDeclaration_28()); 
@@ -7709,12 +7744,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // InternalContainer.g:3095:6: (enumLiteral_29= 'SYS_MODULE' )
+                    // InternalContainer.g:3087:6: (enumLiteral_29= 'SYS_MODULE' )
                     {
-                    // InternalContainer.g:3095:6: (enumLiteral_29= 'SYS_MODULE' )
-                    // InternalContainer.g:3095:8: enumLiteral_29= 'SYS_MODULE'
+                    // InternalContainer.g:3087:6: (enumLiteral_29= 'SYS_MODULE' )
+                    // InternalContainer.g:3087:8: enumLiteral_29= 'SYS_MODULE'
                     {
-                    enumLiteral_29=(Token)match(input,100,FOLLOW_2); 
+                    enumLiteral_29=(Token)match(input,102,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_MODULEEnumLiteralDeclaration_29().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_29, grammarAccess.getCapabilityAccess().getSYS_MODULEEnumLiteralDeclaration_29()); 
@@ -7726,12 +7761,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // InternalContainer.g:3101:6: (enumLiteral_30= 'SYS_NICE' )
+                    // InternalContainer.g:3093:6: (enumLiteral_30= 'SYS_NICE' )
                     {
-                    // InternalContainer.g:3101:6: (enumLiteral_30= 'SYS_NICE' )
-                    // InternalContainer.g:3101:8: enumLiteral_30= 'SYS_NICE'
+                    // InternalContainer.g:3093:6: (enumLiteral_30= 'SYS_NICE' )
+                    // InternalContainer.g:3093:8: enumLiteral_30= 'SYS_NICE'
                     {
-                    enumLiteral_30=(Token)match(input,101,FOLLOW_2); 
+                    enumLiteral_30=(Token)match(input,103,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_NICEEnumLiteralDeclaration_30().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_30, grammarAccess.getCapabilityAccess().getSYS_NICEEnumLiteralDeclaration_30()); 
@@ -7743,12 +7778,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // InternalContainer.g:3107:6: (enumLiteral_31= 'SYS_PACCT' )
+                    // InternalContainer.g:3099:6: (enumLiteral_31= 'SYS_PACCT' )
                     {
-                    // InternalContainer.g:3107:6: (enumLiteral_31= 'SYS_PACCT' )
-                    // InternalContainer.g:3107:8: enumLiteral_31= 'SYS_PACCT'
+                    // InternalContainer.g:3099:6: (enumLiteral_31= 'SYS_PACCT' )
+                    // InternalContainer.g:3099:8: enumLiteral_31= 'SYS_PACCT'
                     {
-                    enumLiteral_31=(Token)match(input,102,FOLLOW_2); 
+                    enumLiteral_31=(Token)match(input,104,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_PACCTEnumLiteralDeclaration_31().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_31, grammarAccess.getCapabilityAccess().getSYS_PACCTEnumLiteralDeclaration_31()); 
@@ -7760,12 +7795,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // InternalContainer.g:3113:6: (enumLiteral_32= 'SYS_PTRACE' )
+                    // InternalContainer.g:3105:6: (enumLiteral_32= 'SYS_PTRACE' )
                     {
-                    // InternalContainer.g:3113:6: (enumLiteral_32= 'SYS_PTRACE' )
-                    // InternalContainer.g:3113:8: enumLiteral_32= 'SYS_PTRACE'
+                    // InternalContainer.g:3105:6: (enumLiteral_32= 'SYS_PTRACE' )
+                    // InternalContainer.g:3105:8: enumLiteral_32= 'SYS_PTRACE'
                     {
-                    enumLiteral_32=(Token)match(input,103,FOLLOW_2); 
+                    enumLiteral_32=(Token)match(input,105,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_PTRACEEnumLiteralDeclaration_32().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_32, grammarAccess.getCapabilityAccess().getSYS_PTRACEEnumLiteralDeclaration_32()); 
@@ -7777,12 +7812,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // InternalContainer.g:3119:6: (enumLiteral_33= 'SYS_RAWIO' )
+                    // InternalContainer.g:3111:6: (enumLiteral_33= 'SYS_RAWIO' )
                     {
-                    // InternalContainer.g:3119:6: (enumLiteral_33= 'SYS_RAWIO' )
-                    // InternalContainer.g:3119:8: enumLiteral_33= 'SYS_RAWIO'
+                    // InternalContainer.g:3111:6: (enumLiteral_33= 'SYS_RAWIO' )
+                    // InternalContainer.g:3111:8: enumLiteral_33= 'SYS_RAWIO'
                     {
-                    enumLiteral_33=(Token)match(input,104,FOLLOW_2); 
+                    enumLiteral_33=(Token)match(input,106,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_RAWIOEnumLiteralDeclaration_33().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_33, grammarAccess.getCapabilityAccess().getSYS_RAWIOEnumLiteralDeclaration_33()); 
@@ -7794,12 +7829,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // InternalContainer.g:3125:6: (enumLiteral_34= 'SYS_RESOURCE' )
+                    // InternalContainer.g:3117:6: (enumLiteral_34= 'SYS_RESOURCE' )
                     {
-                    // InternalContainer.g:3125:6: (enumLiteral_34= 'SYS_RESOURCE' )
-                    // InternalContainer.g:3125:8: enumLiteral_34= 'SYS_RESOURCE'
+                    // InternalContainer.g:3117:6: (enumLiteral_34= 'SYS_RESOURCE' )
+                    // InternalContainer.g:3117:8: enumLiteral_34= 'SYS_RESOURCE'
                     {
-                    enumLiteral_34=(Token)match(input,105,FOLLOW_2); 
+                    enumLiteral_34=(Token)match(input,107,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_RESOURCEEnumLiteralDeclaration_34().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_34, grammarAccess.getCapabilityAccess().getSYS_RESOURCEEnumLiteralDeclaration_34()); 
@@ -7811,12 +7846,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // InternalContainer.g:3131:6: (enumLiteral_35= 'SYS_TIME' )
+                    // InternalContainer.g:3123:6: (enumLiteral_35= 'SYS_TIME' )
                     {
-                    // InternalContainer.g:3131:6: (enumLiteral_35= 'SYS_TIME' )
-                    // InternalContainer.g:3131:8: enumLiteral_35= 'SYS_TIME'
+                    // InternalContainer.g:3123:6: (enumLiteral_35= 'SYS_TIME' )
+                    // InternalContainer.g:3123:8: enumLiteral_35= 'SYS_TIME'
                     {
-                    enumLiteral_35=(Token)match(input,106,FOLLOW_2); 
+                    enumLiteral_35=(Token)match(input,108,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_TIMEEnumLiteralDeclaration_35().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_35, grammarAccess.getCapabilityAccess().getSYS_TIMEEnumLiteralDeclaration_35()); 
@@ -7828,12 +7863,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // InternalContainer.g:3137:6: (enumLiteral_36= 'SYS_TTY_CONFIG' )
+                    // InternalContainer.g:3129:6: (enumLiteral_36= 'SYS_TTY_CONFIG' )
                     {
-                    // InternalContainer.g:3137:6: (enumLiteral_36= 'SYS_TTY_CONFIG' )
-                    // InternalContainer.g:3137:8: enumLiteral_36= 'SYS_TTY_CONFIG'
+                    // InternalContainer.g:3129:6: (enumLiteral_36= 'SYS_TTY_CONFIG' )
+                    // InternalContainer.g:3129:8: enumLiteral_36= 'SYS_TTY_CONFIG'
                     {
-                    enumLiteral_36=(Token)match(input,107,FOLLOW_2); 
+                    enumLiteral_36=(Token)match(input,109,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getSYS_TTY_CONFIGEnumLiteralDeclaration_36().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_36, grammarAccess.getCapabilityAccess().getSYS_TTY_CONFIGEnumLiteralDeclaration_36()); 
@@ -7845,12 +7880,12 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // InternalContainer.g:3143:6: (enumLiteral_37= 'WAKE_ALARM' )
+                    // InternalContainer.g:3135:6: (enumLiteral_37= 'WAKE_ALARM' )
                     {
-                    // InternalContainer.g:3143:6: (enumLiteral_37= 'WAKE_ALARM' )
-                    // InternalContainer.g:3143:8: enumLiteral_37= 'WAKE_ALARM'
+                    // InternalContainer.g:3135:6: (enumLiteral_37= 'WAKE_ALARM' )
+                    // InternalContainer.g:3135:8: enumLiteral_37= 'WAKE_ALARM'
                     {
-                    enumLiteral_37=(Token)match(input,108,FOLLOW_2); 
+                    enumLiteral_37=(Token)match(input,110,FOLLOW_2); 
 
                             current = grammarAccess.getCapabilityAccess().getWAKE_ALARMEnumLiteralDeclaration_37().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_37, grammarAccess.getCapabilityAccess().getWAKE_ALARMEnumLiteralDeclaration_37()); 
@@ -7927,7 +7962,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "()* loopback of 172:3: ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileDir' ( (lv_dockerFileDir_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )*";
+            return "()* loopback of 172:3: ( ({...}? => ( ({...}? => (otherlv_4= 'tag' ( (lv_tag_5_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_6= 'dockerFileLocation' ( (lv_dockerFilelocation_7_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'buildArg' ( (lv_buildargs_9_0= ruleBuildArgs ) )+ ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'noCache' ( (lv_noCache_11_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_12= 'memory' ( (lv_memory_13_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'memswap' ( (lv_memswap_15_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_16= 'cpusetcpus' ( (lv_cpusetcpus_17_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'cpushares' ( (lv_cpushares_19_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_20= 'remove' ( (lv_remove_21_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'quiet' ( (lv_quiet_23_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'pull' ( (lv_pull_25_0= ruleEBoolean ) ) ) ) ) ) )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -7975,14 +8010,13 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             throw nvae;
         }
     }
-    static final String dfa_7s = "\47\uffff";
-    static final String dfa_8s = "\1\21\46\uffff";
-    static final String dfa_9s = "\1\100\46\uffff";
-    static final String dfa_10s = "\1\uffff\1\46\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45";
-    static final String dfa_11s = "\1\0\46\uffff}>";
+    static final String dfa_7s = "\46\uffff";
+    static final String dfa_8s = "\1\21\45\uffff";
+    static final String dfa_9s = "\1\77\45\uffff";
+    static final String dfa_10s = "\1\uffff\1\45\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44";
+    static final String dfa_11s = "\1\0\45\uffff}>";
     static final String[] dfa_12s = {
-            "\1\26\6\uffff\1\1\4\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46",
-            "",
+            "\1\26\6\uffff\1\1\4\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45",
             "",
             "",
             "",
@@ -8043,7 +8077,7 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
             this.transition = dfa_12;
         }
         public String getDescription() {
-            return "()* loopback of 753:3: ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'cgroupParent' ( (lv_cgroupParent_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'workingDir' ( (lv_workingDir_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'user' ( (lv_user_96_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'tty' ( (lv_tty_98_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'restartPolicy' ( (lv_restartPolicy_100_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_101= 'volumes' otherlv_102= '{' (otherlv_103= '-' ( (lv_volumes_104_0= ruleVolume ) ) )+ otherlv_105= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_106= 'volumesFrom' otherlv_107= '{' (otherlv_108= '-' ( (lv_volumesFrom_109_0= ruleVolumesFrom ) ) )+ otherlv_110= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_111= 'ulimits' otherlv_112= '{' (otherlv_113= '-' ( (lv_ulimits_114_0= ruleUlimit ) ) )+ otherlv_115= '}' ) ) ) ) )*";
+            return "()* loopback of 758:3: ( ({...}? => ( ({...}? => (otherlv_6= 'binds' otherlv_7= '{' ( (lv_binds_8_0= ruleBind ) )+ otherlv_9= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_10= 'capabilityAdd' otherlv_11= '{' ( (lv_capabilityAdd_12_0= ruleCapability ) )+ otherlv_13= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'capabilityDrop' otherlv_15= '{' ( (lv_capabilityDrop_16_0= ruleCapability ) )+ otherlv_17= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_18= 'commands' otherlv_19= '{' ( (lv_commands_20_0= RULE_STRING ) )+ otherlv_21= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_22= 'containerIDFile' ( (lv_containerIDFile_23_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_24= 'cpuPeriod' ( (lv_cpuPeriod_25_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_26= 'cpusetCpus' ( (lv_cpusetCpus_27_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_28= 'cpusetMems' ( (lv_cpusetMems_29_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_30= 'cpuShares' ( (lv_cpuShares_31_0= RULE_INT ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_32= 'devices' otherlv_33= '{' ( (lv_devices_34_0= ruleDevice ) )+ otherlv_35= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_36= 'dns' ( (lv_dns_37_0= RULE_STRING ) )+ otherlv_38= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_39= 'dnsSearch' otherlv_40= '{' ( (lv_dnsSearch_41_0= RULE_STRING ) )+ otherlv_42= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_43= 'domainName' ( (lv_domainName_44_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_45= 'entrypoint' otherlv_46= '{' ( (lv_entrypoint_47_0= RULE_STRING ) )+ otherlv_48= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_49= 'env' otherlv_50= '{' ( (lv_env_51_0= RULE_STRING ) )+ otherlv_52= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_53= 'exposedPorts' otherlv_54= '{' ( (lv_exposedPorts_55_0= ruleExposedPort ) )+ otherlv_56= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_57= 'extraHosts' otherlv_58= '{' ( (lv_extraHosts_59_0= RULE_STRING ) )+ otherlv_60= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_61= 'labels' otherlv_62= '{' ( (lv_labels_63_0= ruleLabel ) )+ otherlv_64= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_65= 'links' otherlv_66= '{' ( (lv_links_67_0= ruleLink ) )+ otherlv_68= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_69= 'macAddress' ( (lv_macAddress_70_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_71= 'memory' ( (lv_memory_72_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_73= 'memorySwap' ( (lv_memorySwap_74_0= ruleElong ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_75= 'disableNetwork' ( (lv_disableNetwork_76_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_77= 'networkMode' ( (lv_networkMode_78_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_79= 'portBindings' otherlv_80= '{' ( (lv_portBindings_81_0= rulePortBinding ) )+ otherlv_82= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_83= 'privileged' ( (lv_privileged_84_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_85= 'publishAllPorts' ( (lv_publishAllPorts_86_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_87= 'readonlyRootfs' ( (lv_readonlyRootfs_88_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_89= 'pidMode' ( (lv_pidMode_90_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_91= 'workingDir' ( (lv_workingDir_92_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_93= 'user' ( (lv_user_94_0= RULE_STRING ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_95= 'tty' ( (lv_tty_96_0= ruleEBoolean ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_97= 'restartPolicy' ( (lv_restartPolicy_98_0= ruleRestartPolicy ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_99= 'volumes' otherlv_100= '{' (otherlv_101= '-' ( (lv_volumes_102_0= ruleVolume ) ) )+ otherlv_103= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_104= 'volumesFrom' otherlv_105= '{' (otherlv_106= '-' ( (lv_volumesFrom_107_0= ruleVolumesFrom ) ) )+ otherlv_108= '}' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_109= 'ulimits' otherlv_110= '{' (otherlv_111= '-' ( (lv_ulimits_112_0= ruleUlimit ) ) )+ otherlv_113= '}' ) ) ) ) )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -8130,8 +8164,6 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
 
                         else if ( LA22_0 == 63 && getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 35) ) {s = 37;}
 
-                        else if ( LA22_0 == 64 && getUnorderedGroupHelper().canSelect(grammarAccess.getContainerAccess().getUnorderedGroup_5(), 36) ) {s = 38;}
-
                          
                         input.seek(index22_0);
                         if ( s>=0 ) return s;
@@ -8157,14 +8189,18 @@ public class InternalContainerParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0xFFFFFFFFE1020000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0xFFFFFFFFE1020000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000000L,0x00001FFFFFFFFF80L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000000L,0x00001FFFFFFFFF80L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000000L,0x00007FFFFFFFFE00L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000000L,0x00007FFFFFFFFE00L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000010L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000018L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L,0x000000000000000CL});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000180L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000180L});
 
 }

@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getTag <em>Tag</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getDockerFileDir <em>Docker File Dir</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getDockerFilelocation <em>Docker Filelocation</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getBuildargs <em>Buildargs</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#isNoCache <em>No Cache</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getMemory <em>Memory</em>}</li>
@@ -82,24 +82,24 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
   protected String tag = TAG_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDockerFileDir() <em>Docker File Dir</em>}' attribute.
+   * The default value of the '{@link #getDockerFilelocation() <em>Docker Filelocation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDockerFileDir()
+   * @see #getDockerFilelocation()
    * @generated
    * @ordered
    */
-  protected static final String DOCKER_FILE_DIR_EDEFAULT = null;
+  protected static final String DOCKER_FILELOCATION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDockerFileDir() <em>Docker File Dir</em>}' attribute.
+   * The cached value of the '{@link #getDockerFilelocation() <em>Docker Filelocation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDockerFileDir()
+   * @see #getDockerFilelocation()
    * @generated
    * @ordered
    */
-  protected String dockerFileDir = DOCKER_FILE_DIR_EDEFAULT;
+  protected String dockerFilelocation = DOCKER_FILELOCATION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getBuildargs() <em>Buildargs</em>}' containment reference.
@@ -343,9 +343,9 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDockerFileDir()
+  public String getDockerFilelocation()
   {
-    return dockerFileDir;
+    return dockerFilelocation;
   }
 
   /**
@@ -353,12 +353,12 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDockerFileDir(String newDockerFileDir)
+  public void setDockerFilelocation(String newDockerFilelocation)
   {
-    String oldDockerFileDir = dockerFileDir;
-    dockerFileDir = newDockerFileDir;
+    String oldDockerFilelocation = dockerFilelocation;
+    dockerFilelocation = newDockerFilelocation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.IMAGE__DOCKER_FILE_DIR, oldDockerFileDir, dockerFileDir));
+      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.IMAGE__DOCKER_FILELOCATION, oldDockerFilelocation, dockerFilelocation));
   }
 
   /**
@@ -623,8 +623,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
         return getName();
       case ContainerPackage.IMAGE__TAG:
         return getTag();
-      case ContainerPackage.IMAGE__DOCKER_FILE_DIR:
-        return getDockerFileDir();
+      case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
+        return getDockerFilelocation();
       case ContainerPackage.IMAGE__BUILDARGS:
         return getBuildargs();
       case ContainerPackage.IMAGE__NO_CACHE:
@@ -663,8 +663,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
       case ContainerPackage.IMAGE__TAG:
         setTag((String)newValue);
         return;
-      case ContainerPackage.IMAGE__DOCKER_FILE_DIR:
-        setDockerFileDir((String)newValue);
+      case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
+        setDockerFilelocation((String)newValue);
         return;
       case ContainerPackage.IMAGE__BUILDARGS:
         setBuildargs((BuildArgs)newValue);
@@ -713,8 +713,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
       case ContainerPackage.IMAGE__TAG:
         setTag(TAG_EDEFAULT);
         return;
-      case ContainerPackage.IMAGE__DOCKER_FILE_DIR:
-        setDockerFileDir(DOCKER_FILE_DIR_EDEFAULT);
+      case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
+        setDockerFilelocation(DOCKER_FILELOCATION_EDEFAULT);
         return;
       case ContainerPackage.IMAGE__BUILDARGS:
         setBuildargs((BuildArgs)null);
@@ -761,8 +761,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ContainerPackage.IMAGE__TAG:
         return TAG_EDEFAULT == null ? tag != null : !TAG_EDEFAULT.equals(tag);
-      case ContainerPackage.IMAGE__DOCKER_FILE_DIR:
-        return DOCKER_FILE_DIR_EDEFAULT == null ? dockerFileDir != null : !DOCKER_FILE_DIR_EDEFAULT.equals(dockerFileDir);
+      case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
+        return DOCKER_FILELOCATION_EDEFAULT == null ? dockerFilelocation != null : !DOCKER_FILELOCATION_EDEFAULT.equals(dockerFilelocation);
       case ContainerPackage.IMAGE__BUILDARGS:
         return buildargs != null;
       case ContainerPackage.IMAGE__NO_CACHE:
@@ -800,8 +800,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
     result.append(name);
     result.append(", tag: ");
     result.append(tag);
-    result.append(", dockerFileDir: ");
-    result.append(dockerFileDir);
+    result.append(", dockerFilelocation: ");
+    result.append(dockerFilelocation);
     result.append(", noCache: ");
     result.append(noCache);
     result.append(", memory: ");

@@ -101,22 +101,10 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Bind returns Bind
 	 *
 	 * Constraint:
-	 *     (location=STRING volume=Volume accessMode1=AccessMode)
+	 *     (location=STRING volume=Volume accessMode1=AccessMode?)
 	 */
 	protected void sequence_Bind(ISerializationContext context, Bind semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ContainerPackage.Literals.BIND__LOCATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.BIND__LOCATION));
-			if (transientValues.isValueTransient(semanticObject, ContainerPackage.Literals.BIND__VOLUME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.BIND__VOLUME));
-			if (transientValues.isValueTransient(semanticObject, ContainerPackage.Literals.BIND__ACCESS_MODE1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.BIND__ACCESS_MODE1));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBindAccess().getLocationSTRINGTerminalRuleCall_1_0(), semanticObject.getLocation());
-		feeder.accept(grammarAccess.getBindAccess().getVolumeVolumeParserRuleCall_3_0(), semanticObject.getVolume());
-		feeder.accept(grammarAccess.getBindAccess().getAccessMode1AccessModeEnumRuleCall_5_0(), semanticObject.getAccessMode1());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -169,7 +157,7 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         image=[Image|ID] 
+	 *         image=STRING 
 	 *         (
 	 *             binds+=Bind | 
 	 *             capabilityAdd+=Capability | 
@@ -177,7 +165,7 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *             commands+=STRING | 
 	 *             containerIDFile=STRING | 
 	 *             cpuPeriod=INT | 
-	 *             cpusetCpus=INT | 
+	 *             cpusetCpus=STRING | 
 	 *             cpusetMems=STRING | 
 	 *             cpuShares=INT | 
 	 *             devices+=Device | 
@@ -200,7 +188,6 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *             publishAllPorts=EBoolean | 
 	 *             readonlyRootfs=EBoolean | 
 	 *             pidMode=STRING | 
-	 *             cgroupParent=STRING | 
 	 *             workingDir=STRING | 
 	 *             user=STRING | 
 	 *             tty=EBoolean | 
@@ -282,7 +269,7 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         name=STRING 
 	 *         (
 	 *             tag=STRING | 
-	 *             dockerFileDir=STRING | 
+	 *             dockerFilelocation=STRING | 
 	 *             buildargs=BuildArgs | 
 	 *             noCache=EBoolean | 
 	 *             memory=Elong | 
@@ -326,7 +313,7 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Link returns Link
 	 *
 	 * Constraint:
-	 *     (containerLink=[Container|ID] alias=STRING)
+	 *     (containerLink=STRING alias=STRING)
 	 */
 	protected void sequence_Link(ISerializationContext context, Link semanticObject) {
 		if (errorAcceptor != null) {
@@ -336,7 +323,7 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.LINK__ALIAS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLinkAccess().getContainerLinkContainerIDTerminalRuleCall_1_0_1(), semanticObject.getContainerLink());
+		feeder.accept(grammarAccess.getLinkAccess().getContainerLinkSTRINGTerminalRuleCall_1_0(), semanticObject.getContainerLink());
 		feeder.accept(grammarAccess.getLinkAccess().getAliasSTRINGTerminalRuleCall_3_0(), semanticObject.getAlias());
 		feeder.finish();
 	}
@@ -368,19 +355,10 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     RestartPolicy returns RestartPolicy
 	 *
 	 * Constraint:
-	 *     (name=STRING maximumRetryCount=INT)
+	 *     (value='always' | maximumRetryCount=INT)
 	 */
 	protected void sequence_RestartPolicy(ISerializationContext context, RestartPolicy semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ContainerPackage.Literals.RESTART_POLICY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.RESTART_POLICY__NAME));
-			if (transientValues.isValueTransient(semanticObject, ContainerPackage.Literals.RESTART_POLICY__MAXIMUM_RETRY_COUNT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.RESTART_POLICY__MAXIMUM_RETRY_COUNT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRestartPolicyAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getRestartPolicyAccess().getMaximumRetryCountINTTerminalRuleCall_2_0(), semanticObject.getMaximumRetryCount());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -431,19 +409,10 @@ public class ContainerSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     VolumesFrom returns VolumesFrom
 	 *
 	 * Constraint:
-	 *     (container=[Container|ID] accessMode=AccessMode)
+	 *     (container=STRING accessMode=AccessMode?)
 	 */
 	protected void sequence_VolumesFrom(ISerializationContext context, VolumesFrom semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ContainerPackage.Literals.VOLUMES_FROM__CONTAINER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.VOLUMES_FROM__CONTAINER));
-			if (transientValues.isValueTransient(semanticObject, ContainerPackage.Literals.VOLUMES_FROM__ACCESS_MODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ContainerPackage.Literals.VOLUMES_FROM__ACCESS_MODE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVolumesFromAccess().getContainerContainerIDTerminalRuleCall_1_0_1(), semanticObject.getContainer());
-		feeder.accept(grammarAccess.getVolumesFromAccess().getAccessModeAccessModeEnumRuleCall_2_0(), semanticObject.getAccessMode());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

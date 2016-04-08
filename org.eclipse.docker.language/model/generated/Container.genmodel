@@ -62,7 +62,7 @@
     <genClasses ecoreClass="Container.ecore#//Image">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/tag"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/dockerFileDir"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/dockerFilelocation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Image/buildargs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/noCache"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/memory"/>
@@ -79,7 +79,7 @@
     </genClasses>
     <genClasses ecoreClass="Container.ecore#//Container">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Container.ecore#//Container/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/image"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Container/binds"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/capabilityAdd"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/capabilityDrop"/>
@@ -109,7 +109,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/publishAllPorts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/readonlyRootfs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/pidMode"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/cgroupParent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/workingDir"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/user"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Container/tty"/>
@@ -119,11 +118,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Container/ulimits"/>
     </genClasses>
     <genClasses ecoreClass="Container.ecore#//VolumesFrom">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Container.ecore#//VolumesFrom/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//VolumesFrom/container"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//VolumesFrom/accessMode"/>
     </genClasses>
     <genClasses ecoreClass="Container.ecore#//RestartPolicy">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//RestartPolicy/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//RestartPolicy/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//RestartPolicy/maximumRetryCount"/>
     </genClasses>
     <genClasses ecoreClass="Container.ecore#//PortBinding">
@@ -135,7 +134,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Binding/hostPort"/>
     </genClasses>
     <genClasses ecoreClass="Container.ecore#//Link">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Container.ecore#//Link/containerLink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Link/containerLink"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Link/alias"/>
     </genClasses>
     <genClasses ecoreClass="Container.ecore#//Ulimit">

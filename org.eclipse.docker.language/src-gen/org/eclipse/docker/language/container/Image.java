@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Image#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#getTag <em>Tag</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.Image#getDockerFileDir <em>Docker File Dir</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.Image#getDockerFilelocation <em>Docker Filelocation</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#getBuildargs <em>Buildargs</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#isNoCache <em>No Cache</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#getMemory <em>Memory</em>}</li>
@@ -86,30 +86,30 @@ public interface Image extends EObject
   void setTag(String value);
 
   /**
-   * Returns the value of the '<em><b>Docker File Dir</b></em>' attribute.
+   * Returns the value of the '<em><b>Docker Filelocation</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Docker File Dir</em>' attribute isn't clear,
+   * If the meaning of the '<em>Docker Filelocation</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Docker File Dir</em>' attribute.
-   * @see #setDockerFileDir(String)
-   * @see org.eclipse.docker.language.container.ContainerPackage#getImage_DockerFileDir()
+   * @return the value of the '<em>Docker Filelocation</em>' attribute.
+   * @see #setDockerFilelocation(String)
+   * @see org.eclipse.docker.language.container.ContainerPackage#getImage_DockerFilelocation()
    * @model
    * @generated
    */
-  String getDockerFileDir();
+  String getDockerFilelocation();
 
   /**
-   * Sets the value of the '{@link org.eclipse.docker.language.container.Image#getDockerFileDir <em>Docker File Dir</em>}' attribute.
+   * Sets the value of the '{@link org.eclipse.docker.language.container.Image#getDockerFilelocation <em>Docker Filelocation</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Docker File Dir</em>' attribute.
-   * @see #getDockerFileDir()
+   * @param value the new value of the '<em>Docker Filelocation</em>' attribute.
+   * @see #getDockerFilelocation()
    * @generated
    */
-  void setDockerFileDir(String value);
+  void setDockerFilelocation(String value);
 
   /**
    * Returns the value of the '<em><b>Buildargs</b></em>' containment reference.

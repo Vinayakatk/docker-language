@@ -46,7 +46,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.docker.language.container.Container#isPublishAllPorts <em>Publish All Ports</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Container#isReadonlyRootfs <em>Readonly Rootfs</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Container#getPidMode <em>Pid Mode</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.Container#getCgroupParent <em>Cgroup Parent</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Container#getWorkingDir <em>Working Dir</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Container#getUser <em>User</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Container#isTty <em>Tty</em>}</li>
@@ -89,30 +88,30 @@ public interface Container extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Image</b></em>' reference.
+   * Returns the value of the '<em><b>Image</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Image</em>' reference isn't clear,
+   * If the meaning of the '<em>Image</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Image</em>' reference.
-   * @see #setImage(Image)
+   * @return the value of the '<em>Image</em>' attribute.
+   * @see #setImage(String)
    * @see org.eclipse.docker.language.container.ContainerPackage#getContainer_Image()
    * @model
    * @generated
    */
-  Image getImage();
+  String getImage();
 
   /**
-   * Sets the value of the '{@link org.eclipse.docker.language.container.Container#getImage <em>Image</em>}' reference.
+   * Sets the value of the '{@link org.eclipse.docker.language.container.Container#getImage <em>Image</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Image</em>' reference.
+   * @param value the new value of the '<em>Image</em>' attribute.
    * @see #getImage()
    * @generated
    */
-  void setImage(Image value);
+  void setImage(String value);
 
   /**
    * Returns the value of the '<em><b>Binds</b></em>' containment reference list.
@@ -243,12 +242,12 @@ public interface Container extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cpuset Cpus</em>' attribute.
-   * @see #setCpusetCpus(int)
+   * @see #setCpusetCpus(String)
    * @see org.eclipse.docker.language.container.ContainerPackage#getContainer_CpusetCpus()
    * @model
    * @generated
    */
-  int getCpusetCpus();
+  String getCpusetCpus();
 
   /**
    * Sets the value of the '{@link org.eclipse.docker.language.container.Container#getCpusetCpus <em>Cpuset Cpus</em>}' attribute.
@@ -258,7 +257,7 @@ public interface Container extends EObject
    * @see #getCpusetCpus()
    * @generated
    */
-  void setCpusetCpus(int value);
+  void setCpusetCpus(String value);
 
   /**
    * Returns the value of the '<em><b>Cpuset Mems</b></em>' attribute.
@@ -731,32 +730,6 @@ public interface Container extends EObject
    * @generated
    */
   void setPidMode(String value);
-
-  /**
-   * Returns the value of the '<em><b>Cgroup Parent</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Cgroup Parent</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Cgroup Parent</em>' attribute.
-   * @see #setCgroupParent(String)
-   * @see org.eclipse.docker.language.container.ContainerPackage#getContainer_CgroupParent()
-   * @model
-   * @generated
-   */
-  String getCgroupParent();
-
-  /**
-   * Sets the value of the '{@link org.eclipse.docker.language.container.Container#getCgroupParent <em>Cgroup Parent</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Cgroup Parent</em>' attribute.
-   * @see #getCgroupParent()
-   * @generated
-   */
-  void setCgroupParent(String value);
 
   /**
    * Returns the value of the '<em><b>Working Dir</b></em>' attribute.

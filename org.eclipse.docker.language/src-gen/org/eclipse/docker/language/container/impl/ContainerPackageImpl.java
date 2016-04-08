@@ -292,7 +292,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImage_DockerFileDir()
+  public EAttribute getImage_DockerFilelocation()
   {
     return (EAttribute)imageEClass.getEStructuralFeatures().get(2);
   }
@@ -442,9 +442,9 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getContainer_Image()
+  public EAttribute getContainer_Image()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -742,7 +742,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainer_CgroupParent()
+  public EAttribute getContainer_WorkingDir()
   {
     return (EAttribute)containerEClass.getEStructuralFeatures().get(31);
   }
@@ -752,7 +752,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainer_WorkingDir()
+  public EAttribute getContainer_User()
   {
     return (EAttribute)containerEClass.getEStructuralFeatures().get(32);
   }
@@ -762,7 +762,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainer_User()
+  public EAttribute getContainer_Tty()
   {
     return (EAttribute)containerEClass.getEStructuralFeatures().get(33);
   }
@@ -772,19 +772,9 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainer_Tty()
-  {
-    return (EAttribute)containerEClass.getEStructuralFeatures().get(34);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getContainer_RestartPolicy()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(35);
+    return (EReference)containerEClass.getEStructuralFeatures().get(34);
   }
 
   /**
@@ -794,7 +784,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    */
   public EReference getContainer_Volumes()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(36);
+    return (EReference)containerEClass.getEStructuralFeatures().get(35);
   }
 
   /**
@@ -804,7 +794,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    */
   public EReference getContainer_VolumesFrom()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(37);
+    return (EReference)containerEClass.getEStructuralFeatures().get(36);
   }
 
   /**
@@ -814,7 +804,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    */
   public EReference getContainer_Ulimits()
   {
-    return (EReference)containerEClass.getEStructuralFeatures().get(38);
+    return (EReference)containerEClass.getEStructuralFeatures().get(37);
   }
 
   /**
@@ -832,9 +822,9 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVolumesFrom_Container()
+  public EAttribute getVolumesFrom_Container()
   {
-    return (EReference)volumesFromEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)volumesFromEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -862,7 +852,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRestartPolicy_Name()
+  public EAttribute getRestartPolicy_Value()
   {
     return (EAttribute)restartPolicyEClass.getEStructuralFeatures().get(0);
   }
@@ -952,9 +942,9 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLink_ContainerLink()
+  public EAttribute getLink_ContainerLink()
   {
-    return (EReference)linkEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)linkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1234,7 +1224,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     imageEClass = createEClass(IMAGE);
     createEAttribute(imageEClass, IMAGE__NAME);
     createEAttribute(imageEClass, IMAGE__TAG);
-    createEAttribute(imageEClass, IMAGE__DOCKER_FILE_DIR);
+    createEAttribute(imageEClass, IMAGE__DOCKER_FILELOCATION);
     createEReference(imageEClass, IMAGE__BUILDARGS);
     createEAttribute(imageEClass, IMAGE__NO_CACHE);
     createEAttribute(imageEClass, IMAGE__MEMORY);
@@ -1251,7 +1241,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
 
     containerEClass = createEClass(CONTAINER);
     createEAttribute(containerEClass, CONTAINER__NAME);
-    createEReference(containerEClass, CONTAINER__IMAGE);
+    createEAttribute(containerEClass, CONTAINER__IMAGE);
     createEReference(containerEClass, CONTAINER__BINDS);
     createEAttribute(containerEClass, CONTAINER__CAPABILITY_ADD);
     createEAttribute(containerEClass, CONTAINER__CAPABILITY_DROP);
@@ -1281,7 +1271,6 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     createEAttribute(containerEClass, CONTAINER__PUBLISH_ALL_PORTS);
     createEAttribute(containerEClass, CONTAINER__READONLY_ROOTFS);
     createEAttribute(containerEClass, CONTAINER__PID_MODE);
-    createEAttribute(containerEClass, CONTAINER__CGROUP_PARENT);
     createEAttribute(containerEClass, CONTAINER__WORKING_DIR);
     createEAttribute(containerEClass, CONTAINER__USER);
     createEAttribute(containerEClass, CONTAINER__TTY);
@@ -1291,11 +1280,11 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     createEReference(containerEClass, CONTAINER__ULIMITS);
 
     volumesFromEClass = createEClass(VOLUMES_FROM);
-    createEReference(volumesFromEClass, VOLUMES_FROM__CONTAINER);
+    createEAttribute(volumesFromEClass, VOLUMES_FROM__CONTAINER);
     createEAttribute(volumesFromEClass, VOLUMES_FROM__ACCESS_MODE);
 
     restartPolicyEClass = createEClass(RESTART_POLICY);
-    createEAttribute(restartPolicyEClass, RESTART_POLICY__NAME);
+    createEAttribute(restartPolicyEClass, RESTART_POLICY__VALUE);
     createEAttribute(restartPolicyEClass, RESTART_POLICY__MAXIMUM_RETRY_COUNT);
 
     portBindingEClass = createEClass(PORT_BINDING);
@@ -1307,7 +1296,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     createEAttribute(bindingEClass, BINDING__HOST_PORT);
 
     linkEClass = createEClass(LINK);
-    createEReference(linkEClass, LINK__CONTAINER_LINK);
+    createEAttribute(linkEClass, LINK__CONTAINER_LINK);
     createEAttribute(linkEClass, LINK__ALIAS);
 
     ulimitEClass = createEClass(ULIMIT);
@@ -1380,7 +1369,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImage_Name(), ecorePackage.getEString(), "name", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_Tag(), ecorePackage.getEString(), "tag", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImage_DockerFileDir(), ecorePackage.getEString(), "dockerFileDir", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImage_DockerFilelocation(), ecorePackage.getEString(), "dockerFilelocation", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getImage_Buildargs(), this.getBuildArgs(), null, "buildargs", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_NoCache(), ecorePackage.getEBoolean(), "noCache", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_Memory(), ecorePackage.getELong(), "memory", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1397,14 +1386,14 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
 
     initEClass(containerEClass, org.eclipse.docker.language.container.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getContainer_Image(), this.getImage(), null, "image", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainer_Image(), ecorePackage.getEString(), "image", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainer_Binds(), this.getBind(), null, "binds", null, 0, -1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_CapabilityAdd(), this.getCapability(), "capabilityAdd", null, 0, -1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_CapabilityDrop(), this.getCapability(), "capabilityDrop", null, 0, -1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_Commands(), ecorePackage.getEString(), "commands", null, 0, -1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_ContainerIDFile(), ecorePackage.getEString(), "containerIDFile", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_CpuPeriod(), ecorePackage.getEInt(), "cpuPeriod", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_CpusetCpus(), ecorePackage.getEInt(), "cpusetCpus", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContainer_CpusetCpus(), ecorePackage.getEString(), "cpusetCpus", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_CpusetMems(), ecorePackage.getEString(), "cpusetMems", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_CpuShares(), ecorePackage.getEInt(), "cpuShares", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainer_Devices(), this.getDevice(), null, "devices", null, 0, -1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1427,7 +1416,6 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     initEAttribute(getContainer_PublishAllPorts(), ecorePackage.getEBoolean(), "publishAllPorts", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_ReadonlyRootfs(), ecorePackage.getEBoolean(), "readonlyRootfs", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_PidMode(), ecorePackage.getEString(), "pidMode", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainer_CgroupParent(), ecorePackage.getEString(), "cgroupParent", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_WorkingDir(), ecorePackage.getEString(), "workingDir", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_User(), ecorePackage.getEString(), "user", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainer_Tty(), ecorePackage.getEBoolean(), "tty", null, 0, 1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1437,11 +1425,11 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     initEReference(getContainer_Ulimits(), this.getUlimit(), null, "ulimits", null, 0, -1, org.eclipse.docker.language.container.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(volumesFromEClass, VolumesFrom.class, "VolumesFrom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVolumesFrom_Container(), this.getContainer(), null, "container", null, 0, 1, VolumesFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVolumesFrom_Container(), ecorePackage.getEString(), "container", null, 0, 1, VolumesFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVolumesFrom_AccessMode(), this.getAccessMode(), "accessMode", null, 0, 1, VolumesFrom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(restartPolicyEClass, RestartPolicy.class, "RestartPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRestartPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1, RestartPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRestartPolicy_Value(), ecorePackage.getEString(), "value", null, 0, 1, RestartPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRestartPolicy_MaximumRetryCount(), ecorePackage.getEInt(), "maximumRetryCount", null, 0, 1, RestartPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(portBindingEClass, PortBinding.class, "PortBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1453,7 +1441,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
     initEAttribute(getBinding_HostPort(), ecorePackage.getEInt(), "hostPort", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLink_ContainerLink(), this.getContainer(), null, "containerLink", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLink_ContainerLink(), ecorePackage.getEString(), "containerLink", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLink_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ulimitEClass, Ulimit.class, "Ulimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

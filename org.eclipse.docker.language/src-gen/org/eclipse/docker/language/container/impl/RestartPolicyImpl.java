@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.docker.language.container.impl.RestartPolicyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.impl.RestartPolicyImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.RestartPolicyImpl#getMaximumRetryCount <em>Maximum Retry Count</em>}</li>
  * </ul>
  *
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements RestartPolicy
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMaximumRetryCount() <em>Maximum Retry Count</em>}' attribute.
@@ -94,9 +94,9 @@ public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements R
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getValue()
   {
-    return name;
+    return value;
   }
 
   /**
@@ -104,12 +104,12 @@ public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements R
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setValue(String newValue)
   {
-    String oldName = name;
-    name = newName;
+    String oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.RESTART_POLICY__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.RESTART_POLICY__VALUE, oldValue, value));
   }
 
   /**
@@ -145,8 +145,8 @@ public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case ContainerPackage.RESTART_POLICY__NAME:
-        return getName();
+      case ContainerPackage.RESTART_POLICY__VALUE:
+        return getValue();
       case ContainerPackage.RESTART_POLICY__MAXIMUM_RETRY_COUNT:
         return getMaximumRetryCount();
     }
@@ -163,8 +163,8 @@ public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case ContainerPackage.RESTART_POLICY__NAME:
-        setName((String)newValue);
+      case ContainerPackage.RESTART_POLICY__VALUE:
+        setValue((String)newValue);
         return;
       case ContainerPackage.RESTART_POLICY__MAXIMUM_RETRY_COUNT:
         setMaximumRetryCount((Integer)newValue);
@@ -183,8 +183,8 @@ public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case ContainerPackage.RESTART_POLICY__NAME:
-        setName(NAME_EDEFAULT);
+      case ContainerPackage.RESTART_POLICY__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
       case ContainerPackage.RESTART_POLICY__MAXIMUM_RETRY_COUNT:
         setMaximumRetryCount(MAXIMUM_RETRY_COUNT_EDEFAULT);
@@ -203,8 +203,8 @@ public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements R
   {
     switch (featureID)
     {
-      case ContainerPackage.RESTART_POLICY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ContainerPackage.RESTART_POLICY__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case ContainerPackage.RESTART_POLICY__MAXIMUM_RETRY_COUNT:
         return maximumRetryCount != MAXIMUM_RETRY_COUNT_EDEFAULT;
     }
@@ -222,8 +222,8 @@ public class RestartPolicyImpl extends MinimalEObjectImpl.Container implements R
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (value: ");
+    result.append(value);
     result.append(", maximumRetryCount: ");
     result.append(maximumRetryCount);
     result.append(')');
