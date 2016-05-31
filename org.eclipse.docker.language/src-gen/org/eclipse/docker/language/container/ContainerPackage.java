@@ -68,22 +68,22 @@ public interface ContainerPackage extends EPackage
   int DOCKER = 0;
 
   /**
-   * The feature id for the '<em><b>Containers</b></em>' containment reference list.
+   * The feature id for the '<em><b>Container Region</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOCKER__CONTAINERS = 0;
+  int DOCKER__CONTAINER_REGION = 0;
 
   /**
-   * The feature id for the '<em><b>Images</b></em>' containment reference list.
+   * The feature id for the '<em><b>Image Region</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOCKER__IMAGES = 1;
+  int DOCKER__IMAGE_REGION = 1;
 
   /**
    * The number of structural features of the '<em>Docker</em>' class.
@@ -95,6 +95,80 @@ public interface ContainerPackage extends EPackage
   int DOCKER_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.eclipse.docker.language.container.impl.ContainerSectionImpl <em>Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.docker.language.container.impl.ContainerSectionImpl
+   * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getContainerSection()
+   * @generated
+   */
+  int CONTAINER_SECTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_SECTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Containers</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_SECTION__CONTAINERS = 1;
+
+  /**
+   * The number of structural features of the '<em>Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_SECTION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.eclipse.docker.language.container.impl.ImageSectionImpl <em>Image Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.eclipse.docker.language.container.impl.ImageSectionImpl
+   * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getImageSection()
+   * @generated
+   */
+  int IMAGE_SECTION = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_SECTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Images</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_SECTION__IMAGES = 1;
+
+  /**
+   * The number of structural features of the '<em>Image Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_SECTION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.eclipse.docker.language.container.impl.ImageImpl <em>Image</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,7 +176,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getImage()
    * @generated
    */
-  int IMAGE = 1;
+  int IMAGE = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -132,13 +206,13 @@ public interface ContainerPackage extends EPackage
   int IMAGE__DOCKER_FILELOCATION = 2;
 
   /**
-   * The feature id for the '<em><b>Buildargs</b></em>' containment reference.
+   * The feature id for the '<em><b>Force RM</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMAGE__BUILDARGS = 3;
+  int IMAGE__FORCE_RM = 3;
 
   /**
    * The feature id for the '<em><b>No Cache</b></em>' attribute.
@@ -229,7 +303,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getBuildArgs()
    * @generated
    */
-  int BUILD_ARGS = 2;
+  int BUILD_ARGS = 4;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -266,7 +340,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getContainer()
    * @generated
    */
-  int CONTAINER = 3;
+  int CONTAINER = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -627,7 +701,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getVolumesFrom()
    * @generated
    */
-  int VOLUMES_FROM = 4;
+  int VOLUMES_FROM = 6;
 
   /**
    * The feature id for the '<em><b>Container</b></em>' attribute.
@@ -664,7 +738,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getRestartPolicy()
    * @generated
    */
-  int RESTART_POLICY = 5;
+  int RESTART_POLICY = 7;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -701,7 +775,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getPortBinding()
    * @generated
    */
-  int PORT_BINDING = 6;
+  int PORT_BINDING = 8;
 
   /**
    * The feature id for the '<em><b>Binding</b></em>' containment reference.
@@ -738,7 +812,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getBinding()
    * @generated
    */
-  int BINDING = 7;
+  int BINDING = 9;
 
   /**
    * The feature id for the '<em><b>Host IP</b></em>' attribute.
@@ -775,7 +849,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getLink()
    * @generated
    */
-  int LINK = 8;
+  int LINK = 10;
 
   /**
    * The feature id for the '<em><b>Container Link</b></em>' attribute.
@@ -812,7 +886,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getUlimit()
    * @generated
    */
-  int ULIMIT = 9;
+  int ULIMIT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -858,7 +932,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getLabel()
    * @generated
    */
-  int LABEL = 10;
+  int LABEL = 12;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -895,7 +969,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getExposedPort()
    * @generated
    */
-  int EXPOSED_PORT = 11;
+  int EXPOSED_PORT = 13;
 
   /**
    * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -932,7 +1006,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getDevice()
    * @generated
    */
-  int DEVICE = 12;
+  int DEVICE = 14;
 
   /**
    * The feature id for the '<em><b>CGroup Permissions</b></em>' attribute.
@@ -978,7 +1052,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getBind()
    * @generated
    */
-  int BIND = 13;
+  int BIND = 15;
 
   /**
    * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -1024,7 +1098,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getVolume()
    * @generated
    */
-  int VOLUME = 14;
+  int VOLUME = 16;
 
   /**
    * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -1052,7 +1126,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getInternalProtocol()
    * @generated
    */
-  int INTERNAL_PROTOCOL = 15;
+  int INTERNAL_PROTOCOL = 17;
 
   /**
    * The meta object id for the '{@link org.eclipse.docker.language.container.AccessMode <em>Access Mode</em>}' enum.
@@ -1062,7 +1136,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getAccessMode()
    * @generated
    */
-  int ACCESS_MODE = 16;
+  int ACCESS_MODE = 18;
 
   /**
    * The meta object id for the '{@link org.eclipse.docker.language.container.Capability <em>Capability</em>}' enum.
@@ -1072,7 +1146,7 @@ public interface ContainerPackage extends EPackage
    * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getCapability()
    * @generated
    */
-  int CAPABILITY = 17;
+  int CAPABILITY = 19;
 
 
   /**
@@ -1086,26 +1160,90 @@ public interface ContainerPackage extends EPackage
   EClass getDocker();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.docker.language.container.Docker#getContainers <em>Containers</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.docker.language.container.Docker#getContainerRegion <em>Container Region</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Container Region</em>'.
+   * @see org.eclipse.docker.language.container.Docker#getContainerRegion()
+   * @see #getDocker()
+   * @generated
+   */
+  EReference getDocker_ContainerRegion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.eclipse.docker.language.container.Docker#getImageRegion <em>Image Region</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Image Region</em>'.
+   * @see org.eclipse.docker.language.container.Docker#getImageRegion()
+   * @see #getDocker()
+   * @generated
+   */
+  EReference getDocker_ImageRegion();
+
+  /**
+   * Returns the meta object for class '{@link org.eclipse.docker.language.container.ContainerSection <em>Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Section</em>'.
+   * @see org.eclipse.docker.language.container.ContainerSection
+   * @generated
+   */
+  EClass getContainerSection();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.ContainerSection#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.eclipse.docker.language.container.ContainerSection#getName()
+   * @see #getContainerSection()
+   * @generated
+   */
+  EAttribute getContainerSection_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.eclipse.docker.language.container.ContainerSection#getContainers <em>Containers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Containers</em>'.
-   * @see org.eclipse.docker.language.container.Docker#getContainers()
-   * @see #getDocker()
+   * @see org.eclipse.docker.language.container.ContainerSection#getContainers()
+   * @see #getContainerSection()
    * @generated
    */
-  EReference getDocker_Containers();
+  EReference getContainerSection_Containers();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.eclipse.docker.language.container.Docker#getImages <em>Images</em>}'.
+   * Returns the meta object for class '{@link org.eclipse.docker.language.container.ImageSection <em>Image Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Image Section</em>'.
+   * @see org.eclipse.docker.language.container.ImageSection
+   * @generated
+   */
+  EClass getImageSection();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.ImageSection#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.eclipse.docker.language.container.ImageSection#getName()
+   * @see #getImageSection()
+   * @generated
+   */
+  EAttribute getImageSection_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.eclipse.docker.language.container.ImageSection#getImages <em>Images</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Images</em>'.
-   * @see org.eclipse.docker.language.container.Docker#getImages()
-   * @see #getDocker()
+   * @see org.eclipse.docker.language.container.ImageSection#getImages()
+   * @see #getImageSection()
    * @generated
    */
-  EReference getDocker_Images();
+  EReference getImageSection_Images();
 
   /**
    * Returns the meta object for class '{@link org.eclipse.docker.language.container.Image <em>Image</em>}'.
@@ -1151,15 +1289,15 @@ public interface ContainerPackage extends EPackage
   EAttribute getImage_DockerFilelocation();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.docker.language.container.Image#getBuildargs <em>Buildargs</em>}'.
+   * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Image#isForceRM <em>Force RM</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Buildargs</em>'.
-   * @see org.eclipse.docker.language.container.Image#getBuildargs()
+   * @return the meta object for the attribute '<em>Force RM</em>'.
+   * @see org.eclipse.docker.language.container.Image#isForceRM()
    * @see #getImage()
    * @generated
    */
-  EReference getImage_Buildargs();
+  EAttribute getImage_ForceRM();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.docker.language.container.Image#isNoCache <em>No Cache</em>}'.
@@ -2147,12 +2285,64 @@ public interface ContainerPackage extends EPackage
     EClass DOCKER = eINSTANCE.getDocker();
 
     /**
+     * The meta object literal for the '<em><b>Container Region</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOCKER__CONTAINER_REGION = eINSTANCE.getDocker_ContainerRegion();
+
+    /**
+     * The meta object literal for the '<em><b>Image Region</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOCKER__IMAGE_REGION = eINSTANCE.getDocker_ImageRegion();
+
+    /**
+     * The meta object literal for the '{@link org.eclipse.docker.language.container.impl.ContainerSectionImpl <em>Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.docker.language.container.impl.ContainerSectionImpl
+     * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getContainerSection()
+     * @generated
+     */
+    EClass CONTAINER_SECTION = eINSTANCE.getContainerSection();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTAINER_SECTION__NAME = eINSTANCE.getContainerSection_Name();
+
+    /**
      * The meta object literal for the '<em><b>Containers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCKER__CONTAINERS = eINSTANCE.getDocker_Containers();
+    EReference CONTAINER_SECTION__CONTAINERS = eINSTANCE.getContainerSection_Containers();
+
+    /**
+     * The meta object literal for the '{@link org.eclipse.docker.language.container.impl.ImageSectionImpl <em>Image Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.docker.language.container.impl.ImageSectionImpl
+     * @see org.eclipse.docker.language.container.impl.ContainerPackageImpl#getImageSection()
+     * @generated
+     */
+    EClass IMAGE_SECTION = eINSTANCE.getImageSection();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMAGE_SECTION__NAME = eINSTANCE.getImageSection_Name();
 
     /**
      * The meta object literal for the '<em><b>Images</b></em>' containment reference list feature.
@@ -2160,7 +2350,7 @@ public interface ContainerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOCKER__IMAGES = eINSTANCE.getDocker_Images();
+    EReference IMAGE_SECTION__IMAGES = eINSTANCE.getImageSection_Images();
 
     /**
      * The meta object literal for the '{@link org.eclipse.docker.language.container.impl.ImageImpl <em>Image</em>}' class.
@@ -2197,12 +2387,12 @@ public interface ContainerPackage extends EPackage
     EAttribute IMAGE__DOCKER_FILELOCATION = eINSTANCE.getImage_DockerFilelocation();
 
     /**
-     * The meta object literal for the '<em><b>Buildargs</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Force RM</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IMAGE__BUILDARGS = eINSTANCE.getImage_Buildargs();
+    EAttribute IMAGE__FORCE_RM = eINSTANCE.getImage_ForceRM();
 
     /**
      * The meta object literal for the '<em><b>No Cache</b></em>' attribute feature.

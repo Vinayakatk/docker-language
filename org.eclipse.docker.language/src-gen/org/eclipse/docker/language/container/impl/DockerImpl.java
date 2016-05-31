@@ -2,23 +2,19 @@
  */
 package org.eclipse.docker.language.container.impl;
 
-import java.util.Collection;
-
 import org.eclipse.docker.language.container.ContainerPackage;
+import org.eclipse.docker.language.container.ContainerSection;
 import org.eclipse.docker.language.container.Docker;
-import org.eclipse.docker.language.container.Image;
+import org.eclipse.docker.language.container.ImageSection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,35 +22,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
- *   <li>{@link org.eclipse.docker.language.container.impl.DockerImpl#getContainers <em>Containers</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.impl.DockerImpl#getImages <em>Images</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.impl.DockerImpl#getContainerRegion <em>Container Region</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.impl.DockerImpl#getImageRegion <em>Image Region</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
 {
   /**
-   * The cached value of the '{@link #getContainers() <em>Containers</em>}' containment reference list.
+   * The cached value of the '{@link #getContainerRegion() <em>Container Region</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContainers()
+   * @see #getContainerRegion()
    * @generated
    * @ordered
    */
-  protected EList<org.eclipse.docker.language.container.Container> containers;
+  protected ContainerSection containerRegion;
 
   /**
-   * The cached value of the '{@link #getImages() <em>Images</em>}' containment reference list.
+   * The cached value of the '{@link #getImageRegion() <em>Image Region</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImages()
+   * @see #getImageRegion()
    * @generated
    * @ordered
    */
-  protected EList<Image> images;
+  protected ImageSection imageRegion;
 
   /**
    * <!-- begin-user-doc -->
@@ -82,13 +78,9 @@ public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<org.eclipse.docker.language.container.Container> getContainers()
+  public ContainerSection getContainerRegion()
   {
-    if (containers == null)
-    {
-      containers = new EObjectContainmentEList<org.eclipse.docker.language.container.Container>(org.eclipse.docker.language.container.Container.class, this, ContainerPackage.DOCKER__CONTAINERS);
-    }
-    return containers;
+    return containerRegion;
   }
 
   /**
@@ -96,13 +88,85 @@ public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Image> getImages()
+  public NotificationChain basicSetContainerRegion(ContainerSection newContainerRegion, NotificationChain msgs)
   {
-    if (images == null)
+    ContainerSection oldContainerRegion = containerRegion;
+    containerRegion = newContainerRegion;
+    if (eNotificationRequired())
     {
-      images = new EObjectContainmentEList<Image>(Image.class, this, ContainerPackage.DOCKER__IMAGES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContainerPackage.DOCKER__CONTAINER_REGION, oldContainerRegion, newContainerRegion);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return images;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContainerRegion(ContainerSection newContainerRegion)
+  {
+    if (newContainerRegion != containerRegion)
+    {
+      NotificationChain msgs = null;
+      if (containerRegion != null)
+        msgs = ((InternalEObject)containerRegion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContainerPackage.DOCKER__CONTAINER_REGION, null, msgs);
+      if (newContainerRegion != null)
+        msgs = ((InternalEObject)newContainerRegion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContainerPackage.DOCKER__CONTAINER_REGION, null, msgs);
+      msgs = basicSetContainerRegion(newContainerRegion, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.DOCKER__CONTAINER_REGION, newContainerRegion, newContainerRegion));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImageSection getImageRegion()
+  {
+    return imageRegion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetImageRegion(ImageSection newImageRegion, NotificationChain msgs)
+  {
+    ImageSection oldImageRegion = imageRegion;
+    imageRegion = newImageRegion;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContainerPackage.DOCKER__IMAGE_REGION, oldImageRegion, newImageRegion);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImageRegion(ImageSection newImageRegion)
+  {
+    if (newImageRegion != imageRegion)
+    {
+      NotificationChain msgs = null;
+      if (imageRegion != null)
+        msgs = ((InternalEObject)imageRegion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContainerPackage.DOCKER__IMAGE_REGION, null, msgs);
+      if (newImageRegion != null)
+        msgs = ((InternalEObject)newImageRegion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContainerPackage.DOCKER__IMAGE_REGION, null, msgs);
+      msgs = basicSetImageRegion(newImageRegion, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.DOCKER__IMAGE_REGION, newImageRegion, newImageRegion));
   }
 
   /**
@@ -115,10 +179,10 @@ public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
   {
     switch (featureID)
     {
-      case ContainerPackage.DOCKER__CONTAINERS:
-        return ((InternalEList<?>)getContainers()).basicRemove(otherEnd, msgs);
-      case ContainerPackage.DOCKER__IMAGES:
-        return ((InternalEList<?>)getImages()).basicRemove(otherEnd, msgs);
+      case ContainerPackage.DOCKER__CONTAINER_REGION:
+        return basicSetContainerRegion(null, msgs);
+      case ContainerPackage.DOCKER__IMAGE_REGION:
+        return basicSetImageRegion(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -133,10 +197,10 @@ public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
   {
     switch (featureID)
     {
-      case ContainerPackage.DOCKER__CONTAINERS:
-        return getContainers();
-      case ContainerPackage.DOCKER__IMAGES:
-        return getImages();
+      case ContainerPackage.DOCKER__CONTAINER_REGION:
+        return getContainerRegion();
+      case ContainerPackage.DOCKER__IMAGE_REGION:
+        return getImageRegion();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,19 +210,16 @@ public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ContainerPackage.DOCKER__CONTAINERS:
-        getContainers().clear();
-        getContainers().addAll((Collection<? extends org.eclipse.docker.language.container.Container>)newValue);
+      case ContainerPackage.DOCKER__CONTAINER_REGION:
+        setContainerRegion((ContainerSection)newValue);
         return;
-      case ContainerPackage.DOCKER__IMAGES:
-        getImages().clear();
-        getImages().addAll((Collection<? extends Image>)newValue);
+      case ContainerPackage.DOCKER__IMAGE_REGION:
+        setImageRegion((ImageSection)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -174,11 +235,11 @@ public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
   {
     switch (featureID)
     {
-      case ContainerPackage.DOCKER__CONTAINERS:
-        getContainers().clear();
+      case ContainerPackage.DOCKER__CONTAINER_REGION:
+        setContainerRegion((ContainerSection)null);
         return;
-      case ContainerPackage.DOCKER__IMAGES:
-        getImages().clear();
+      case ContainerPackage.DOCKER__IMAGE_REGION:
+        setImageRegion((ImageSection)null);
         return;
     }
     super.eUnset(featureID);
@@ -194,10 +255,10 @@ public class DockerImpl extends MinimalEObjectImpl.Container implements Docker
   {
     switch (featureID)
     {
-      case ContainerPackage.DOCKER__CONTAINERS:
-        return containers != null && !containers.isEmpty();
-      case ContainerPackage.DOCKER__IMAGES:
-        return images != null && !images.isEmpty();
+      case ContainerPackage.DOCKER__CONTAINER_REGION:
+        return containerRegion != null;
+      case ContainerPackage.DOCKER__IMAGE_REGION:
+        return imageRegion != null;
     }
     return super.eIsSet(featureID);
   }

@@ -3,11 +3,71 @@
  */
 package org.eclipse.docker.language.ui.contentassist
 
-import org.eclipse.docker.language.ui.contentassist.AbstractContainerProposalProvider
+import java.io.File
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.swt.SWT
+import org.eclipse.swt.widgets.Display
+import org.eclipse.swt.widgets.FileDialog
+import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import org.eclipse.xtext.ui.editor.contentassist.ReplacementTextApplier
+import org.eclipse.docker.language.container.Docker
+import org.eclipse.xtext.Keyword
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
  * on how to customize the content assistant.
  */
 class ContainerProposalProvider extends AbstractContainerProposalProvider {
+
+	override completeImage_DockerFilelocation(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		val createCompletionProposal1 = createCompletionProposal("choose file", context)
+		if (createCompletionProposal1 instanceof ConfigurableCompletionProposal) {
+			var c = createCompletionProposal1 as ConfigurableCompletionProposal
+
+			c.textApplier = new ReplacementTextApplier() {
+
+				override getActualReplacementString(ConfigurableCompletionProposal proposal) {
+					var d = context.viewer.textWidget.display as Display
+
+					var dialog = new FileDialog(d.activeShell, SWT.OPEN)
+					var g = dialog.open
+					var file = URI.createFileURI(g).toFileString
+					'''"«file.replace("\\","\\\\")»"  '''
+				}
+
+			}
+
+		}
+		acceptor.accept(createCompletionProposal1)
+		super.completeImage_DockerFilelocation(model, assignment, context, acceptor)
+	}
+
+	override completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext,
+		ICompletionProposalAcceptor acceptor) {
+		switch (keyword.value) {
+			case "Container Section": {
+				if (contentAssistContext.currentModel != null &&
+					(contentAssistContext.currentModel as Docker).containerRegion == null) {
+					super.completeKeyword(keyword, contentAssistContext, acceptor)
+				} else if(contentAssistContext.currentModel==null) {super.completeKeyword(keyword, contentAssistContext, acceptor)}
+					else return
+			}
+		
+			case "Image Section": {
+				if (contentAssistContext.currentModel != null && (contentAssistContext.currentModel as Docker).imageRegion == null) {
+					super.completeKeyword(keyword, contentAssistContext, acceptor)
+				}  else if(contentAssistContext.currentModel==null) {super.completeKeyword(keyword, contentAssistContext, acceptor)}
+				else
+					return
+			}
+			default : super.completeKeyword(keyword, contentAssistContext, acceptor)
+		}
+//		super.completeKeyword(keyword, contentAssistContext, acceptor)
+	}
+
 }

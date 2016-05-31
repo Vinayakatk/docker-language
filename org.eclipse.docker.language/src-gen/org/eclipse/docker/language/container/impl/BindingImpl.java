@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.BindingImpl#getHostIP <em>Host IP</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.BindingImpl#getHostPort <em>Host Port</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

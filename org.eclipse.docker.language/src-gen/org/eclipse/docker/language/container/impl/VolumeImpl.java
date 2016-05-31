@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.VolumeImpl#getPath <em>Path</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

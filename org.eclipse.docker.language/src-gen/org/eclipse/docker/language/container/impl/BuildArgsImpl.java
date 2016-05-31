@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.BuildArgsImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.BuildArgsImpl#getValue <em>Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Container#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Container#getImage <em>Image</em>}</li>
@@ -54,6 +53,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.docker.language.container.Container#getVolumesFrom <em>Volumes From</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Container#getUlimits <em>Ulimits</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getContainer()
  * @model

@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.ExposedPortImpl#getPort <em>Port</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ExposedPortImpl#getProtocol <em>Protocol</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

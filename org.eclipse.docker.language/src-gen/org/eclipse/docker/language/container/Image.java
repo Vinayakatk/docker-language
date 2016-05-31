@@ -11,12 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Image#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#getTag <em>Tag</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#getDockerFilelocation <em>Docker Filelocation</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.Image#getBuildargs <em>Buildargs</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.Image#isForceRM <em>Force RM</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#isNoCache <em>No Cache</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#getMemory <em>Memory</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#getMemswap <em>Memswap</em>}</li>
@@ -26,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.docker.language.container.Image#isQuiet <em>Quiet</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Image#isPull <em>Pull</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getImage()
  * @model
@@ -112,30 +112,30 @@ public interface Image extends EObject
   void setDockerFilelocation(String value);
 
   /**
-   * Returns the value of the '<em><b>Buildargs</b></em>' containment reference.
+   * Returns the value of the '<em><b>Force RM</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Buildargs</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Force RM</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Buildargs</em>' containment reference.
-   * @see #setBuildargs(BuildArgs)
-   * @see org.eclipse.docker.language.container.ContainerPackage#getImage_Buildargs()
-   * @model containment="true"
+   * @return the value of the '<em>Force RM</em>' attribute.
+   * @see #setForceRM(boolean)
+   * @see org.eclipse.docker.language.container.ContainerPackage#getImage_ForceRM()
+   * @model
    * @generated
    */
-  BuildArgs getBuildargs();
+  boolean isForceRM();
 
   /**
-   * Sets the value of the '{@link org.eclipse.docker.language.container.Image#getBuildargs <em>Buildargs</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.docker.language.container.Image#isForceRM <em>Force RM</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Buildargs</em>' containment reference.
-   * @see #getBuildargs()
+   * @param value the new value of the '<em>Force RM</em>' attribute.
+   * @see #isForceRM()
    * @generated
    */
-  void setBuildargs(BuildArgs value);
+  void setForceRM(boolean value);
 
   /**
    * Returns the value of the '<em><b>No Cache</b></em>' attribute.

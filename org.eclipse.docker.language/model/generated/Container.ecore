@@ -3,8 +3,18 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="container" nsURI="http://www.eclipse.org/docker/language/Container"
     nsPrefix="container">
   <eClassifiers xsi:type="ecore:EClass" name="Docker">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerRegion" eType="#//ContainerSection"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageRegion" eType="#//ImageSection"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerSection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
         eType="#//Container" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageSection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="images" upperBound="-1"
         eType="#//Image" containment="true"/>
   </eClassifiers>
@@ -12,8 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dockerFilelocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="buildargs" eType="#//BuildArgs"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forceRM" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noCache" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memswap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>

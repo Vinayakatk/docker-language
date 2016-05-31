@@ -1,5 +1,6 @@
 package org.eclipse.docker.language.launch
 
+import com.google.inject.Inject
 import com.google.inject.Injector
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IResource
@@ -10,25 +11,28 @@ import org.eclipse.debug.core.ILaunchConfiguration
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate
 import org.eclipse.debug.ui.ILaunchShortcut
 import org.eclipse.debug.ui.ILaunchShortcut2
-import org.eclipse.docker.language.container.Image
+import org.eclipse.docker.language.container.Docker
 import org.eclipse.docker.language.ui.internal.ContainerActivator
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.jface.viewers.ISelection
 import org.eclipse.jface.viewers.IStructuredSelection
+import org.eclipse.swt.widgets.Display
 import org.eclipse.ui.IEditorInput
 import org.eclipse.ui.IEditorPart
 import org.eclipse.ui.part.FileEditorInput
-import org.eclipse.xtext.EcoreUtil2
-import org.eclipse.xtext.util.UriUtil
-import org.eclipse.docker.language.DockerInterpreterImpl
-import org.eclipse.swt.widgets.Display
+import org.eclipse.docker.language.DockerInterpreter
+import org.eclipse.xtext.parser.IEncodingProvider
 
 class RunContainerLauncher implements ILaunchShortcut, ILaunchShortcut2, ILaunchConfigurationDelegate {
+	@Inject DockerInterpreter interpreter
+	DockerConsole console = new DockerConsole
+	
 	override void launch(ILaunchConfiguration configuration, String mode, ILaunch launch,
+		
 		IProgressMonitor monitor) throws CoreException {
+		
 		System::out.println("called launch")
 	}
  
@@ -59,7 +63,7 @@ class RunContainerLauncher implements ILaunchShortcut, ILaunchShortcut2, ILaunch
 	}
 
 	override void launch(ISelection selection, String mode) {
-		System::out.println("called selected launch ")
+
 		Display.current.asyncExec(new Runnable(){
 			
 			override run() {
@@ -72,9 +76,10 @@ class RunContainerLauncher implements ILaunchShortcut, ILaunchShortcut2, ILaunch
 				var ResourceSet instance = injector.getInstance(typeof(ResourceSet))
 				val createURI = URI::createFileURI(f.location.toOSString)
 				var Resource resource = instance.getResource(createURI, true)
-				val images = resource.allContents.filter(Image)
-				images.forEach[print(it.name)]
-				new DockerInterpreterImpl().interpretImage(images.head)
+			
+				val docker = resource.contents.get(0) as Docker
+				docker.imageRegion.images.forEach[print(it.name)]
+				
 				
 			}
 		}

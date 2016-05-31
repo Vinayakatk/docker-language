@@ -32,6 +32,24 @@ public interface ContainerFactory extends EFactory
   Docker createDocker();
 
   /**
+   * Returns a new object of class '<em>Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Section</em>'.
+   * @generated
+   */
+  ContainerSection createContainerSection();
+
+  /**
+   * Returns a new object of class '<em>Image Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Image Section</em>'.
+   * @generated
+   */
+  ImageSection createImageSection();
+
+  /**
    * Returns a new object of class '<em>Image</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.DeviceImpl#getCGroupPermissions <em>CGroup Permissions</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.DeviceImpl#getPathOnHost <em>Path On Host</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.DeviceImpl#getPathInContainer <em>Path In Container</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

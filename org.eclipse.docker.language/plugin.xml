@@ -14,4 +14,13 @@
 
 
 
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated tableModel -->
+      <package
+            uri="www.tContainer.com"
+            class="org.eclipse.docker.language.TableModel.TableModelPackage"
+            genModel="model/table/tableModel.genmodel"/>
+   </extension>
+
 </plugin>

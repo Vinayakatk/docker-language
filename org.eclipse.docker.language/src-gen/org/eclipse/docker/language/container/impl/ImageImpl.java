@@ -2,15 +2,12 @@
  */
 package org.eclipse.docker.language.container.impl;
 
-import org.eclipse.docker.language.container.BuildArgs;
 import org.eclipse.docker.language.container.ContainerPackage;
 import org.eclipse.docker.language.container.Image;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -21,12 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getTag <em>Tag</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getDockerFilelocation <em>Docker Filelocation</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getBuildargs <em>Buildargs</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#isForceRM <em>Force RM</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#isNoCache <em>No Cache</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getMemory <em>Memory</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#getMemswap <em>Memswap</em>}</li>
@@ -36,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#isQuiet <em>Quiet</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ImageImpl#isPull <em>Pull</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -102,14 +99,24 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
   protected String dockerFilelocation = DOCKER_FILELOCATION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getBuildargs() <em>Buildargs</em>}' containment reference.
+   * The default value of the '{@link #isForceRM() <em>Force RM</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBuildargs()
+   * @see #isForceRM()
    * @generated
    * @ordered
    */
-  protected BuildArgs buildargs;
+  protected static final boolean FORCE_RM_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isForceRM() <em>Force RM</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isForceRM()
+   * @generated
+   * @ordered
+   */
+  protected boolean forceRM = FORCE_RM_EDEFAULT;
 
   /**
    * The default value of the '{@link #isNoCache() <em>No Cache</em>}' attribute.
@@ -366,9 +373,9 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
    * <!-- end-user-doc -->
    * @generated
    */
-  public BuildArgs getBuildargs()
+  public boolean isForceRM()
   {
-    return buildargs;
+    return forceRM;
   }
 
   /**
@@ -376,37 +383,12 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBuildargs(BuildArgs newBuildargs, NotificationChain msgs)
+  public void setForceRM(boolean newForceRM)
   {
-    BuildArgs oldBuildargs = buildargs;
-    buildargs = newBuildargs;
+    boolean oldForceRM = forceRM;
+    forceRM = newForceRM;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContainerPackage.IMAGE__BUILDARGS, oldBuildargs, newBuildargs);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBuildargs(BuildArgs newBuildargs)
-  {
-    if (newBuildargs != buildargs)
-    {
-      NotificationChain msgs = null;
-      if (buildargs != null)
-        msgs = ((InternalEObject)buildargs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContainerPackage.IMAGE__BUILDARGS, null, msgs);
-      if (newBuildargs != null)
-        msgs = ((InternalEObject)newBuildargs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContainerPackage.IMAGE__BUILDARGS, null, msgs);
-      msgs = basicSetBuildargs(newBuildargs, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.IMAGE__BUILDARGS, newBuildargs, newBuildargs));
+      eNotify(new ENotificationImpl(this, Notification.SET, ContainerPackage.IMAGE__FORCE_RM, oldForceRM, forceRM));
   }
 
   /**
@@ -599,22 +581,6 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case ContainerPackage.IMAGE__BUILDARGS:
-        return basicSetBuildargs(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -625,8 +591,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
         return getTag();
       case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
         return getDockerFilelocation();
-      case ContainerPackage.IMAGE__BUILDARGS:
-        return getBuildargs();
+      case ContainerPackage.IMAGE__FORCE_RM:
+        return isForceRM();
       case ContainerPackage.IMAGE__NO_CACHE:
         return isNoCache();
       case ContainerPackage.IMAGE__MEMORY:
@@ -666,8 +632,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
       case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
         setDockerFilelocation((String)newValue);
         return;
-      case ContainerPackage.IMAGE__BUILDARGS:
-        setBuildargs((BuildArgs)newValue);
+      case ContainerPackage.IMAGE__FORCE_RM:
+        setForceRM((Boolean)newValue);
         return;
       case ContainerPackage.IMAGE__NO_CACHE:
         setNoCache((Boolean)newValue);
@@ -716,8 +682,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
       case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
         setDockerFilelocation(DOCKER_FILELOCATION_EDEFAULT);
         return;
-      case ContainerPackage.IMAGE__BUILDARGS:
-        setBuildargs((BuildArgs)null);
+      case ContainerPackage.IMAGE__FORCE_RM:
+        setForceRM(FORCE_RM_EDEFAULT);
         return;
       case ContainerPackage.IMAGE__NO_CACHE:
         setNoCache(NO_CACHE_EDEFAULT);
@@ -763,8 +729,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
         return TAG_EDEFAULT == null ? tag != null : !TAG_EDEFAULT.equals(tag);
       case ContainerPackage.IMAGE__DOCKER_FILELOCATION:
         return DOCKER_FILELOCATION_EDEFAULT == null ? dockerFilelocation != null : !DOCKER_FILELOCATION_EDEFAULT.equals(dockerFilelocation);
-      case ContainerPackage.IMAGE__BUILDARGS:
-        return buildargs != null;
+      case ContainerPackage.IMAGE__FORCE_RM:
+        return forceRM != FORCE_RM_EDEFAULT;
       case ContainerPackage.IMAGE__NO_CACHE:
         return noCache != NO_CACHE_EDEFAULT;
       case ContainerPackage.IMAGE__MEMORY:
@@ -802,6 +768,8 @@ public class ImageImpl extends MinimalEObjectImpl.Container implements Image
     result.append(tag);
     result.append(", dockerFilelocation: ");
     result.append(dockerFilelocation);
+    result.append(", forceRM: ");
+    result.append(forceRM);
     result.append(", noCache: ");
     result.append(noCache);
     result.append(", memory: ");

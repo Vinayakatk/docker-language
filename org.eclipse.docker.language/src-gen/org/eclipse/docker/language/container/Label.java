@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Label#getKey <em>Key</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Label#getValue <em>Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getLabel()
  * @model

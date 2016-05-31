@@ -80,6 +80,16 @@ public class ContainerAdapterFactory extends AdapterFactoryImpl
         return createDockerAdapter();
       }
       @Override
+      public Adapter caseContainerSection(ContainerSection object)
+      {
+        return createContainerSectionAdapter();
+      }
+      @Override
+      public Adapter caseImageSection(ImageSection object)
+      {
+        return createImageSectionAdapter();
+      }
+      @Override
       public Adapter caseImage(Image object)
       {
         return createImageAdapter();
@@ -182,6 +192,36 @@ public class ContainerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDockerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.docker.language.container.ContainerSection <em>Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.docker.language.container.ContainerSection
+   * @generated
+   */
+  public Adapter createContainerSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.docker.language.container.ImageSection <em>Image Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.docker.language.container.ImageSection
+   * @generated
+   */
+  public Adapter createImageSectionAdapter()
   {
     return null;
   }

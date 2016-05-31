@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Bind#getLocation <em>Location</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Bind#getVolume <em>Volume</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Bind#getAccessMode1 <em>Access Mode1</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getBind()
  * @model

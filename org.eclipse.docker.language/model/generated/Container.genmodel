@@ -3,8 +3,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.docker.language/src-gen" editDirectory="/org.eclipse.docker.language.edit/src"
     editorDirectory="/org.eclipse.docker.language.editor/src" modelPluginID="org.eclipse.docker.language"
     forceOverwrite="true" modelName="Container" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="6.0" copyrightFields="false" editPluginID="org.eclipse.docker.language.edit"
-    editorPluginID="org.eclipse.docker.language.editor" runtimeVersion="2.11">
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.docker.language.edit"
+    editorPluginID="org.eclipse.docker.language.editor" runtimeVersion="2.10">
   <genPackages prefix="Container" basePackage="org.eclipse.docker.language" disposableProviderFactory="true"
       fileExtensions="dcon" ecorePackage="Container.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Container.ecore#//InternalProtocol">
@@ -56,14 +56,22 @@
       <genEnumLiterals ecoreEnumLiteral="Container.ecore#//Capability/WAKE_ALARM"/>
     </genEnums>
     <genClasses ecoreClass="Container.ecore#//Docker">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Docker/containers"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Docker/images"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Docker/containerRegion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Docker/imageRegion"/>
+    </genClasses>
+    <genClasses ecoreClass="Container.ecore#//ContainerSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//ContainerSection/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//ContainerSection/containers"/>
+    </genClasses>
+    <genClasses ecoreClass="Container.ecore#//ImageSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//ImageSection/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//ImageSection/images"/>
     </genClasses>
     <genClasses ecoreClass="Container.ecore#//Image">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/tag"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/dockerFilelocation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Container.ecore#//Image/buildargs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/forceRM"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/noCache"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/memory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Container.ecore#//Image/memswap"/>

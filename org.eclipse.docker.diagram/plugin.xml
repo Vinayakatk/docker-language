@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.cau.cs.kieler.klighd.diagramSyntheses">
+   <diagramSynthesis
+         class="de.cau.cs.kieler.klighd.syntheses.GuiceBasedSynthesisFactory:my.klighd.diagrams.example.dd.DockerDiagramSynthesis"
+         id="my.klighd.diagrams.example.dd.DockerDiagramSynthesis">
+   </diagramSynthesis>
+   </extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <category
+         description="Docker diagrams"
+         id="my.klighd.diagrams.example.dd.DockerDiagrams"
+         name="DockerDiagrams">
+   </category>
+   <command
+         categoryId="my.klighd.diagrams.example.dd.DockerDiagrams"
+         defaultHandler="my.klighd.diagrams.example.dd.OpenDiagramHandler"
+         description="Primitive helper command that opens KLighD-based Docker diagrams."
+         id="my.klighd.diagrams.example.dd.openDockerDiagram"
+         name="Open Docker diagram">
+   </command>
+</extension>
+
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         locationURI="popup:org.eclipse.ui.popup.any?before=additions">
+      <command
+            commandId="my.klighd.diagrams.example.dd.openDockerDiagram"
+            label="Open Docker diagram"
+            style="push">
+         <visibleWhen
+               checkEnabled="false">
+            <or>
+               <and>
+                  <with
+                        variable="activeEditor">
+                     <instanceof
+                           value="org.eclipse.xtext.ui.editor.XtextEditor">
+                     </instanceof>
+                  </with>
+                  <with
+                        variable="activeEditorInput">
+                     <adapt type="org.eclipse.core.resources.IResource">
+                         <test
+                               forcePluginActivation="false"
+                               property="org.eclipse.core.resources.extension"
+                               value="dcon">
+                         </test>
+                     </adapt>
+                  </with>
+               </and>
+               <iterate ifEmpty="false" operator="or">
+                  <or>
+                     <instanceof
+                         value="org.eclipse.docker.language.container.Docker">
+                     </instanceof>
+                     <adapt type="org.eclipse.core.resources.IResource">
+                         <test
+                               forcePluginActivation="false"
+                               property="org.eclipse.core.resources.extension"
+                               value="dcon">
+                         </test>
+                     </adapt>
+                  </or>
+               </iterate>
+            </or>
+         </visibleWhen>
+      </command>
+   </menuContribution>
+</extension>
+<extension
+      point="de.cau.cs.kieler.core.kivi.combinations">
+   <combination
+         active="true"
+         class="de.cau.cs.kieler.klighd.xtext.UpdateXtextModelKLighDCombination"
+         name="org.eclipse.diagrams.docker.combination">
+   </combination>
+</extension>
+
+</plugin>

@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.UlimitImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.UlimitImpl#getSoft <em>Soft</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.UlimitImpl#getHard <em>Hard</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

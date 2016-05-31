@@ -6,6 +6,8 @@ package org.eclipse.docker.language.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import com.google.inject.Inject
+import org.eclipse.emf.mwe2.language.scoping.QualifiedNameProvider
 
 /**
  * Generates code from your model files on save.
@@ -13,12 +15,15 @@ import org.eclipse.xtext.generator.IFileSystemAccess
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class ContainerGenerator implements IGenerator {
-	
+	@Inject
+	QualifiedNameProvider provider
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(typeof(Greeting))
 //				.map[name]
 //				.join(', '))
+	var res = resource.contents.get(0)
+	res.eContents.forEach[print(provider.getFullyQualifiedName(it))]
 	}
 }

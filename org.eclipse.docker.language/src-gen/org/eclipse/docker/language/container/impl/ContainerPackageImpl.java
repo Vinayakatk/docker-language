@@ -9,10 +9,12 @@ import org.eclipse.docker.language.container.BuildArgs;
 import org.eclipse.docker.language.container.Capability;
 import org.eclipse.docker.language.container.ContainerFactory;
 import org.eclipse.docker.language.container.ContainerPackage;
+import org.eclipse.docker.language.container.ContainerSection;
 import org.eclipse.docker.language.container.Device;
 import org.eclipse.docker.language.container.Docker;
 import org.eclipse.docker.language.container.ExposedPort;
 import org.eclipse.docker.language.container.Image;
+import org.eclipse.docker.language.container.ImageSection;
 import org.eclipse.docker.language.container.InternalProtocol;
 import org.eclipse.docker.language.container.Label;
 import org.eclipse.docker.language.container.Link;
@@ -44,6 +46,20 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * @generated
    */
   private EClass dockerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass containerSectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass imageSectionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -242,7 +258,7 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocker_Containers()
+  public EReference getDocker_ContainerRegion()
   {
     return (EReference)dockerEClass.getEStructuralFeatures().get(0);
   }
@@ -252,9 +268,69 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDocker_Images()
+  public EReference getDocker_ImageRegion()
   {
     return (EReference)dockerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getContainerSection()
+  {
+    return containerSectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContainerSection_Name()
+  {
+    return (EAttribute)containerSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContainerSection_Containers()
+  {
+    return (EReference)containerSectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImageSection()
+  {
+    return imageSectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImageSection_Name()
+  {
+    return (EAttribute)imageSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getImageSection_Images()
+  {
+    return (EReference)imageSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -302,9 +378,9 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getImage_Buildargs()
+  public EAttribute getImage_ForceRM()
   {
-    return (EReference)imageEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)imageEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1218,14 +1294,22 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
 
     // Create classes and their features
     dockerEClass = createEClass(DOCKER);
-    createEReference(dockerEClass, DOCKER__CONTAINERS);
-    createEReference(dockerEClass, DOCKER__IMAGES);
+    createEReference(dockerEClass, DOCKER__CONTAINER_REGION);
+    createEReference(dockerEClass, DOCKER__IMAGE_REGION);
+
+    containerSectionEClass = createEClass(CONTAINER_SECTION);
+    createEAttribute(containerSectionEClass, CONTAINER_SECTION__NAME);
+    createEReference(containerSectionEClass, CONTAINER_SECTION__CONTAINERS);
+
+    imageSectionEClass = createEClass(IMAGE_SECTION);
+    createEAttribute(imageSectionEClass, IMAGE_SECTION__NAME);
+    createEReference(imageSectionEClass, IMAGE_SECTION__IMAGES);
 
     imageEClass = createEClass(IMAGE);
     createEAttribute(imageEClass, IMAGE__NAME);
     createEAttribute(imageEClass, IMAGE__TAG);
     createEAttribute(imageEClass, IMAGE__DOCKER_FILELOCATION);
-    createEReference(imageEClass, IMAGE__BUILDARGS);
+    createEAttribute(imageEClass, IMAGE__FORCE_RM);
     createEAttribute(imageEClass, IMAGE__NO_CACHE);
     createEAttribute(imageEClass, IMAGE__MEMORY);
     createEAttribute(imageEClass, IMAGE__MEMSWAP);
@@ -1363,14 +1447,22 @@ public class ContainerPackageImpl extends EPackageImpl implements ContainerPacka
 
     // Initialize classes and features; add operations and parameters
     initEClass(dockerEClass, Docker.class, "Docker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDocker_Containers(), this.getContainer(), null, "containers", null, 0, -1, Docker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDocker_Images(), this.getImage(), null, "images", null, 0, -1, Docker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocker_ContainerRegion(), this.getContainerSection(), null, "containerRegion", null, 0, 1, Docker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocker_ImageRegion(), this.getImageSection(), null, "imageRegion", null, 0, 1, Docker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(containerSectionEClass, ContainerSection.class, "ContainerSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getContainerSection_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContainerSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainerSection_Containers(), this.getContainer(), null, "containers", null, 0, -1, ContainerSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(imageSectionEClass, ImageSection.class, "ImageSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImageSection_Name(), ecorePackage.getEString(), "name", null, 0, 1, ImageSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImageSection_Images(), this.getImage(), null, "images", null, 0, -1, ImageSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImage_Name(), ecorePackage.getEString(), "name", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_Tag(), ecorePackage.getEString(), "tag", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_DockerFilelocation(), ecorePackage.getEString(), "dockerFilelocation", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImage_Buildargs(), this.getBuildArgs(), null, "buildargs", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImage_ForceRM(), ecorePackage.getEBoolean(), "forceRM", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_NoCache(), ecorePackage.getEBoolean(), "noCache", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_Memory(), ecorePackage.getELong(), "memory", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_Memswap(), ecorePackage.getELong(), "memswap", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

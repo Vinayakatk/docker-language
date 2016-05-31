@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Binding#getHostIP <em>Host IP</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Binding#getHostPort <em>Host Port</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getBinding()
  * @model

@@ -3,17 +3,34 @@ grammar org.eclipse.docker.language.Container with org.eclipse.xtext.common.Term
 generate container "http://www.eclipse.org/docker/language/Container"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 Docker:
-	(containers+=Container |
-//		networks+=Network | volumes+=Volume
-	images += Image
-	)*
+//	imports +=ImportContainer*	
+(containerRegion=ContainerSection? & imageRegion=ImageSection?)
+;
+
+//ImportContainer:
+//	'import' importedNamespace=ImportedSection 'from' importURI=STRING
+//;
+//
+//ImportedSection returns ecore::EString:
+//	
+//	'Container-Section.*'
+//;
+
+ContainerSection:
+	{ContainerSection}
+	name='Container-Section' '{'containers+=Container*	'}'
+;
+
+ImageSection:
+	{ImageSection}
+	name='Image-Section' '{'images+=Image*'}'
 ;
 
 Image://build a new image or pull exiting image added later
 	'image' name=STRING'{'
 			(('tag' tag=STRING)?&
 			('dockerFileLocation' dockerFilelocation=STRING)? & 
-			('buildArg' buildargs=BuildArgs+)? &
+			('Force-rm' forceRM=EBoolean)? &
 			('noCache' noCache=EBoolean)? &
 			('memory' memory=Elong)?&
 			('memswap' memswap=Elong)?& 
@@ -45,8 +62,8 @@ Elong returns ecore::ELong:
 //;
 
 Container:
-	'container' name=ID '{'
-		'image'image=STRING 
+		'container' name=ID '{'
+		'image-tag'image=STRING 
 		(('binds' '{' binds+=Bind+'}')?&
 		('capabilityAdd''{'capabilityAdd+=Capability+ '}')?&
 		('capabilityDrop''{'capabilityDrop+=Capability+'}')?&
@@ -82,11 +99,20 @@ Container:
 		('tty'tty=EBoolean)?&
 		('restartPolicy'restartPolicy=RestartPolicy)?&
 		('volumes' '{'('-'volumes+=Volume)+'}')?&
-		('volumesFrom''{'('-'volumesFrom+=VolumesFrom)+'}')?&
-		('ulimits' '{'('-'ulimits+=Ulimit)+'}')?
+		('volumesFrom''{'(volumesFrom+=VolumesFrom)+'}')?&
+		('ulimits' '{'(ulimits+=Ulimit)+'}')?
 		)
 	'}'
+	
 ;
+
+//ManagedContainer returns Container:
+//		'Managed'
+//;
+
+//ActiveContainer returns Container:
+//	 'Active'
+//;
 
 VolumesFrom:'-'
 	container=STRING':'
@@ -109,7 +135,7 @@ Binding:'-'
 ;
 
 Link:'-'
-	containerLink=STRING ':' alias=STRING
+	containerLink=STRING (':' alias=STRING)?
 ;
 Ulimit:'-'
 	name=STRING
@@ -426,3 +452,17 @@ Bind:'-'
 Volume: 
 	path=STRING
 ;
+
+//Section :
+//	ActiveRegion | ManagedRegion
+//;
+//
+//ManagedRegion:
+//	{ManagedRegion}
+//	'Managed' '{'containers+=ActiveContainer*'}'
+//;
+//
+//ActiveRegion:
+//	{ActiveRegion}
+//	'Active' '{'containers+=ManagedContainer*'}'
+//;

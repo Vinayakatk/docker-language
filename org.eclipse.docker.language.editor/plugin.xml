@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Container -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.docker.language.container.presentation.ContainerModelWizardID"
+            name="%_UI_ContainerModelWizard_label"
+            class="org.eclipse.docker.language.container.presentation.ContainerModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ContainerModelFile.gif">
+         <description>%_UI_ContainerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Container -->
+      <editor
+            id="org.eclipse.docker.language.container.presentation.ContainerEditorID"
+            name="%_UI_ContainerEditor_label"
+            icon="icons/full/obj16/ContainerModelFile.gif"
+            extensions="dcon"
+            class="org.eclipse.docker.language.container.presentation.ContainerEditor"
+            contributorClass="org.eclipse.docker.language.container.presentation.ContainerActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated tableModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.docker.language.TableModel.presentation.TableModelModelWizardID"
+            name="%_UI_TableModelModelWizard_label"
+            class="org.eclipse.docker.language.TableModel.presentation.TableModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TableModelModelFile.gif">
+         <description>%_UI_TableModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated tableModel -->
+      <editor
+            id="org.eclipse.docker.language.TableModel.presentation.TableModelEditorID"
+            name="%_UI_TableModelEditor_label"
+            icon="icons/full/obj16/TableModelModelFile.gif"
+            extensions="tablemodel"
+            class="org.eclipse.docker.language.TableModel.presentation.TableModelEditor"
+            contributorClass="org.eclipse.docker.language.TableModel.presentation.TableModelActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

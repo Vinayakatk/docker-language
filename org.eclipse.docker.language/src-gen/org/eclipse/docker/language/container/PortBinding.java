@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.PortBinding#getBinding <em>Binding</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.PortBinding#getExposedPort <em>Exposed Port</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getPortBinding()
  * @model

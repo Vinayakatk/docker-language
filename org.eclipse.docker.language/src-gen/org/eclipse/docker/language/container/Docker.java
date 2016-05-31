@@ -2,8 +2,6 @@
  */
 package org.eclipse.docker.language.container;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
- *   <li>{@link org.eclipse.docker.language.container.Docker#getContainers <em>Containers</em>}</li>
- *   <li>{@link org.eclipse.docker.language.container.Docker#getImages <em>Images</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.Docker#getContainerRegion <em>Container Region</em>}</li>
+ *   <li>{@link org.eclipse.docker.language.container.Docker#getImageRegion <em>Image Region</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getDocker()
  * @model
@@ -26,35 +24,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Docker extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Containers</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.docker.language.container.Container}.
+   * Returns the value of the '<em><b>Container Region</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Containers</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Container Region</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Containers</em>' containment reference list.
-   * @see org.eclipse.docker.language.container.ContainerPackage#getDocker_Containers()
+   * @return the value of the '<em>Container Region</em>' containment reference.
+   * @see #setContainerRegion(ContainerSection)
+   * @see org.eclipse.docker.language.container.ContainerPackage#getDocker_ContainerRegion()
    * @model containment="true"
    * @generated
    */
-  EList<Container> getContainers();
+  ContainerSection getContainerRegion();
 
   /**
-   * Returns the value of the '<em><b>Images</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.docker.language.container.Image}.
+   * Sets the value of the '{@link org.eclipse.docker.language.container.Docker#getContainerRegion <em>Container Region</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Container Region</em>' containment reference.
+   * @see #getContainerRegion()
+   * @generated
+   */
+  void setContainerRegion(ContainerSection value);
+
+  /**
+   * Returns the value of the '<em><b>Image Region</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Images</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Image Region</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Images</em>' containment reference list.
-   * @see org.eclipse.docker.language.container.ContainerPackage#getDocker_Images()
+   * @return the value of the '<em>Image Region</em>' containment reference.
+   * @see #setImageRegion(ImageSection)
+   * @see org.eclipse.docker.language.container.ContainerPackage#getDocker_ImageRegion()
    * @model containment="true"
    * @generated
    */
-  EList<Image> getImages();
+  ImageSection getImageRegion();
+
+  /**
+   * Sets the value of the '{@link org.eclipse.docker.language.container.Docker#getImageRegion <em>Image Region</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Image Region</em>' containment reference.
+   * @see #getImageRegion()
+   * @generated
+   */
+  void setImageRegion(ImageSection value);
 
 } // Docker

@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Link#getContainerLink <em>Container Link</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Link#getAlias <em>Alias</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getLink()
  * @model

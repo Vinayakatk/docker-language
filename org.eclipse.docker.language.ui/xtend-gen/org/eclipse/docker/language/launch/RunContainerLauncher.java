@@ -1,8 +1,8 @@
 package org.eclipse.docker.language.launch;
 
-import com.google.common.collect.Iterators;
+import com.google.inject.Inject;
 import com.google.inject.Injector;
-import java.util.Iterator;
+import java.util.function.Consumer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -13,10 +13,13 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
 import org.eclipse.debug.ui.ILaunchShortcut;
 import org.eclipse.debug.ui.ILaunchShortcut2;
-import org.eclipse.docker.language.DockerInterpreterImpl;
+import org.eclipse.docker.language.DockerInterpreter;
+import org.eclipse.docker.language.container.Docker;
 import org.eclipse.docker.language.container.Image;
+import org.eclipse.docker.language.container.ImageSection;
+import org.eclipse.docker.language.launch.DockerConsole;
 import org.eclipse.docker.language.ui.internal.ContainerActivator;
-import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -28,11 +31,14 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.xtext.xbase.lib.InputOutput;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 @SuppressWarnings("all")
 public class RunContainerLauncher implements ILaunchShortcut, ILaunchShortcut2, ILaunchConfigurationDelegate {
+  @Inject
+  private DockerInterpreter interpreter;
+  
+  private DockerConsole console = new DockerConsole();
+  
   @Override
   public void launch(final ILaunchConfiguration configuration, final String mode, final ILaunch launch, final IProgressMonitor monitor) throws CoreException {
     System.out.println("called launch");
@@ -75,7 +81,6 @@ public class RunContainerLauncher implements ILaunchShortcut, ILaunchShortcut2, 
   
   @Override
   public void launch(final ISelection selection, final String mode) {
-    System.out.println("called selected launch ");
     Display _current = Display.getCurrent();
     _current.asyncExec(new Runnable() {
       @Override
@@ -92,16 +97,16 @@ public class RunContainerLauncher implements ILaunchShortcut, ILaunchShortcut2, 
             String _oSString = _location.toOSString();
             final URI createURI = URI.createFileURI(_oSString);
             Resource resource = instance.getResource(createURI, true);
-            TreeIterator<EObject> _allContents = resource.getAllContents();
-            final Iterator<Image> images = Iterators.<Image>filter(_allContents, Image.class);
-            final Procedure1<Image> _function = (Image it) -> {
+            EList<EObject> _contents = resource.getContents();
+            EObject _get = _contents.get(0);
+            final Docker docker = ((Docker) _get);
+            ImageSection _imageRegion = docker.getImageRegion();
+            EList<Image> _images = _imageRegion.getImages();
+            final Consumer<Image> _function = (Image it) -> {
               String _name = it.getName();
               InputOutput.<String>print(_name);
             };
-            IteratorExtensions.<Image>forEach(images, _function);
-            DockerInterpreterImpl _dockerInterpreterImpl = new DockerInterpreterImpl();
-            Image _head = IteratorExtensions.<Image>head(images);
-            _dockerInterpreterImpl.interpretImage(_head);
+            _images.forEach(_function);
           }
         }
       }

@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.BindImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.BindImpl#getVolume <em>Volume</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.BindImpl#getAccessMode1 <em>Access Mode1</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

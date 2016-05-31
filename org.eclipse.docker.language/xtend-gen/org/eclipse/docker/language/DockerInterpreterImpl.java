@@ -3,17 +3,21 @@ package org.eclipse.docker.language;
 import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.api.command.BuildImageCmd;
 import com.github.dockerjava.api.command.CreateContainerCmd;
+import com.github.dockerjava.api.command.CreateContainerResponse;
 import com.github.dockerjava.api.model.BuildResponseItem;
 import com.github.dockerjava.api.model.Ports;
-import com.github.dockerjava.core.DockerClientBuilder;
-import com.github.dockerjava.core.DockerClientConfig;
 import com.github.dockerjava.core.command.BuildImageResultCallback;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import com.google.inject.Provider;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.Consumer;
+import javax.inject.Inject;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.docker.language.DockerInterpreter;
 import org.eclipse.docker.language.container.AccessMode;
 import org.eclipse.docker.language.container.Bind;
@@ -37,29 +41,21 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.ui.util.ResourceUtil;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 
 @SuppressWarnings("all")
 public class DockerInterpreterImpl implements DockerInterpreter {
-  private String DOCKER_CERT = "C:\\Users\\vinio\\.docker\\machine\\certs";
-  
-  private String Docker_uri = "https://192.168.99.100:2376";
-  
   private DockerClient dockerClient;
   
-  public DockerInterpreterImpl() {
-    DockerClientConfig.DockerClientConfigBuilder _createDefaultConfigBuilder = DockerClientConfig.createDefaultConfigBuilder();
-    DockerClientConfig.DockerClientConfigBuilder _withUri = _createDefaultConfigBuilder.withUri(this.Docker_uri);
-    File _file = new File(this.DOCKER_CERT);
-    String _absolutePath = _file.getAbsolutePath();
-    DockerClientConfig.DockerClientConfigBuilder _withDockerCertPath = _withUri.withDockerCertPath(_absolutePath);
-    DockerClientConfig dockerClientConfig = _withDockerCertPath.build();
-    DockerClientBuilder _instance = DockerClientBuilder.getInstance(dockerClientConfig);
-    DockerClient _build = _instance.build();
-    this.dockerClient = _build;
+  @Inject
+  public DockerInterpreterImpl(final Provider<DockerClient> provider) {
+    DockerClient _get = provider.get();
+    this.dockerClient = _get;
   }
   
   @Override
@@ -75,12 +71,12 @@ public class DockerInterpreterImpl implements DockerInterpreter {
   protected void _interpret(final Container container) {
     String _image = container.getImage();
     CreateContainerCmd command = this.dockerClient.createContainerCmd(_image);
-    EAttribute _container_Image = ContainerPackage.eINSTANCE.getContainer_Image();
-    Object _eGet = container.eGet(_container_Image);
+    EAttribute _container_Name = ContainerPackage.eINSTANCE.getContainer_Name();
+    Object _eGet = container.eGet(_container_Name);
     boolean _notEquals = (!Objects.equal(_eGet, null));
     if (_notEquals) {
-      String _image_1 = container.getImage();
-      this.interpretImage(_image_1, command);
+      String _name = container.getName();
+      command.withName(_name);
     }
     EReference _container_Binds = ContainerPackage.eINSTANCE.getContainer_Binds();
     Object _eGet_1 = container.eGet(_container_Binds);
@@ -334,8 +330,9 @@ public class DockerInterpreterImpl implements DockerInterpreter {
       EList<Ulimit> _ulimits = container.getUlimits();
       this.interpretULimits(_ulimits, command);
     }
-    CreateContainerCmd _createContainerCmd = this.dockerClient.createContainerCmd("");
-    _createContainerCmd.exec();
+    CreateContainerResponse response = command.exec();
+    String _id = response.getId();
+    InputOutput.<String>println(_id);
   }
   
   public void interpretCpusetMems(final String value, final CreateContainerCmd command) {
@@ -655,78 +652,96 @@ public class DockerInterpreterImpl implements DockerInterpreter {
       String _tag = image.getTag();
       buildImageCmd.withTag(_tag);
     }
-    EAttribute _image_Cpusetcpus = ContainerPackage.eINSTANCE.getImage_Cpusetcpus();
-    Object _eGet_1 = image.eGet(_image_Cpusetcpus);
+    EAttribute _image_ForceRM = ContainerPackage.eINSTANCE.getImage_ForceRM();
+    Object _eGet_1 = image.eGet(_image_ForceRM);
     boolean _notEquals_1 = (!Objects.equal(_eGet_1, null));
     if (_notEquals_1) {
+      boolean _isForceRM = image.isForceRM();
+      buildImageCmd.withForcerm(Boolean.valueOf(_isForceRM));
+    }
+    EAttribute _image_Cpusetcpus = ContainerPackage.eINSTANCE.getImage_Cpusetcpus();
+    Object _eGet_2 = image.eGet(_image_Cpusetcpus);
+    boolean _notEquals_2 = (!Objects.equal(_eGet_2, null));
+    if (_notEquals_2) {
       String _cpusetcpus = image.getCpusetcpus();
       buildImageCmd.withCpusetcpus(_cpusetcpus);
     }
     EAttribute _image_Cpushares = ContainerPackage.eINSTANCE.getImage_Cpushares();
-    Object _eGet_2 = image.eGet(_image_Cpushares);
-    boolean _notEquals_2 = (!Objects.equal(_eGet_2, null));
-    if (_notEquals_2) {
+    Object _eGet_3 = image.eGet(_image_Cpushares);
+    boolean _notEquals_3 = (!Objects.equal(_eGet_3, null));
+    if (_notEquals_3) {
       String _cpushares = image.getCpushares();
       buildImageCmd.withCpushares(_cpushares);
     }
     EAttribute _image_DockerFilelocation = ContainerPackage.eINSTANCE.getImage_DockerFilelocation();
-    Object _eGet_3 = image.eGet(_image_DockerFilelocation);
-    boolean _notEquals_3 = (!Objects.equal(_eGet_3, null));
-    if (_notEquals_3) {
-      String _dockerFilelocation = image.getDockerFilelocation();
-      final File file = new File(_dockerFilelocation);
-      String _absolutePath = file.getAbsolutePath();
-      File _file = new File(_absolutePath);
-      buildImageCmd.withDockerfile(_file);
-    }
-    EAttribute _image_Memory = ContainerPackage.eINSTANCE.getImage_Memory();
-    Object _eGet_4 = image.eGet(_image_Memory);
+    Object _eGet_4 = image.eGet(_image_DockerFilelocation);
     boolean _notEquals_4 = (!Objects.equal(_eGet_4, null));
     if (_notEquals_4) {
+      Resource resource = image.eResource();
+      String _dockerFilelocation = image.getDockerFilelocation();
+      File absFile = new File(_dockerFilelocation);
+      boolean _isAbsolute = absFile.isAbsolute();
+      if (_isAbsolute) {
+        buildImageCmd.withDockerfile(absFile);
+      } else {
+        IFile _file = ResourceUtil.getFile(resource);
+        IProject _project = _file.getProject();
+        String _dockerFilelocation_1 = image.getDockerFilelocation();
+        IFile _file_1 = _project.getFile(_dockerFilelocation_1);
+        IPath _location = _file_1.getLocation();
+        File file = _location.toFile();
+        buildImageCmd.withDockerfile(file);
+      }
+    }
+    EAttribute _image_Memory = ContainerPackage.eINSTANCE.getImage_Memory();
+    Object _eGet_5 = image.eGet(_image_Memory);
+    boolean _notEquals_5 = (!Objects.equal(_eGet_5, null));
+    if (_notEquals_5) {
       long _memory = image.getMemory();
       buildImageCmd.withMemory(_memory);
     }
     EAttribute _image_Memswap = ContainerPackage.eINSTANCE.getImage_Memswap();
-    Object _eGet_5 = image.eGet(_image_Memswap);
-    boolean _notEquals_5 = (!Objects.equal(_eGet_5, null));
-    if (_notEquals_5) {
+    Object _eGet_6 = image.eGet(_image_Memswap);
+    boolean _notEquals_6 = (!Objects.equal(_eGet_6, null));
+    if (_notEquals_6) {
       long _memswap = image.getMemswap();
       buildImageCmd.withMemswap(_memswap);
     }
     EAttribute _image_NoCache = ContainerPackage.eINSTANCE.getImage_NoCache();
-    Object _eGet_6 = image.eGet(_image_NoCache);
-    boolean _notEquals_6 = (!Objects.equal(_eGet_6, null));
-    if (_notEquals_6) {
+    Object _eGet_7 = image.eGet(_image_NoCache);
+    boolean _notEquals_7 = (!Objects.equal(_eGet_7, null));
+    if (_notEquals_7) {
       boolean _isNoCache = image.isNoCache();
       buildImageCmd.withNoCache(_isNoCache);
     }
     EAttribute _image_Name = ContainerPackage.eINSTANCE.getImage_Name();
-    Object _eGet_7 = image.eGet(_image_Name);
-    boolean _notEquals_7 = (!Objects.equal(_eGet_7, null));
-    if (_notEquals_7) {
-    }
-    EAttribute _image_Pull = ContainerPackage.eINSTANCE.getImage_Pull();
-    Object _eGet_8 = image.eGet(_image_Pull);
+    Object _eGet_8 = image.eGet(_image_Name);
     boolean _notEquals_8 = (!Objects.equal(_eGet_8, null));
     if (_notEquals_8) {
+    }
+    EAttribute _image_Pull = ContainerPackage.eINSTANCE.getImage_Pull();
+    Object _eGet_9 = image.eGet(_image_Pull);
+    boolean _notEquals_9 = (!Objects.equal(_eGet_9, null));
+    if (_notEquals_9) {
       boolean _isPull = image.isPull();
       buildImageCmd.withPull(_isPull);
     }
     EAttribute _image_Quiet = ContainerPackage.eINSTANCE.getImage_Quiet();
-    Object _eGet_9 = image.eGet(_image_Quiet);
-    boolean _notEquals_9 = (!Objects.equal(_eGet_9, null));
-    if (_notEquals_9) {
+    Object _eGet_10 = image.eGet(_image_Quiet);
+    boolean _notEquals_10 = (!Objects.equal(_eGet_10, null));
+    if (_notEquals_10) {
       boolean _isQuiet = image.isQuiet();
       buildImageCmd.withQuiet(_isQuiet);
     }
     EAttribute _image_Remove = ContainerPackage.eINSTANCE.getImage_Remove();
-    Object _eGet_10 = image.eGet(_image_Remove);
-    boolean _notEquals_10 = (!Objects.equal(_eGet_10, null));
-    if (_notEquals_10) {
+    Object _eGet_11 = image.eGet(_image_Remove);
+    boolean _notEquals_11 = (!Objects.equal(_eGet_11, null));
+    if (_notEquals_11) {
       boolean _isRemove = image.isRemove();
       buildImageCmd.withRemove(_isRemove);
     }
-    buildImageCmd.<BuildImageResultCallback>exec(callback);
+    BuildImageResultCallback _exec = buildImageCmd.<BuildImageResultCallback>exec(callback);
+    _exec.awaitImageId();
   }
   
   public com.github.dockerjava.api.model.Capability toCapability(final Capability cap) {

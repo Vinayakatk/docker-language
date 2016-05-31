@@ -2,13 +2,15 @@ package org.eclipse.docker.language
 
 import com.github.dockerjava.api.DockerClient
 import com.github.dockerjava.api.command.CreateContainerCmd
+import com.github.dockerjava.api.model.BuildResponseItem
 import com.github.dockerjava.api.model.Capability
 import com.github.dockerjava.api.model.Ports
 import com.github.dockerjava.api.model.RestartPolicy
-import com.github.dockerjava.core.DockerClientBuilder
-import com.github.dockerjava.core.DockerClientConfig
+import com.github.dockerjava.core.command.BuildImageResultCallback
+import com.google.inject.Provider
 import java.io.File
 import java.util.List
+import javax.inject.Inject
 import org.eclipse.docker.language.container.AccessMode
 import org.eclipse.docker.language.container.Bind
 import org.eclipse.docker.language.container.Binding
@@ -25,20 +27,16 @@ import org.eclipse.docker.language.container.Volume
 import org.eclipse.docker.language.container.VolumesFrom
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.resource.Resource
-import com.github.dockerjava.api.model.BuildResponseItem
-import com.github.dockerjava.core.command.BuildImageResultCallback
- 
+import org.eclipse.xtext.ui.util.ResourceUtil
+
 class DockerInterpreterImpl implements DockerInterpreter {
-	private String DOCKER_CERT = "C:\\Users\\vinio\\.docker\\machine\\certs"
-	private String Docker_uri = "https://192.168.99.100:2376"
 
+	
+	
 	DockerClient dockerClient
-
-	public new() {
-		var dockerClientConfig = DockerClientConfig.createDefaultConfigBuilder().withUri(Docker_uri).
-			withDockerCertPath(new File(DOCKER_CERT).absolutePath).build();
-
-		dockerClient = DockerClientBuilder.getInstance(dockerClientConfig).build();
+	@Inject
+	public new(Provider<DockerClient> provider) {
+		dockerClient = provider.get
 	}
 
 	override interpret(Resource resource) {
@@ -47,10 +45,11 @@ class DockerInterpreterImpl implements DockerInterpreter {
 	}
 
 	def dispatch void interpret(Container container) {
+	
 
 		var command = dockerClient.createContainerCmd(container.image)
-		if (container.eGet(ContainerPackage.eINSTANCE.container_Image) != null) {
-			container.image.interpretImage(command)
+		if (container.eGet(ContainerPackage.eINSTANCE.container_Name) != null) {
+			command.withName(container.name)
 		}
 		if (container.eGet(ContainerPackage.eINSTANCE.container_Binds) != null) {
 			container.binds.interpretBinds(command)
@@ -164,7 +163,8 @@ class DockerInterpreterImpl implements DockerInterpreter {
 		if (container.eGet(ContainerPackage.eINSTANCE.container_Ulimits) != null) {
 			container.ulimits.interpretULimits(command)
 		}
-		dockerClient.createContainerCmd("").exec
+		var response=command.exec
+		println(response.id)
 
 	}
 
@@ -401,6 +401,9 @@ class DockerInterpreterImpl implements DockerInterpreter {
 		if (image.eGet(ContainerPackage.eINSTANCE.image_Tag) != null) {
 			buildImageCmd.withTag(image.tag)
 		}
+		if (image.eGet(ContainerPackage.eINSTANCE.image_ForceRM) != null) {
+			buildImageCmd.withForcerm(image.forceRM)
+		}
 		if (image.eGet(ContainerPackage.eINSTANCE.image_Cpusetcpus) != null) {
 			buildImageCmd.withCpusetcpus(image.cpusetcpus)
 		}
@@ -408,9 +411,13 @@ class DockerInterpreterImpl implements DockerInterpreter {
 			buildImageCmd.withCpushares(image.cpushares)
 		}
 		if (image.eGet(ContainerPackage.eINSTANCE.image_DockerFilelocation) != null) {
-			val file = new File(image.dockerFilelocation)
-			buildImageCmd.withDockerfile(new File(file.absolutePath))
-		}
+		var resource = image.eResource
+		var absFile=new File(image.dockerFilelocation)
+			if(absFile.isAbsolute) buildImageCmd.withDockerfile(absFile)
+			else{
+			var file = ResourceUtil.getFile(resource).project.getFile(image.dockerFilelocation).location.toFile
+			buildImageCmd.withDockerfile(file)
+		}}
 		if (image.eGet(ContainerPackage.eINSTANCE.image_Memory) != null) {
 			buildImageCmd.withMemory(image.memory)
 		}
@@ -435,7 +442,7 @@ class DockerInterpreterImpl implements DockerInterpreter {
 //		if (image.eGet(ContainerPackage.eINSTANCE.image_Buildargs) != null) {
 //			buildImageCmd.with
 //		}
-		buildImageCmd.exec(callback)
+		buildImageCmd.exec(callback).awaitImageId
 
 	}
 

@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.VolumesFromImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.VolumesFromImpl#getAccessMode <em>Access Mode</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.LinkImpl#getContainerLink <em>Container Link</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.LinkImpl#getAlias <em>Alias</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

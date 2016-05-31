@@ -3,11 +3,14 @@
  */
 package org.eclipse.docker.language.ui.outline
 
+import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode
+import org.eclipse.emf.ecore.EObject
+
 /**
  * Customization of the default outline structure.
  *
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#outline
  */
 class ContainerOutlineTreeProvider extends org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider {
-	
+
 }

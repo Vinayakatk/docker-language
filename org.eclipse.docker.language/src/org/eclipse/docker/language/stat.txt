@@ -1,0 +1,60 @@
+ if (stats != null) {
+                LinkedHashMap object = (LinkedHashMap) stats.getCpuStats().get("cpu_usage");
+//				System.out.println(object.get("total_usage"));
+//				System.out.println(stats.getCpuStats().get("system_cpu_usage"));
+				Object object2 = stats.getCpuStats().get("system_cpu_usage");
+				Double sys = new Double((Long) object2);
+				Object object3 = object.get("total_usage");
+				Double cpu = new Double((Integer) object3);
+				Double perc =0.0;
+				Double sysDelta = sys-prevsyscpu;
+				Double cpuDelat = cpu - prevcpu;
+				if(sysDelta>0.0&& cpuDelat >0.0){
+					prevcpu = cpu;
+					prevsyscpu=sys;
+					perc = (cpuDelat/sysDelta) *(((List)object.get("percpu_usage")).size()) *100 ;
+				}
+				prevcpu = cpu;
+				prevsyscpu=sys;
+				if(prevPerc.doubleValue()!=perc.doubleValue()){prevPerc=perc;
+				System.out.println(perc +"%");}
+//                System.out.println(stats.getMemoryStats().values().toString());
+            }
+//            countDownLatch.countDown();
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        	System.out.println(stats.getMemoryStats());
+        	System.out.println(stats.getMemoryStats().get("usage"));
+        	System.out.println(stats.getMemoryStats().get("limit"));
+        	System.out.println(((int)stats.getMemoryStats().get("usage"))/((int)stats.getMemoryStats().get("limit")));
+}
+        
+        
+        {eth0={rx_bytes=648, rx_packets=8, rx_errors=0, rx_dropped=0, tx_bytes=648, tx_packets=8, tx_errors=0, tx_dropped=0}}
+{eth0={rx_bytes=648, rx_packets=8, rx_errors=0, rx_dropped=0, tx_bytes=648, tx_packets=8, tx_errors=0, tx_dropped=0}}
+{eth0={rx_bytes=648, rx_packets=8, rx_errors=0, rx_dropped=0, tx_bytes=648, tx_packets=8, tx_errors=0, tx_dropped=0}}
+{eth0={rx_bytes=648, rx_packets=8, rx_errors=0, rx_dropped=0, tx_bytes=648, tx_packets=8, tx_errors=0, tx_dropped=0}}
+        
+        
+        
+        
+        	ArrayList x = (ArrayList)stats.getBlkioStats().get("io_service_bytes_recursive");
+			System.out.println(x);
+        	for (Object object : x) {
+				Object object2 = ((LinkedHashMap)object).get("op");
+				if(object2.equals("Read")){
+					System.out.println(((LinkedHashMap)object).get("value"));
+				}
+				if(object2.toString().equals("Write")){
+					System.out.println(((LinkedHashMap)object).get("value"));
+				}
+			}
+        

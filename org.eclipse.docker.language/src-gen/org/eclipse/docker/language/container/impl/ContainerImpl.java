@@ -38,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getImage <em>Image</em>}</li>
@@ -79,6 +78,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getVolumesFrom <em>Volumes From</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.impl.ContainerImpl#getUlimits <em>Ulimits</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

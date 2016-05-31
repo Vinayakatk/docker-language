@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Event
+Bundle-SymbolicName: org.eclipse.docker.event
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.docker.event.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.docker.dependency,
+ org.eclipse.docker.language.ui;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,74 @@
+
+//		Composite container = new Composite(parent, SWT.NONE);
+//		container.setLayout(new FillLayout(SWT.HORIZONTAL));
+//		
+//
+//		Form frmDockerEditor = formToolkit.createForm(container);
+//		frmDockerEditor.setImage(ResourceManager.getPluginImage("org.eclipse.docker.language.ui", "icons/docker.jpg"));
+//		formToolkit.paintBordersFor(frmDockerEditor);
+//		frmDockerEditor.setText("Docker Editor");
+//
+//		// Button button = formToolkit.createButton(frmDockerEditor.getBody(),
+//		// "New Button", SWT.NONE);
+//
+//		Hyperlink hprlnkNewHyperlink = formToolkit.createHyperlink(frmDockerEditor.getHead(), "configure", SWT.NONE);
+//		// Hyperlink hprlnkNewHyperlink2 =
+//		// formToolkit.createHyperlink(frmDockerEditor.getHead(), "configure2",
+//		// SWT.NONE);
+//		frmDockerEditor.setHeadClient(hprlnkNewHyperlink);
+//		formToolkit.paintBordersFor(hprlnkNewHyperlink);
+//		frmDockerEditor.getBody().setLayout(new FillLayout(SWT.HORIZONTAL));
+//		hprlnkNewHyperlink.addHyperlinkListener(new IHyperlinkListener() {
+//			public void linkActivated(HyperlinkEvent e) {
+//				ConfigureDialog d = new ConfigureDialog(Display.getDefault().getActiveShell());
+//						d.open();
+//			}
+//			public void linkEntered(HyperlinkEvent e) {
+//			}
+//			public void linkExited(HyperlinkEvent e) {
+//			}
+//		});
+//		Section sctnNewSection = formToolkit.createSection(frmDockerEditor.getBody(),
+//				Section.TWISTIE | Section.TITLE_BAR);
+//		sctnNewSection.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_HIGHLIGHT_SHADOW));
+//		formToolkit.paintBordersFor(sctnNewSection);
+//		sctnNewSection.setText("");
+//		sctnNewSection.setExpanded(true);
+//
+//		Section sctnNewSection2 = formToolkit.createSection(frmDockerEditor.getBody(),
+//				Section.TWISTIE | Section.TITLE_BAR);
+//		sctnNewSection2.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_HIGHLIGHT_SHADOW));
+//		formToolkit.paintBordersFor(sctnNewSection2);
+//		sctnNewSection2.setText("");
+//		sctnNewSection2.setExpanded(true);
+//		
+//		
+//		Button btnNewButton = formToolkit.createButton(sctnNewSection2, "Connect", SWT.NONE);
+//		btnNewButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_TRANSPARENT));
+//		btnNewButton.setImage(ResourceManager.getPluginImage("org.eclipse.docker.language.ui", "icons/docker.jpg"));
+//		sctnNewSection2.setTextClient(btnNewButton);
+//
+//		Composite composite = formToolkit.createComposite(sctnNewSection, SWT.NONE);
+//		formToolkit.paintBordersFor(composite);
+//		sctnNewSection.setClient(composite);
+//		composite.setLayout(new FillLayout(SWT.HORIZONTAL));
+//
+//		Composite composite2 = formToolkit.createComposite(sctnNewSection2, SWT.NONE);
+//		formToolkit.paintBordersFor(composite2);
+//		sctnNewSection2.setClient(composite2);
+//		composite2.setLayout(new FillLayout(SWT.HORIZONTAL));
+//		
+//		TableViewer tableViewer = new TableViewer(composite2, SWT.BORDER | SWT.FULL_SELECTION);
+//		table = tableViewer.getTable();
+//		table.setBounds(10, 10, 372, 568);
+//		formToolkit.paintBordersFor(table);
+//		
+//		TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
+//		TableColumn tblclmnName = tableViewerColumn.getColumn();
+//		tblclmnName.setWidth(100);
+//		tblclmnName.setText("name");
+//		tableViewer.setContentProvider(new ContentProvider());
+//		
+//		super.createPartControl(composite);
+//
+//		// super.createPartControl(form.getForm().getBody());

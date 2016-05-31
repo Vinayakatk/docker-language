@@ -18,12 +18,21 @@ Require-Bundle: org.eclipse.docker.language;visibility:=reexport,
  org.eclipse.compare,
  org.eclipse.debug.ui,
  org.eclipse.jface,
- org.eclipse.ui.workbench
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.console,
+ org.eclipse.ui.forms,
+ org.eclipse.docker.dependency;bundle-version="1.0.0",
+ org.apache.httpcomponents.httpcore;bundle-version="4.3.3",
+ org.apache.httpcomponents.httpclient;bundle-version="4.3.6",
+ org.antlr.runtime
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.docker.language.ui.quickfix,
+Export-Package: org.eclipse.docker.language.launch,
+ org.eclipse.docker.language.ui,
  org.eclipse.docker.language.ui.contentassist,
- org.eclipse.docker.language.ui.internal,
  org.eclipse.docker.language.ui.contentassist.antlr,
- org.eclipse.docker.language.ui.contentassist.antlr.internal
+ org.eclipse.docker.language.ui.contentassist.antlr.internal,
+ org.eclipse.docker.language.ui.internal,
+ org.eclipse.docker.language.ui.quickfix
 Bundle-Activator: org.eclipse.docker.language.ui.internal.ContainerActivator
+Bundle-ClassPath: .,swing2swt.jar,icons/jfxrt.jar,icons/jfxswt.jar

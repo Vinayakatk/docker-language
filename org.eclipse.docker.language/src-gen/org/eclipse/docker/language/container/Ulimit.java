@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link org.eclipse.docker.language.container.Ulimit#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Ulimit#getSoft <em>Soft</em>}</li>
  *   <li>{@link org.eclipse.docker.language.container.Ulimit#getHard <em>Hard</em>}</li>
  * </ul>
+ * </p>
  *
  * @see org.eclipse.docker.language.container.ContainerPackage#getUlimit()
  * @model
