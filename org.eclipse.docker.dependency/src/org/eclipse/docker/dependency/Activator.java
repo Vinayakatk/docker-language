@@ -9,7 +9,7 @@ public class Activator implements BundleActivator {
 
 	static BundleContext getContext() {
 
-		System.out.println("second");
+		System.out.println("wakawak a");
 		return context;
 		
 	}
