@@ -8,7 +8,7 @@ public class Activator implements BundleActivator {
 	private static BundleContext context;
 
 	static BundleContext getContext() {
-		System.out.println("new change on master22");
+		System.out.println("new change on master 11");
 		return context;
 		
 	}
