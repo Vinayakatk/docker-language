@@ -11,7 +11,7 @@ public class Activator implements BundleActivator {
 
 
 
-		System.out.println("fourth from master2");
+		System.out.println("i am fourth from master");
 
 		return context;
 		
