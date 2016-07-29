@@ -9,7 +9,11 @@ public class Activator implements BundleActivator {
 
 	static BundleContext getContext() {
 
+<<<<<<< HEAD
 		System.out.println("i am first committed");
+=======
+		System.out.println("I am third committed on same mater2");
+>>>>>>> master2
 		return context;
 		
 	}
