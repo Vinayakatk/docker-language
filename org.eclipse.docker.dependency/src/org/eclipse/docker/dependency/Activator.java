@@ -9,7 +9,9 @@ public class Activator implements BundleActivator {
 
 	static BundleContext getContext() {
 
-		System.out.println("i am walking on master to be overrriden myself");
+
+		System.out.println("i am walking on master to be overrriden other");
+
 		return context;
 		
 	}
