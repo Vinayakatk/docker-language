@@ -9,7 +9,7 @@ public class Activator implements BundleActivator {
 
 	static BundleContext getContext() {
 
-		System.out.println("parent vbranch");
+		System.out.println("i am first committed");
 		return context;
 		
 	}
