@@ -8,7 +8,8 @@ public class Activator implements BundleActivator {
 	private static BundleContext context;
 
 	static BundleContext getContext() {
-		System.out.println("decendent from master 2 3");
+
+		System.out.println("parent vbranch");
 		return context;
 		
 	}
