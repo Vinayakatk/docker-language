@@ -10,7 +10,9 @@ public class Activator implements BundleActivator {
 	static BundleContext getContext() {
 
 
-		System.out.println("first fdfd ");
+		System.out.println("first hello there is not here"
+				+ "");
+
 
 		return context;
 		
