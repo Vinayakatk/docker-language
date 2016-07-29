@@ -8,7 +8,8 @@ public class Activator implements BundleActivator {
 	private static BundleContext context;
 
 	static BundleContext getContext() {
-		System.out.println("first");
+
+		System.out.println("second");
 		return context;
 		
 	}
