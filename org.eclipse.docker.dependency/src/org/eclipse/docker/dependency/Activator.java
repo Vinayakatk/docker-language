@@ -9,7 +9,7 @@ public class Activator implements BundleActivator {
 
 	static BundleContext getContext() {
 
-		System.out.println("i am the first to commit");
+		System.out.println("i am the second to commit");
 		return context;
 		
 	}
