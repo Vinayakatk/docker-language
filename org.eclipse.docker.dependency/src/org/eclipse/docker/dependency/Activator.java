@@ -10,7 +10,7 @@ public class Activator implements BundleActivator {
 	static BundleContext getContext() {
 
 
-		System.out.println("second from master");
+		System.out.println("third from master");
 		return context;
 		
 	}
